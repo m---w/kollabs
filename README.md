@@ -1,22 +1,20 @@
-=======
 kollabs
 =======
 
 description
-===========
+-----------
 
-    These are some kollected PureData abstractions for data management,
-    OSC communiacation and state saving.
+These are some kollected PureData abstractions for data management, OSC communiacation and state saving.
     
-    This library is still work in progress.
+This library is still work in progress.
     
-    For questions or bug reports, contact me:
-    mail@marianweger.com
+For questions or bug reports, contact me:
+mail@marianweger.com
 
 license
-=======
+-------
 
-    Copyright (C) 2012  Marian Weger
+Copyright (C) 2012  Marian Weger
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

@@ -1,15 +1,20 @@
-kollabs
 =======
+KOLLABS
+=======
+
+collected abstractions for data collapse
+
 
 description
 -----------
 
-These are some kollected PureData abstractions for data management, OSC communiacation and state saving.
+Kollabs is an abstraction library for Pure Data, that covers data management, OSC communiacation and state saving.
     
 This library is still work in progress.
     
 For questions or bug reports, contact me:
 mail@marianweger.com
+
 
 license
 -------

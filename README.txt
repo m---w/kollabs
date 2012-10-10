@@ -8,7 +8,7 @@ collected abstractions for absolute collapse
 description
 -----------
 
-KOLLABS is an abstraction library for Pure Data, that covers data management, OSC communiacation and state saving.
+KOLLABS is an abstraction library for Pure Data, that covers data management, OSC communication and state saving.
     
 This library is still work in progress.
     

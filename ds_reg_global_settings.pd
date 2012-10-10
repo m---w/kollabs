@@ -1,0 +1,15 @@
+#N canvas 777 143 362 304 10;
+#X obj 78 115 t b;
+#X obj 78 163 f 0;
+#X text 191 262 (c)2012 Marian Weger;
+#X obj 78 93 r /\$1/ds/fetch/global/settings;
+#X obj 78 211 s /\$1/ds/fetched;
+#X obj 93 139 r /\$1\$2;
+#X obj 78 185 list prepend /\$1\$2;
+#X text 27 52 used by [ds_logic] for registering its settings;
+#X text 27 22 ds_reg_global_settings <domain> <subname>;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 3 0 0 0;
+#X connect 5 0 1 1;
+#X connect 6 0 4 0;

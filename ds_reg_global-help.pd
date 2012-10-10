@@ -1,0 +1,5 @@
+#N canvas 689 448 367 229 10;
+#X text 495 104 (c)2011-2012 \, Marian Weger;
+#X obj 82 120 cnv 15 200 30 empty empty see_[ds-help]_for_help 20 12
+0 14 -261234 -1 0;
+#X text 27 22 ds_reg_global <domain> <subname>;

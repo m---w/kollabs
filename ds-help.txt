@@ -1,0 +1,609 @@
+======================== GLOBAL ========================
+#settings
+#data
+======================== SCENE 0 Een ========================
+#settings
+/i/am/also/a/variable/ds/occupy 1
+/i/am/also/a/variable/ds/delay 0
+/i/am/also/a/variable/ds/morph/timegrain 20
+/i/am/also/a/variable/ds/morph/curve/quality 0
+/i/am/also/a/variable/ds/slave 0
+/i/am/also/a/variable/ds/morph/curve/resolution 100
+/i/am/also/a/variable/ds/morph/curve/weight 0
+/i/am/also/a/variable/ds/morph/curve/shape 0
+/i/am/also/a/variable/ds/morph/time 0
+/i/am/also/a/variable/ds/morph 0
+/i/am/a/variable/ds/occupy 1
+/i/am/a/variable/ds/delay 0
+/i/am/a/variable/ds/morph/timegrain 20
+/i/am/a/variable/ds/morph/curve/quality 0
+/i/am/a/variable/ds/slave 0
+/i/am/a/variable/ds/morph/curve/resolution 100
+/i/am/a/variable/ds/morph/curve/weight 0
+/i/am/a/variable/ds/morph/curve/shape 0
+/i/am/a/variable/ds/morph/time 0
+/i/am/a/variable/ds/morph 0
+/i/am/another/morphing/variable/ds/occupy 1
+/i/am/another/morphing/variable/ds/delay 0
+/i/am/another/morphing/variable/ds/morph/timegrain 20
+/i/am/another/morphing/variable/ds/morph/curve/quality 3
+/i/am/another/morphing/variable/ds/slave 0
+/i/am/another/morphing/variable/ds/morph/curve/resolution 200
+/i/am/another/morphing/variable/ds/morph/curve/weight 0.8
+/i/am/another/morphing/variable/ds/morph/curve/shape 0
+/i/am/another/morphing/variable/ds/morph/time 3
+/i/am/another/morphing/variable/ds/morph 1
+/i/am/a/morphing/variable/ds/occupy 1
+/i/am/a/morphing/variable/ds/delay 0
+/i/am/a/morphing/variable/ds/morph/timegrain 20
+/i/am/a/morphing/variable/ds/morph/curve/quality 0
+/i/am/a/morphing/variable/ds/slave 0
+/i/am/a/morphing/variable/ds/morph/curve/resolution 100
+/i/am/a/morphing/variable/ds/morph/curve/weight 0
+/i/am/a/morphing/variable/ds/morph/curve/shape 0
+/i/am/a/morphing/variable/ds/morph/time 1
+/i/am/a/morphing/variable/ds/morph 1
+/i/am/no/morphing/variable/ds/morph 0
+/i/am/a/delayed/variable/ds/occupy 1
+/i/am/a/delayed/variable/ds/delay 1
+/i/am/a/delayed/variable/ds/morph/timegrain 20
+/i/am/a/delayed/variable/ds/morph/curve/quality 0
+/i/am/a/delayed/variable/ds/slave 0
+/i/am/a/delayed/variable/ds/morph/curve/resolution 100
+/i/am/a/delayed/variable/ds/morph/curve/weight 0
+/i/am/a/delayed/variable/ds/morph/curve/shape 0
+/i/am/a/delayed/variable/ds/morph/time 0
+/i/am/a/delayed/variable/ds/morph 0
+/i/am/a/master/ds/occupy 1
+/i/am/a/master/ds/delay 0
+/i/am/a/master/ds/morph/timegrain 20
+/i/am/a/master/ds/morph/curve/quality 0
+/i/am/a/master/ds/slave 0
+/i/am/a/master/ds/morph/curve/resolution 100
+/i/am/a/master/ds/morph/curve/weight 0
+/i/am/a/master/ds/morph/curve/shape 0
+/i/am/a/master/ds/morph/time 1
+/i/am/a/master/ds/morph 1
+/i/am/a/slave/ds/occupy 1
+/i/am/a/slave/ds/delay 0
+/i/am/a/slave/ds/morph/timegrain 20
+/i/am/a/slave/ds/morph/curve/quality 0
+/i/am/a/slave/ds/slave 1
+/i/am/a/slave/ds/morph/curve/resolution 100
+/i/am/a/slave/ds/morph/curve/weight 0
+/i/am/a/slave/ds/morph/curve/shape 0
+/i/am/a/slave/ds/morph/time 0
+/i/am/a/slave/ds/morph 0
+/i/am/occupied/ds/morph 0
+/i/got/changed/ds/morph 0
+/i/must/be/set/ds/morph 0
+/ev/grid/id0/labeling/size/ds/morph 0
+/ev/grid/id0/labeling/mark/color/ds/morph 0
+/ev/grid/id0/labeling/border/color/ds/morph 0
+/ev/grid/id0/labeling/zero/color/ds/morph 0
+/ev/grid/id0/labeling/state/ds/morph 0
+/ev/grid/id0/grid/color/ds/morph 0
+/ev/grid/id0/grid/res/y/ds/morph 0
+/ev/grid/id0/grid/res/x/ds/morph 0
+/ev/grid/id0/size/ds/morph 0
+/ev/grid/id0/grid/state/ds/morph 0
+#data
+/i/am/also/a/variable 63
+/i/am/a/variable 9
+/i/am/another/morphing/variable 4
+/i/am/a/morphing/variable 3
+/i/am/no/morphing/variable 0
+/i/am/a/delayed/variable 10
+/i/am/a/master 11
+/i/am/a/slave 12
+/ev/grid/id0/labeling/size 0.0025
+/ev/grid/id0/labeling/mark/color 1 1 0
+/ev/grid/id0/labeling/border/color 0 1 0
+/ev/grid/id0/labeling/zero/color 0 0 1
+/ev/grid/id0/labeling/state 0
+/ev/grid/id0/grid/color 1 1 1
+/ev/grid/id0/grid/res/y 2
+/ev/grid/id0/grid/res/x 2
+/ev/grid/id0/size 3
+/ev/grid/id0/grid/state 1
+======================== SCENE 1 Twee ========================
+#settings
+/i/am/also/a/variable/ds/occupy 1
+/i/am/also/a/variable/ds/delay 0
+/i/am/also/a/variable/ds/morph/timegrain 20
+/i/am/also/a/variable/ds/morph/curve/quality 0
+/i/am/also/a/variable/ds/slave 0
+/i/am/also/a/variable/ds/morph/curve/resolution 100
+/i/am/also/a/variable/ds/morph/curve/weight 0
+/i/am/also/a/variable/ds/morph/curve/shape 0
+/i/am/also/a/variable/ds/morph/time 0
+/i/am/also/a/variable/ds/morph 0
+/i/am/a/variable/ds/occupy 1
+/i/am/a/variable/ds/delay 0
+/i/am/a/variable/ds/morph/timegrain 20
+/i/am/a/variable/ds/morph/curve/quality 0
+/i/am/a/variable/ds/slave 0
+/i/am/a/variable/ds/morph/curve/resolution 100
+/i/am/a/variable/ds/morph/curve/weight 0
+/i/am/a/variable/ds/morph/curve/shape 0
+/i/am/a/variable/ds/morph/time 0
+/i/am/a/variable/ds/morph 0
+/i/am/another/morphing/variable/ds/occupy 1
+/i/am/another/morphing/variable/ds/delay 0
+/i/am/another/morphing/variable/ds/morph/timegrain 20
+/i/am/another/morphing/variable/ds/morph/curve/quality 3
+/i/am/another/morphing/variable/ds/slave 0
+/i/am/another/morphing/variable/ds/morph/curve/resolution 200
+/i/am/another/morphing/variable/ds/morph/curve/weight 0.8
+/i/am/another/morphing/variable/ds/morph/curve/shape 0
+/i/am/another/morphing/variable/ds/morph/time 3
+/i/am/another/morphing/variable/ds/morph 1
+/i/am/a/morphing/variable/ds/occupy 1
+/i/am/a/morphing/variable/ds/delay 0
+/i/am/a/morphing/variable/ds/morph/timegrain 20
+/i/am/a/morphing/variable/ds/morph/curve/quality 0
+/i/am/a/morphing/variable/ds/slave 0
+/i/am/a/morphing/variable/ds/morph/curve/resolution 100
+/i/am/a/morphing/variable/ds/morph/curve/weight 0
+/i/am/a/morphing/variable/ds/morph/curve/shape 0
+/i/am/a/morphing/variable/ds/morph/time 1
+/i/am/a/morphing/variable/ds/morph 1
+/i/am/no/morphing/variable/ds/morph 0
+/i/am/a/delayed/variable/ds/occupy 1
+/i/am/a/delayed/variable/ds/delay 1
+/i/am/a/delayed/variable/ds/morph/timegrain 20
+/i/am/a/delayed/variable/ds/morph/curve/quality 0
+/i/am/a/delayed/variable/ds/slave 0
+/i/am/a/delayed/variable/ds/morph/curve/resolution 100
+/i/am/a/delayed/variable/ds/morph/curve/weight 0
+/i/am/a/delayed/variable/ds/morph/curve/shape 0
+/i/am/a/delayed/variable/ds/morph/time 0
+/i/am/a/delayed/variable/ds/morph 0
+/i/am/a/master/ds/occupy 1
+/i/am/a/master/ds/delay 0
+/i/am/a/master/ds/morph/timegrain 20
+/i/am/a/master/ds/morph/curve/quality 0
+/i/am/a/master/ds/slave 0
+/i/am/a/master/ds/morph/curve/resolution 100
+/i/am/a/master/ds/morph/curve/weight 0
+/i/am/a/master/ds/morph/curve/shape 0
+/i/am/a/master/ds/morph/time 1
+/i/am/a/master/ds/morph 1
+/i/am/a/slave/ds/occupy 1
+/i/am/a/slave/ds/delay 0
+/i/am/a/slave/ds/morph/timegrain 20
+/i/am/a/slave/ds/morph/curve/quality 0
+/i/am/a/slave/ds/slave 1
+/i/am/a/slave/ds/morph/curve/resolution 100
+/i/am/a/slave/ds/morph/curve/weight 0
+/i/am/a/slave/ds/morph/curve/shape 0
+/i/am/a/slave/ds/morph/time 0
+/i/am/a/slave/ds/morph 0
+/i/am/occupied/ds/morph 0
+/i/got/changed/ds/morph 0
+/i/must/be/set/ds/morph 0
+/ev/grid/id0/labeling/size/ds/morph 0
+/ev/grid/id0/labeling/mark/color/ds/morph 0
+/ev/grid/id0/labeling/border/color/ds/morph 0
+/ev/grid/id0/labeling/zero/color/ds/morph 0
+/ev/grid/id0/labeling/state/ds/morph 0
+/ev/grid/id0/grid/color/ds/morph 0
+/ev/grid/id0/grid/res/y/ds/morph 0
+/ev/grid/id0/grid/res/x/ds/morph 0
+/ev/grid/id0/size/ds/morph 0
+/ev/grid/id0/grid/state/ds/morph 0
+#data
+/i/am/also/a/variable 24
+/i/am/a/variable 40
+/i/am/another/morphing/variable 64
+/i/am/a/morphing/variable 61
+/i/am/no/morphing/variable 100
+/i/am/a/delayed/variable 41
+/i/am/a/master 56
+/i/am/a/slave 59
+/ev/grid/id0/labeling/size 0.0025
+/ev/grid/id0/labeling/mark/color 1 1 0
+/ev/grid/id0/labeling/border/color 0 1 0
+/ev/grid/id0/labeling/zero/color 0 0 1
+/ev/grid/id0/labeling/state 1
+/ev/grid/id0/grid/color 1 1 1
+/ev/grid/id0/grid/res/y 6
+/ev/grid/id0/grid/res/x 5
+/ev/grid/id0/size 3
+/ev/grid/id0/grid/state 1
+======================== SCENE 2 Drie ========================
+#settings
+/i/am/also/a/variable/ds/occupy 1
+/i/am/also/a/variable/ds/delay 0
+/i/am/also/a/variable/ds/morph/timegrain 20
+/i/am/also/a/variable/ds/morph/curve/quality 0
+/i/am/also/a/variable/ds/slave 0
+/i/am/also/a/variable/ds/morph/curve/resolution 100
+/i/am/also/a/variable/ds/morph/curve/weight 0
+/i/am/also/a/variable/ds/morph/curve/shape 0
+/i/am/also/a/variable/ds/morph/time 0
+/i/am/also/a/variable/ds/morph 0
+/i/am/a/variable/ds/occupy 1
+/i/am/a/variable/ds/delay 0
+/i/am/a/variable/ds/morph/timegrain 20
+/i/am/a/variable/ds/morph/curve/quality 0
+/i/am/a/variable/ds/slave 0
+/i/am/a/variable/ds/morph/curve/resolution 100
+/i/am/a/variable/ds/morph/curve/weight 0
+/i/am/a/variable/ds/morph/curve/shape 0
+/i/am/a/variable/ds/morph/time 0
+/i/am/a/variable/ds/morph 0
+/i/am/another/morphing/variable/ds/occupy 1
+/i/am/another/morphing/variable/ds/delay 0
+/i/am/another/morphing/variable/ds/morph/timegrain 20
+/i/am/another/morphing/variable/ds/morph/curve/quality 3
+/i/am/another/morphing/variable/ds/slave 0
+/i/am/another/morphing/variable/ds/morph/curve/resolution 100
+/i/am/another/morphing/variable/ds/morph/curve/weight 1
+/i/am/another/morphing/variable/ds/morph/curve/shape -5.04
+/i/am/another/morphing/variable/ds/morph/time 4
+/i/am/another/morphing/variable/ds/morph 1
+/i/am/a/morphing/variable/ds/occupy 1
+/i/am/a/morphing/variable/ds/delay 0
+/i/am/a/morphing/variable/ds/morph/timegrain 30
+/i/am/a/morphing/variable/ds/morph/curve/quality 0
+/i/am/a/morphing/variable/ds/slave 0
+/i/am/a/morphing/variable/ds/morph/curve/resolution 100
+/i/am/a/morphing/variable/ds/morph/curve/weight 0
+/i/am/a/morphing/variable/ds/morph/curve/shape 0
+/i/am/a/morphing/variable/ds/morph/time 2
+/i/am/a/morphing/variable/ds/morph 1
+/i/am/no/morphing/variable/ds/morph 0
+/i/am/a/delayed/variable/ds/occupy 1
+/i/am/a/delayed/variable/ds/delay 1.5
+/i/am/a/delayed/variable/ds/morph/timegrain 20
+/i/am/a/delayed/variable/ds/morph/curve/quality 0
+/i/am/a/delayed/variable/ds/slave 0
+/i/am/a/delayed/variable/ds/morph/curve/resolution 100
+/i/am/a/delayed/variable/ds/morph/curve/weight 0
+/i/am/a/delayed/variable/ds/morph/curve/shape 0
+/i/am/a/delayed/variable/ds/morph/time 0
+/i/am/a/delayed/variable/ds/morph 0
+/i/am/a/master/ds/occupy 1
+/i/am/a/master/ds/delay 0
+/i/am/a/master/ds/morph/timegrain 20
+/i/am/a/master/ds/morph/curve/quality 0
+/i/am/a/master/ds/slave 0
+/i/am/a/master/ds/morph/curve/resolution 100
+/i/am/a/master/ds/morph/curve/weight 0
+/i/am/a/master/ds/morph/curve/shape 0
+/i/am/a/master/ds/morph/time 1
+/i/am/a/master/ds/morph 0
+/i/am/a/slave/ds/occupy 1
+/i/am/a/slave/ds/delay 0
+/i/am/a/slave/ds/morph/timegrain 20
+/i/am/a/slave/ds/morph/curve/quality 0
+/i/am/a/slave/ds/slave 1
+/i/am/a/slave/ds/morph/curve/resolution 100
+/i/am/a/slave/ds/morph/curve/weight 0
+/i/am/a/slave/ds/morph/curve/shape 0
+/i/am/a/slave/ds/morph/time 0
+/i/am/a/slave/ds/morph 0
+/i/am/occupied/ds/morph 0
+/i/got/changed/ds/morph 0
+/i/must/be/set/ds/morph 0
+/ev/grid/id0/labeling/size/ds/morph 0
+/ev/grid/id0/labeling/mark/color/ds/morph 0
+/ev/grid/id0/labeling/border/color/ds/morph 0
+/ev/grid/id0/labeling/zero/color/ds/morph 0
+/ev/grid/id0/labeling/state/ds/morph 0
+/ev/grid/id0/grid/color/ds/morph 0
+/ev/grid/id0/grid/res/y/ds/morph 0
+/ev/grid/id0/grid/res/x/ds/morph 0
+/ev/grid/id0/size/ds/morph 0
+/ev/grid/id0/grid/state/ds/morph 0
+#data
+/i/am/also/a/variable 77
+/i/am/a/variable 100
+/i/am/another/morphing/variable 122
+/i/am/a/morphing/variable 123
+/i/am/no/morphing/variable 11
+/i/am/a/delayed/variable 101
+/i/am/a/master 109
+/i/am/a/slave 107
+/ev/grid/id0/labeling/size 0.0025
+/ev/grid/id0/labeling/mark/color 1 1 0
+/ev/grid/id0/labeling/border/color 0 1 0
+/ev/grid/id0/labeling/zero/color 0 0 1
+/ev/grid/id0/labeling/state 0
+/ev/grid/id0/grid/color 1 1 1
+/ev/grid/id0/grid/res/y 99
+/ev/grid/id0/grid/res/x 49
+/ev/grid/id0/size 3
+/ev/grid/id0/grid/state 1
+======================== SCENE 3 <unnamed> ========================
+#settings
+#data
+======================== SCENE 4 <unnamed> ========================
+#settings
+#data
+======================== SCENE 5 <unnamed> ========================
+#settings
+#data
+======================== SCENE 6 <unnamed> ========================
+#settings
+#data
+======================== SCENE 7 <unnamed> ========================
+#settings
+#data
+======================== SCENE 8 <unnamed> ========================
+#settings
+#data
+======================== SCENE 9 <unnamed> ========================
+#settings
+#data
+======================== SCENE 10 <unnamed> ========================
+#settings
+#data
+======================== SCENE 11 <unnamed> ========================
+#settings
+#data
+======================== SCENE 12 <unnamed> ========================
+#settings
+#data
+======================== SCENE 13 <unnamed> ========================
+#settings
+#data
+======================== SCENE 14 <unnamed> ========================
+#settings
+#data
+======================== SCENE 15 <unnamed> ========================
+#settings
+#data
+======================== SCENE 16 <unnamed> ========================
+#settings
+#data
+======================== SCENE 17 <unnamed> ========================
+#settings
+#data
+======================== SCENE 18 <unnamed> ========================
+#settings
+#data
+======================== SCENE 19 <unnamed> ========================
+#settings
+#data
+======================== SCENE 20 <unnamed> ========================
+#settings
+#data
+======================== SCENE 21 <unnamed> ========================
+#settings
+#data
+======================== SCENE 22 <unnamed> ========================
+#settings
+#data
+======================== SCENE 23 <unnamed> ========================
+#settings
+#data
+======================== SCENE 24 <unnamed> ========================
+#settings
+#data
+======================== SCENE 25 <unnamed> ========================
+#settings
+#data
+======================== SCENE 26 <unnamed> ========================
+#settings
+#data
+======================== SCENE 27 <unnamed> ========================
+#settings
+#data
+======================== SCENE 28 <unnamed> ========================
+#settings
+#data
+======================== SCENE 29 <unnamed> ========================
+#settings
+#data
+======================== SCENE 30 <unnamed> ========================
+#settings
+#data
+======================== SCENE 31 <unnamed> ========================
+#settings
+#data
+======================== SCENE 32 <unnamed> ========================
+#settings
+#data
+======================== SCENE 33 <unnamed> ========================
+#settings
+#data
+======================== SCENE 34 <unnamed> ========================
+#settings
+#data
+======================== SCENE 35 <unnamed> ========================
+#settings
+#data
+======================== SCENE 36 <unnamed> ========================
+#settings
+#data
+======================== SCENE 37 <unnamed> ========================
+#settings
+#data
+======================== SCENE 38 <unnamed> ========================
+#settings
+#data
+======================== SCENE 39 <unnamed> ========================
+#settings
+#data
+======================== SCENE 40 <unnamed> ========================
+#settings
+#data
+======================== SCENE 41 <unnamed> ========================
+#settings
+#data
+======================== SCENE 42 <unnamed> ========================
+#settings
+#data
+======================== SCENE 43 <unnamed> ========================
+#settings
+#data
+======================== SCENE 44 <unnamed> ========================
+#settings
+#data
+======================== SCENE 45 <unnamed> ========================
+#settings
+#data
+======================== SCENE 46 <unnamed> ========================
+#settings
+#data
+======================== SCENE 47 <unnamed> ========================
+#settings
+#data
+======================== SCENE 48 <unnamed> ========================
+#settings
+#data
+======================== SCENE 49 <unnamed> ========================
+#settings
+#data
+======================== SCENE 50 <unnamed> ========================
+#settings
+#data
+======================== SCENE 51 <unnamed> ========================
+#settings
+#data
+======================== SCENE 52 <unnamed> ========================
+#settings
+#data
+======================== SCENE 53 <unnamed> ========================
+#settings
+#data
+======================== SCENE 54 <unnamed> ========================
+#settings
+#data
+======================== SCENE 55 <unnamed> ========================
+#settings
+#data
+======================== SCENE 56 <unnamed> ========================
+#settings
+#data
+======================== SCENE 57 <unnamed> ========================
+#settings
+#data
+======================== SCENE 58 <unnamed> ========================
+#settings
+#data
+======================== SCENE 59 <unnamed> ========================
+#settings
+#data
+======================== SCENE 60 <unnamed> ========================
+#settings
+#data
+======================== SCENE 61 <unnamed> ========================
+#settings
+#data
+======================== SCENE 62 <unnamed> ========================
+#settings
+#data
+======================== SCENE 63 <unnamed> ========================
+#settings
+#data
+======================== SCENE 64 <unnamed> ========================
+#settings
+#data
+======================== SCENE 65 <unnamed> ========================
+#settings
+#data
+======================== SCENE 66 <unnamed> ========================
+#settings
+#data
+======================== SCENE 67 <unnamed> ========================
+#settings
+#data
+======================== SCENE 68 <unnamed> ========================
+#settings
+#data
+======================== SCENE 69 <unnamed> ========================
+#settings
+#data
+======================== SCENE 70 <unnamed> ========================
+#settings
+#data
+======================== SCENE 71 <unnamed> ========================
+#settings
+#data
+======================== SCENE 72 <unnamed> ========================
+#settings
+#data
+======================== SCENE 73 <unnamed> ========================
+#settings
+#data
+======================== SCENE 74 <unnamed> ========================
+#settings
+#data
+======================== SCENE 75 <unnamed> ========================
+#settings
+#data
+======================== SCENE 76 <unnamed> ========================
+#settings
+#data
+======================== SCENE 77 <unnamed> ========================
+#settings
+#data
+======================== SCENE 78 <unnamed> ========================
+#settings
+#data
+======================== SCENE 79 <unnamed> ========================
+#settings
+#data
+======================== SCENE 80 <unnamed> ========================
+#settings
+#data
+======================== SCENE 81 <unnamed> ========================
+#settings
+#data
+======================== SCENE 82 <unnamed> ========================
+#settings
+#data
+======================== SCENE 83 <unnamed> ========================
+#settings
+#data
+======================== SCENE 84 <unnamed> ========================
+#settings
+#data
+======================== SCENE 85 <unnamed> ========================
+#settings
+#data
+======================== SCENE 86 <unnamed> ========================
+#settings
+#data
+======================== SCENE 87 <unnamed> ========================
+#settings
+#data
+======================== SCENE 88 <unnamed> ========================
+#settings
+#data
+======================== SCENE 89 <unnamed> ========================
+#settings
+#data
+======================== SCENE 90 <unnamed> ========================
+#settings
+#data
+======================== SCENE 91 <unnamed> ========================
+#settings
+#data
+======================== SCENE 92 <unnamed> ========================
+#settings
+#data
+======================== SCENE 93 <unnamed> ========================
+#settings
+#data
+======================== SCENE 94 <unnamed> ========================
+#settings
+#data
+======================== SCENE 95 <unnamed> ========================
+#settings
+#data
+======================== SCENE 96 <unnamed> ========================
+#settings
+#data
+======================== SCENE 97 <unnamed> ========================
+#settings
+#data
+======================== SCENE 98 <unnamed> ========================
+#settings
+#data
+======================== SCENE 99 <unnamed> ========================
+#settings
+#data

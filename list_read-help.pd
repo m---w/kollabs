@@ -1,0 +1,14 @@
+#N canvas 522 129 436 366 10;
+#X text 209 269 (c)2012 Marian Weger;
+#X obj 63 237 print;
+#X floatatom 63 83 5 0 0 2 index - -;
+#X obj 63 165 list_read;
+#X obj 114 117 loadbang;
+#X msg 114 139 list a b c 1 2 3 x y z 9 8 7;
+#X text 74 195 if the indexed element is not existent \, a "bang" will
+be sent to the output.;
+#X text 17 16 list_read <index init (optional)>;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 1;

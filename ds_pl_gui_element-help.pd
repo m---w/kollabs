@@ -1,0 +1,6 @@
+#N canvas 689 448 367 229 10;
+#X text 495 104 (c)2011-2012 \, Marian Weger;
+#X obj 70 114 cnv 15 200 30 empty empty see_[ds-help]_for_help 20 12
+0 14 -261234 -1 0;
+#X text 23 13 ds_pl_gui_element <name> <id>;
+#X text 23 43 used by [ds_pl_gui];

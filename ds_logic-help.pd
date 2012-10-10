@@ -1,0 +1,7 @@
+#N canvas 689 448 367 229 10;
+#X text 495 104 (c)2011-2012 \, Marian Weger;
+#X obj 70 114 cnv 15 200 30 empty empty see_[ds-help]_for_help 20 12
+0 14 -261234 -1 0;
+#X text 56 61 (corresponding gui: [ds_gui]);
+#X text 41 3 ds_logic <domain> <arg1> <arg2> ...;
+#X text 55 32 arguments: nodispatch \, direct;

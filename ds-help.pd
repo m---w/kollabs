@@ -1,0 +1,991 @@
+#N canvas 124 22 960 756 10;
+#X obj 40 35 cnv 15 750 16 empty empty KOLLABS_DATA_STORAGE_SYSTEM
+20 8 0 14 -233017 -66577 0;
+#X obj 40 62 cnv 15 370 240 empty empty description 5 8 0 14 -233017
+-66577 0;
+#X obj 40 735 cnv 15 370 50 empty empty Load_preset_file_on_startup
+20 12 0 14 -261682 -66577 0;
+#X obj 40 315 cnv 15 370 70 empty empty GUI_CONTROLS 20 12 0 14 -232576
+-66577 0;
+#X obj 40 395 cnv 15 370 170 empty empty Access_controls_from_"outside"
+20 12 0 14 -261682 -66577 0;
+#X msg 145 455 0;
+#X msg 175 455 1;
+#X msg 205 455 2;
+#X obj 145 481 s /help/ds/scene;
+#X text 61 763 Look inside here:;
+#X text 60 516 Look inside here for a list of the most important parameters:
+;
+#X obj 420 62 cnv 15 370 300 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 432 306 print ev_storage_output;
+#X obj 432 282 spigot;
+#X obj 465 260 tgl 15 0 empty empty print 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 60 431 Change scene by clicking these message boxes:;
+#X obj 40 795 cnv 15 370 80 empty empty File_layout 20 12 0 14 -228856
+-66577 0;
+#X text 54 848 Have a look on the syntax:;
+#X text 53 821 You can easily edit the preset files with any text editor.
+;
+#X text 58 350 The GUI controls are explained in here:;
+#X obj 420 371 cnv 15 370 80 empty empty Registering_variables 20 12
+0 14 -261234 -66577 0;
+#X text 438 400 Look inside to see how new variables can get registered:
+;
+#X obj 420 462 cnv 15 370 700 empty empty Scene_transitions 20 12 0
+14 -203904 -66577 0;
+#X obj 618 492 bng 15 250 50 0 /help/ds/advanced/vis /help/ds/advanced/vis
+advanced 17 7 0 10 -262144 -1 -1;
+#X text 438 491 Go to the advanced settings:;
+#X obj 618 519 bng 15 250 50 0 /help/ds/reg/dialog /help/ds/reg/dialog
+register_settings 17 7 0 10 -4032 -1 -1;
+#X text 438 521 And open the register list:;
+#X text 438 541 There \, you can enter the scene transition dialog
+for all registered variables of this domain.;
+#X text 438 571 The scene transition settings are saved with the DESTINATION
+scene.;
+#X text 367 35 (c)2012 Marian Weger;
+#X obj 425 697 cnv 15 360 80 empty empty Delaying_&_Chaining_Recalls
+20 12 0 14 -204800 -66577 0;
+#X obj 425 606 cnv 15 360 80 empty empty Fade_/_Morph 20 12 0 14 -204800
+-66577 0;
+#X text 443 635 Look inside to see how it is possible to fade between
+scenes:;
+#X text 443 726 It is also possible to delay recalls or to chain them
+to another one:;
+#X obj 424 787 cnv 15 360 80 empty empty Occupy 20 12 0 14 -204800
+-66577 0;
+#X text 442 816 A variable can be set to ignore all recalls \, until
+it is fully dispatched.;
+#X obj 424 877 cnv 15 360 80 empty empty Additional_register_options
+20 12 0 14 -204800 -66577 0;
+#X text 442 906 There are some additional options for registers:;
+#X obj 40 885 cnv 15 370 120 empty empty Playlist_View 20 12 0 14 -261682
+-66577 0;
+#X obj 40 1013 cnv 15 370 120 empty empty Advanced_File_Operations
+20 12 0 14 -261234 -66577 0;
+#X obj 154 1068 bng 15 250 50 0 /help/ds/edit/dialog /help/ds/edit/dialog
+edit 17 7 0 10 -258113 -1 -1;
+#X obj 239 1042 bng 15 250 50 0 /help/ds/advanced/vis /help/ds/advanced/vis
+advanced 17 7 0 10 -262144 -1 -1;
+#X text 59 1041 Go to the advanced settings:;
+#X text 59 1068 Click "edit":;
+#N canvas 185 56 831 476 \$0-file_layout 0;
+#X obj 11 15 cnv 15 810 450 empty empty PRESET_FILE_LAYOUT 20 12 0
+14 -233017 -66577 0;
+#X text 215 22 The textfile can also be edited with a simple text editor.
+;
+#X text 25 62 The File is formatted as follows:;
+#X obj 22 93 cnv 20 420 350 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X text 29 101 ======================== GLOBAL ========================
+;
+#X text 29 201 #data;
+#X text 29 271 ======================== SCENE <nr> <name>;
+#X text 288 271 ========================;
+#X text 455 152 After the #settings header \, the settings of the global
+data are saved.;
+#X text 455 182 After the #data header \, the global data is saved.
+;
+#X text 455 302 After the #settings header \, the settings of the scene
+data are saved.;
+#X text 455 342 After the #data header \, the scene data is saved.
+;
+#X text 455 112 After this header \, the global data is saved.;
+#X text 455 92 Every preset file starts with a GLOBAL SECTION:;
+#X text 455 222 For every scene \, there is a SCENE header \, and two
+sections for settings and data.;
+#X text 455 252 After this header \, a scene begins. It has a number
+(from 0 to N) and a name. The name can only be set by an external text
+editor.;
+#X text 29 131 #settings;
+#X text 29 177 ...;
+#X text 29 234 <variable_name_2> <value>;
+#X text 29 221 <variable_name_1> <value>;
+#X text 29 247 ...;
+#X text 29 151 <setting_name_1> <value>;
+#X text 29 164 <setting_name_2> <value>;
+#X text 29 371 #data;
+#X text 29 301 #settings;
+#X text 29 347 ...;
+#X text 29 404 <variable_name_2> <value>;
+#X text 29 391 <variable_name_1> <value>;
+#X text 29 417 ...;
+#X text 29 321 <setting_name_1> <value>;
+#X text 29 334 <setting_name_2> <value>;
+#X restore 238 848 pd \$0-file_layout;
+#N canvas 185 36 576 616 \$0-controls 0;
+#X text 96 -373 (c)2011 Marian Weger /part of EXTENDED VIEW toolkit/
+gpl v3;
+#X obj 3 -394 cnv 15 550 600 empty empty CONTROLS 20 12 0 14 -228856
+-66577 0;
+#X obj 41 -354 nbx 3 15 0 999 0 0 /help/ds/scene/current /help/ds/scene/current
+scene 0 -8 0 12 -204786 -1 -1 0 256;
+#X obj 22 -354 bng 15 250 50 0 /0/ds/scene/current/prev /0/ds/scene/current/prev
+< 4 7 0 10 -204786 -1 -1;
+#X obj 92 -354 bng 15 250 50 0 /help/ds/scene/current/next /help/ds/scene/current/next
+> 5 7 0 10 -204786 -1 -1;
+#X obj 115 -354 bng 15 250 50 0 /help/ds/recall /help/ds/recall recall
+17 7 0 10 -4034 -1 -1;
+#X obj 24 -193 bng 15 250 50 0 /help/ds/save /help/ds/save save 17
+7 0 10 -258113 -1 -1;
+#X obj 24 -99 bng 15 250 50 0 /help/ds/load /help/ds/load load 17 7
+0 10 -4034 -1 -1;
+#X obj 94 -193 bng 15 250 50 0 /help/ds/resave /help/ds/resave resave
+17 7 0 10 -258113 -1 -1;
+#X obj 94 -99 bng 15 250 50 0 /help/ds/reload /help/ds/reload reload
+17 7 0 10 -4034 -1 -1;
+#X obj 114 -270 bng 15 250 50 0 /help/ds/store /help/ds/store store
+17 7 0 10 -258113 -1 -1;
+#X obj 41 -270 nbx 3 15 0 999 0 0 /help/ds/scene/selected /help/ds/scene/selected
+empty 0 -8 0 12 -261234 -1 -1 0 256;
+#X obj 22 -270 bng 15 250 50 0 /help/ds/scene/selected/prev /help/ds/scene/selected/prev
+< 4 7 0 10 -261234 -1 -1;
+#X obj 92 -270 bng 15 250 50 0 /help/ds/scene/selected/next /help/ds/scene/selected/next
+> 5 7 0 10 -261234 -1 -1;
+#X text 195 -205 The SAVE section lets you save all scenes from RAM
+to a textfile on the HDD. Click "save" to open a save dialog. "resave"
+will let you save to the last specified filename.;
+#X text 195 -105 The LOAD section lets you load all scenes from a textfile
+to RAM. Click "load" to open a load dialog. "reload" will let you load
+the last specified filename.;
+#X text 195 -355 In the RECALL section \, you can recall a scene from
+RAM.;
+#X text 195 -275 In the STORE section \, you can store the current
+state of the patch into RAM. Select a destination scene and press "store".
+;
+#X text 195 -325 Switch between presets 0-2 to see the effect.;
+#X obj 24 -39 bng 15 250 50 0 /help/ds/advanced/vis /help/ds/advanced/vis
+advanced 17 7 0 10 -262144 -1 -1;
+#X obj 24 66 bng 15 250 50 0 /ev/storage/help/playlist/vis /ev/storage/help/playlist/vis
+playlist 17 7 0 10 -262144 -1 -1;
+#X text 195 -39 This button opens the advanced options.;
+#X text 195 68 This button opens the playlist view.;
+#X obj 200 -9 cnv 15 260 60 empty empty advanced_settings 20 12 0 14
+-204800 -66577 0;
+#X text 230 23 Look inside:;
+#X obj 200 101 cnv 15 260 60 empty empty playlist_view 20 12 0 14 -204800
+-66577 0;
+#X text 230 133 Look inside:;
+#N canvas 67 22 573 744 \$0-advanced_settings 0;
+#X obj 4 8 cnv 15 550 750 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 23 119 tgl 15 1 /help/ds/settings/state /help/ds/settings/state
+recall_settings 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 23 39 tgl 15 1 /help/ds/data/state /help/ds/data/state recall_data
+17 7 0 10 -262144 -1 -1 1 1;
+#X obj 23 282 bng 15 250 50 0 /help/ds/reg/dialog /help/ds/reg/dialog
+register_settings 17 7 0 10 -4032 -1 -1;
+#X obj 23 206 tgl 15 1 /help/ds/global/state /help/ds/global/state
+recall_global 17 7 0 10 -262144 -1 -1 0 1;
+#X text 163 37 "recall_data" must be enabled to load the saved data
+on a recall.;
+#X text 163 117 "recall_settings" must be enabled to recall the scene
+transition settings for the saved data.;
+#X text 163 204 "recall_global" must be enabled to recall the global
+parameters for this storage domain with each recall.;
+#X text 163 281 This button opens a list of all variables that are
+registered with this domain.;
+#X text 163 67 (All variables are saved within the "data" section)
+;
+#X text 163 147 (The scene transition settings for the variables are
+saved within the "settings" section);
+#X text 163 234 ("recall_data" and "recall_settings" are saved in the
+"GLOBAL" section);
+#X obj 168 349 bng 15 250 50 0 /i/am/a/variable/ds/dialog /i/am/a/variable/ds/dialog
+/i/am/a/variable 20 7 0 10 -262144 -1 -1;
+#X text 166 325 Click on a variable to get to its scene transition
+dialog.;
+#X obj 164 386 cnv 15 280 60 empty empty Scene_transition_dialog 20
+12 0 14 -204800 -66577 0;
+#X text 174 418 Look inside:;
+#N canvas 71 22 960 756 \$0-scene_transition_dialog 0;
+#X obj 4 6 cnv 15 910 850 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 23 168 nbx 4 14 -1e+37 1e+37 0 0 /i/am/a/variable/ds/morph/time
+/i/am/a/variable/ds/morph/time time/s 47 7 0 10 -4034 -1 -1 0 256;
+#X obj 23 128 tgl 15 0 /i/am/a/variable/ds/morph /i/am/a/variable/ds/morph
+morph 17 7 0 10 -4034 -1 -1 0 1;
+#X obj 23 631 bng 15 250 50 0 /i/am/a/variable/ds/print /i/am/a/variable/ds/print
+print_current_value 17 7 0 10 -262144 -1 -1;
+#X obj 23 288 nbx 4 14 -1e+37 1e+37 0 0 /i/am/a/variable/ds/morph/curve/shape
+/i/am/a/variable/ds/morph/curve/shape shape 47 7 0 10 -204786 -1 -1
+0 256;
+#X obj 23 308 nbx 4 14 0 1 0 0 /i/am/a/variable/ds/morph/curve/weight
+/i/am/a/variable/ds/morph/curve/weight weight 47 7 0 10 -204786 -1
+-1 0 256;
+#X obj 23 338 nbx 4 14 10 10000 0 0 /i/am/a/variable/ds/morph/curve/resolution
+/i/am/a/variable/ds/morph/curve/resolution resolution 47 7 0 10 -204786
+-1 -1 100 256;
+#X obj 23 378 hradio 15 1 0 4 /i/am/a/variable/ds/morph/curve/quality
+/i/am/a/variable/ds/morph/curve/quality quality 0 -8 0 10 -204786 -1
+-1 0;
+#X obj 23 244 bng 15 250 50 0 /i/am/a/variable/ds/morph/curve/vis /i/am/a/variable/ds/morph/curve/vis
+show_curve 17 7 0 10 -204786 -1 -1;
+#X obj 23 188 nbx 4 14 -1e+37 1e+37 0 0 /i/am/a/variable/ds/morph/timegrain
+/i/am/a/variable/ds/morph/timegrain time-grain/ms 47 7 0 10 -4034 -1
+-1 20 256;
+#X obj 23 88 nbx 4 14 -1e+37 1e+37 0 0 /i/am/a/variable/ds/delay /i/am/a/variable/ds/delay
+delay 47 7 0 10 -204800 -1 -1 0 256;
+#X obj 23 461 tgl 15 0 /i/am/a/variable/ds/occupy /i/am/a/variable/ds/occupy
+occupy 17 7 0 10 -262130 -1 -1 1 1;
+#X text 173 85 To delay the recall of one variable \, a delay (in seconds)
+can be set.;
+#X text 173 125 Turn on "morph" to get a smooth fade from the last
+value to the value that is saved in the current scene.;
+#X text 173 165 Set the fade time in seconds.;
+#X text 173 189 Set the data-rate of the fade in ms (default = 20 ms)
+;
+#X text 173 199 comment;
+#X text 173 228 If no curve is specified \, a linear fade will be applied.
+;
+#X text 173 40 The values are saved separately for each parameter in
+every scene. They are saved in the "settings" section.;
+#X text 173 245 Show the current appearance of the fade curve.;
+#X text 173 286 Shape lets you chose a shape for the curve.;
+#X text 173 306 Weight is a mix factor between a linear fade and the
+chosen shape.;
+#X text 173 339 This lets you specify the resolution of the fade curve.
+;
+#X text 538 420 2: linear interpolation;
+#X text 538 434 3: tabread4 4-point polynomianl interpolation;
+#X text 538 406 1: no interpolation;
+#X text 538 392 0: bypass --> output=input (default);
+#X text 173 379 Choose the quality in which the fade curve will be
+applied:;
+#X obj 539 268 cnv 15 370 90 empty empty fadecurve 20 12 0 14 -249661
+-66577 0;
+#X obj 657 329 fadecurve-help;
+#X text 549 300 See [fadecurve-help] for more information on these
+values.;
+#X text 173 462 If "occupy" is set \, the variable will not respond
+to another scene recall while it is fading.;
+#X text 173 632 For debug reasons \, you can print the current value
+of the variable to the console.;
+#X obj 23 683 tgl 15 0 \$2/ds/set \$2/ds/set set 17 7 0 10 -228856
+-1 -1 0 1;
+#X obj 23 736 tgl 15 0 \$2/ds/change \$2/ds/change change 17 7 0 10
+-228856 -1 -1 0 1;
+#X obj 23 783 tgl 15 0 \$2/ds/nomorph \$2/ds/nomorph morph_deactivate
+17 7 0 10 -228856 -1 -1 0 1;
+#X text 173 678 If "set" is activated \, a "set" message will be prepended
+to the message when recalled. This option is to prevent loops. It aims
+on special cases \, which are not explained here.;
+#X text 173 736 If the "change" parameter is set \, the message will
+be recalled if the new value differs from the old value.;
+#X obj 659 741 change;
+#X text 528 742 See [change object]:;
+#X text 173 782 Deactivate morphing functionality for this variable.
+This needs to be set as a creation argument for [ds_reg] \, when a
+variable gets registered to the storage.;
+#X text 609 810 nomorph argument deactivates morph functionality.;
+#X obj 610 790 ds_reg foo /\$0/bar nomorph;
+#X obj 14 536 cnv 15 130 60 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 21 542 bng 15 250 50 0 /i/am/a/variable/ds/settings/copy /i/am/a/variable/ds/settings/copy
+COPY_to_buffer 17 7 0 10 -4160 -1 -1;
+#X obj 21 576 bng 15 250 50 0 /i/am/a/variable/ds/settings/paste /i/am/a/variable/ds/settings/paste
+PASTE_from_buffer 17 7 0 10 -260097 -1 -1;
+#X text 173 535 Copy all the settings from above to the register settings
+buffer.;
+#X text 173 576 Paste the register settings buffer to this register.
+;
+#X coords 0 756 1 755 85 60 0;
+#X restore 257 418 pd \$0-scene_transition_dialog;
+#X obj 23 656 bng 15 250 50 0 /help/ds/edit/dialog /help/ds/edit/dialog
+edit 17 7 0 10 -258113 -1 -1;
+#X text 163 651 Click on this button to open the file editing dialog.
+;
+#X obj 164 676 cnv 15 280 60 empty empty edit 20 12 0 14 -204800 -66577
+0;
+#X text 174 708 Look inside:;
+#N canvas 162 190 716 469 \$0-edit 0;
+#X obj 4 3 cnv 15 700 450 empty empty EDITING_ACTIONS 20 12 0 14 -233017
+-66577 0;
+#X obj 20 230 bng 15 250 50 0 /help/ds/edit/scene/cut /help/ds/edit/scene/cut
+cut 17 7 0 10 -257985 -1 -1;
+#X obj 20 270 bng 15 250 50 0 /help/ds/edit/scene/delete /help/ds/edit/scene/delete
+delete 17 7 0 10 -258113 -1 -1;
+#X obj 20 290 bng 15 250 50 0 /help/ds/edit/scene/paste-override /help/ds/edit/scene/paste-override
+paste_overwrite 17 7 0 10 -4032 -1 -1;
+#X obj 20 250 bng 15 250 50 0 /help/ds/edit/scene/copy /help/ds/edit/scene/copy
+copy 17 7 0 10 -159808 -1 -1;
+#X obj 20 310 bng 15 250 50 0 /help/ds/edit/scene/insert /help/ds/edit/scene/insert
+insert_blank 17 7 0 10 -204800 -1 -1;
+#X obj 20 330 bng 15 250 50 0 /help/ds/edit/scene/paste-insert /help/ds/edit/scene/paste-insert
+paste_insert 17 7 0 10 -204800 -1 -1;
+#X obj 20 142 bng 15 250 50 0 /help/ds/edit/clear /help/ds/edit/clear
+clear_all 17 7 0 10 -262144 -1 -1;
+#X obj 20 210 bng 15 250 50 0 /help/ds/edit/scene/clear /help/ds/edit/scene/clear
+clear 17 7 0 10 -260097 -1 -1;
+#X obj 20 390 bng 15 250 50 0 /main/ds/print/buffer /main/ds/print/buffer
+print_clipboard 17 7 0 10 -228856 -1 -1;
+#X text 14 182 Actions for the currently selected scene:;
+#X text 14 367 Debug:;
+#X obj 20 411 bng 15 250 50 0 /main/ds/print /main/ds/print print_all
+17 7 0 10 -262144 -1 -1;
+#X text 16 121 Actions on the whole buffer:;
+#X obj 532 165 nbx 5 14 -1e+37 1e+37 0 0 /help/ds/scene/selected /help/ds/scene/selected
+selected 0 -8 0 10 -261234 -1 -1 0 256;
+#X text 412 130 They apply on the currently SELECTED scene:;
+#X text 153 398 For debugging: Print contents to the console.;
+#X text 153 309 Insert blank scene before the selected scene.;
+#X text 153 329 Insert copied/cut scene before the selected scene.
+;
+#X text 153 289 Paste scene replacing the selected scene.;
+#X text 153 269 Delete selected scene.;
+#X text 153 249 Copy selected scene to clipboard.;
+#X text 153 229 Cut selected scene to clipboard.;
+#X text 153 209 Clear contents of the selected scene.;
+#X text 153 141 Clear the whole file.;
+#X text 15 35 This dialog provides some file operations on the preset
+file.;
+#X text 15 65 It is possible to undo these operations by reloading
+the preset file from the HDD.;
+#X restore 267 713 pd \$0-edit;
+#X obj 23 474 bng 15 250 50 0 /help/ds/reg/settings/buffer /help/ds/reg/settings/buffer
+register_settings_buffer 17 7 0 10 -257985 -1 -1;
+#X text 166 505 The register settings buffer acts as a clipboard for
+scene transition settings. The individual registers can copy their
+settings to it or take the contents of the buffer. The buffer can also
+be edited by hand.;
+#X obj 164 566 cnv 15 280 60 empty empty register_settings_buffer 20
+12 0 14 -204800 -66577 0;
+#X text 174 598 Look inside:;
+#N canvas 428 83 731 472 \$0-buffer 0;
+#X obj -6 3 cnv 15 700 450 empty empty Register_Settings_Buffer 20
+12 0 14 -233017 -66577 0;
+#X obj 97 100 nbx 4 14 -1e+37 1e+37 0 0 /help/ds/reg/settings/buffer/morph/time
+/help/ds/reg/settings/buffer/morph/time time/s 47 7 0 10 -4034 -1 -1
+0 256;
+#X obj 11 100 tgl 15 0 /help/ds/reg/settings/buffer/morph /help/ds/reg/settings/buffer/morph
+morph 17 7 0 10 -4034 -1 -1 0 1;
+#X obj 11 50 tgl 15 0 /help/ds/reg/settings/buffer/slave /help/ds/reg/settings/buffer/slave
+slave 17 7 0 10 -203904 -1 -1 0 1;
+#X obj 97 140 nbx 4 14 -1e+37 1e+37 0 0 /help/ds/reg/settings/buffer/morph/curve/shape
+/help/ds/reg/settings/buffer/morph/curve/shape shape 47 7 0 10 -204786
+-1 -1 0 256;
+#X obj 97 160 nbx 4 14 0 1 0 0 /help/ds/reg/settings/buffer/morph/curve/weight
+/help/ds/reg/settings/buffer/morph/curve/weight weight 47 7 0 10 -204786
+-1 -1 0 256;
+#X obj 97 180 nbx 4 14 10 10000 0 0 /help/ds/reg/settings/buffer/morph/curve/resolution
+/help/ds/reg/settings/buffer/morph/curve/resolution resolution 47 7
+0 10 -204786 -1 -1 100 256;
+#X obj 11 180 hradio 15 1 0 4 /help/ds/reg/settings/buffer/morph/curve/quality
+/help/ds/reg/settings/buffer/morph/curve/quality quality 0 -8 0 10
+-204786 -1 -1 0;
+#X obj 11 140 bng 15 250 50 0 /help/ds/reg/settings/buffer/morph/curve/vis
+/help/ds/reg/settings/buffer/morph/curve/vis show_curve 17 7 0 10 -204786
+-1 -1;
+#X obj 97 120 nbx 4 14 -1e+37 1e+37 0 0 /help/ds/reg/settings/buffer/morph/timegrain
+/help/ds/reg/settings/buffer/morph/timegrain time-grain/ms 47 7 0 10
+-4034 -1 -1 20 256;
+#X obj 11 70 nbx 4 14 -1e+37 1e+37 0 0 /help/ds/reg/settings/buffer/delay
+/help/ds/reg/settings/buffer/delay delay 47 7 0 10 -204800 -1 -1 0
+256;
+#X obj 11 220 tgl 15 0 /help/ds/reg/settings/buffer/occupy /help/ds/reg/settings/buffer/occupy
+occupy 17 7 0 10 -262130 -1 -1 1 1;
+#X obj 11 322 bng 15 250 50 0 /help/ds/reg/settings/buffer/paste/all
+/help/ds/reg/settings/buffer/paste/all send_to_all_registers 17 7 0
+10 -258113 -1 -1;
+#X text 285 87 These controls also exist in the "scene transition dialog"
+of the individual registers. In this buffer \, they work exactly the
+same. The registers can copy their settings to the buffer and paste
+the buffer settings to themselves.;
+#X text 201 321 This button pastes the buffer settings from above to
+all the registers of the current domain. This is sometimes useful if
+all parameters should be morphed the same way.;
+#X restore 267 603 pd \$0-buffer;
+#X restore 314 23 pd \$0-advanced_settings;
+#N canvas 394 102 717 314 \$0-playlist 0;
+#X obj 2 -168 cnv 15 700 300 empty empty playlist_view 20 12 0 14 -228856
+-66577 0;
+#X text 14 -142 It is possible to create multiple playlist windows
+by using the object [ds_pl_gui <domain>].;
+#X text 337 -103 The green column on the left marks the current scene.
+;
+#X text 337 -63 The second column (purple) shows the scene numbers.
+;
+#X text 337 -23 The big row in the center shows the scene names.;
+#X text 337 -8 The names must be set by a text editor in the corresponding
+preset file. Per default \, they are set to "<unnamed>".;
+#X text 337 32 The red row on the right marks the currently selected
+scene.;
+#X text 337 51 With the scrollbar on the right \, it is possible to
+scroll throgh the scenes.;
+#X text 337 101 On the bottom \, the current scene number and its name
+are shown.;
+#X text 337 -88 Click on it to move the cursor.;
+#X obj 14 -100 ds_pl_gui help;
+#X coords 0 314 1 313 85 60 0;
+#X restore 314 133 pd \$0-playlist;
+#X restore 308 350 pd \$0-controls;
+#N canvas 131 51 603 374 \$0-init 0;
+#X obj 77 79 loadbang;
+#X obj 57 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 77 103 del 1000;
+#X text 222 45 If you want the storage to recall a scene from a textfile
+on startup \, you can specify it as follows:;
+#X text 222 140 use the "/<domain>/ds/loadfile" message to load a given
+file path:;
+#X text 222 98 Delay the load by one second to make sure that the patch
+got fully loaded.;
+#X obj 77 125 t b b;
+#X obj 77 240 del 2000;
+#X text 222 238 Delay the recall by two seconds to make sure that the
+textfile got fully loaded to RAM.;
+#X text 232 283 Recall scene "0".;
+#X text 150 103 <--------;
+#X text 150 242 <--------;
+#X text 188 282 <----;
+#X msg 77 282 \; /help/ds/scene 0 \;;
+#X text 140 208 (pathes relative to "./libs/kollabs");
+#X msg 104 173 \; /help/ds/loadfile ds-help.txt;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 15 0;
+#X connect 7 0 13 0;
+#X restore 179 762 pd \$0-init;
+#N canvas 0 22 619 624 \$0-parameter_list 0;
+#X obj 6 5 cnv 15 600 600 empty empty control_parameters 20 12 0 14
+-233017 -66577 0;
+#X text 223 532 reloads the last given filepath from harddisk.;
+#X text 223 452 resaves the current scene-set to the last given path.
+;
+#X text 223 547 loads the scene-set of the given filepath;
+#X text 223 502 opens a dialog to load a scene-set from a file from
+the harddisk.;
+#X text 223 422 opens a dialog to save the current scene-set to a preset
+file on the harddisk.;
+#X text 223 467 saves the current scene-set to the given filepath;
+#X text 223 249 recalls the selected scene of the current scene-set
+;
+#X text 223 264 sets the scene number to be recalled by "recall" or
+to be automatically recalled if autorecall=1;
+#X text 223 294 decrement scene number by 1;
+#X text 223 309 increment scene number by 1;
+#X text 223 407 sets the filepath to be loaded/saved on next reload/resave
+;
+#X text 11 502 /<domain>/ds/load;
+#X text 11 422 /<domain>/ds/save;
+#X text 11 532 /<domain>/ds/reload;
+#X text 11 452 /<domain>/ds/resave;
+#X text 11 407 /<domain>/ds/filename;
+#X text 11 547 /<domain>/ds/loadfile;
+#X text 11 467 /<domain>/ds/savefile;
+#X text 11 249 /<domain>/ds/recall;
+#X text 11 294 /<domain>/ds/scene/current/prev;
+#X text 11 309 /<domain>/ds/scene/current/next;
+#X text 11 279 /<domain>/ds/scene/current;
+#X text 11 264 /<domain>/ds/scene OR;
+#X text 11 334 /<domain>/ds/scene/selected;
+#X text 223 334 sets the scene destination of a file operation;
+#X text 11 349 /<domain>/ds/scene/selected/prev;
+#X text 11 364 /<domain>/ds/scene/selected/next;
+#X text 223 349 decrement destination scene number by 1;
+#X text 223 364 increment destination scene number by 1;
+#X text 11 379 /<domain>/ds/store;
+#X text 223 379 store the current state to the selected scene;
+#X text 61 101 There are many other parameters that can be controlled
+from outside. If you are familiar with Pure Data \, you can look them
+up unside the abstractions.;
+#X text 61 51 This is a list of the most important parameters \, that
+can be controlled by their receive name.;
+#X restore 143 536 pd \$0-parameter_list;
+#X obj 60 931 bng 15 250 50 0 /ev/storage/help/playlist/vis /ev/storage/help/playlist/vis
+playlist 17 7 0 10 -262144 -1 -1;
+#X obj 228 1068 bng 15 250 50 0 empty empty click_here_for_explanation!
+17 7 0 10 -262144 -1 -1;
+#X msg 228 1087 vis 1;
+#X obj 228 1108 s pd-\$0-edit;
+#X text 53 910 Click on "playlist" to show the playlist window.;
+#X obj 208 931 bng 15 250 50 0 empty empty click_here_for_explanation!
+17 7 0 10 -262144 -1 -1;
+#X msg 208 950 vis 1;
+#X obj 208 971 s pd-\$0-playlist;
+#X obj 40 1143 cnv 15 370 120 empty empty Multiple_domains 20 12 0
+14 -261682 -66577 0;
+#X text 54 1176 It is possible to create multiple storage domains.
+But variables can not be registered to both domains at the same time.
+;
+#N canvas 396 22 602 396 \$0-multiple_domains 0;
+#X obj 4 4 cnv 15 370 370 empty empty multiple_domains 20 12 0 14 -228856
+-66577 0;
+#X obj 385 4 cnv 15 200 370 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#N canvas 131 51 603 374 \$0-init 0;
+#X obj 77 79 loadbang;
+#X obj 57 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 77 103 del 1000;
+#X text 222 45 If you want the storage to recall a scene from a textfile
+on startup \, you can specify it as follows:;
+#X text 222 140 use the "/<domain>/ds/loadfile" message to load a given
+file path:;
+#X text 222 98 Delay the load by one second to make sure that the patch
+got fully loaded.;
+#X obj 77 125 t b b;
+#X obj 77 220 del 2000;
+#X text 222 218 Delay the recall by two seconds to make sure that the
+textfile got fully loaded to RAM.;
+#X text 232 263 Recall scene "0".;
+#X text 150 103 <--------;
+#X text 150 222 <--------;
+#X text 188 262 <----;
+#X msg 77 262 \; /help2/ds/scene 0 \;;
+#X msg 104 173 \; /help2/ds/loadfile ds-help2.txt;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 1 14 0;
+#X connect 7 0 13 0;
+#X restore 441 48 pd \$0-init;
+#X text 407 27 Load textfile on startup:;
+#X text 14 42 In this example \, we add another domain to the patch.
+The module [ev_storage help2] adds a storage with domain "help2". Variables
+can be registered to it:;
+#X msg 437 292 0;
+#X msg 467 292 1;
+#X msg 497 292 2;
+#X text 387 265 Change scene for domain "help2":;
+#X obj 437 334 s /help2/ds/scene;
+#X obj 98 163 hsl 128 15 0 127 0 0 /i/am/from/another/domain /i/am/from/another/domain
+/i/am/from/another/domain -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 48 115 ds_reg help2 /i/am/from/another/domain;
+#X text 11 227 Variables that are registered with another domain will
+not be affected by this storage;
+#X obj 417 88 ds_logic help2;
+#X obj 403 122 ds_gui help2;
+#X connect 5 0 9 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 0;
+#X restore 144 1220 pd \$0-multiple_domains;
+#N canvas 248 152 423 323 \$0-register_options 0;
+#X obj 15 -399 cnv 15 370 300 empty empty Register_options 20 12 0
+14 -228856 -66577 0;
+#X obj 39 -291 tgl 15 0 /i/must/be/set/ds/set /i/must/be/set/ds/set
+set 17 7 0 10 -228856 -1 -1 1 1;
+#X obj 41 -148 tgl 15 0 /i/got/changed/ds/change /i/got/changed/ds/change
+change 17 7 0 10 -228856 -1 -1 1 1;
+#X text 32 -355 To prevent loops creating stack overflows \, it is
+possible to prepend a "set" message to a variable if it gets recalled.
+This way \, i.e. numberboxes show the new value \, but will not give
+it out on the outlet.;
+#X text 23 -230 Per default \, saved variables only get dispatched
+\, if the recalled value differs from the current value. If a variable
+needs to get dispatched \, even if the current value would not change
+\, a "nochange" argument can be added to the register.;
+#X obj 125 -264 bng 15 250 50 0 /i/must/be/set/ds/dialog /i/must/be/set/ds/dialog
+/i/must/be/set 20 7 0 10 -262144 -1 -1;
+#X obj 139 -122 bng 15 250 50 0 /i/got/changed/ds/dialog /i/got/changed/ds/dialog
+/i/got/changed 20 7 0 10 -262144 -1 -1;
+#X obj 121 -291 ds_reg help /i/must/be/set set;
+#X obj 121 -149 ds_reg help /i/got/changed nochange;
+#X coords 0 323 1 322 85 60 0;
+#X restore 531 928 pd \$0-register_options;
+#N canvas 502 147 399 317 \$0-occupy 0;
+#X obj 15 -380 cnv 15 370 300 empty empty Occupy 20 12 0 14 -228856
+-66577 0;
+#X obj 35 -298 bng 15 250 50 0 /i/am/occupied/ds/dialog /i/am/occupied/ds/dialog
+/i/am/occupied 20 7 0 10 -262144 -1 -1;
+#X obj 35 -264 tgl 15 0 /i/am/occupied/ds/occupy /i/am/occupied/ds/occupy
+occupy 17 7 0 10 -262130 -1 -1 1 1;
+#X text 23 -235 If "occupy" is set \, the variable will not respond
+to another scene recall until it got fully dispatched.;
+#X text 23 -195 Per default \, this option is activated. It is saved
+individually for each scene.;
+#X obj 35 -328 ds_reg help /i/am/occupied;
+#X coords 0 317 1 316 85 60 0;
+#X restore 573 840 pd \$0-occupy;
+#N canvas 89 22 609 740 \$0-delaying_recalls 0;
+#X obj 15 328 cnv 15 370 400 empty empty Recall_Chains 20 12 0 14 -228856
+-66577 0;
+#X obj 230 450 bng 15 250 50 0 /i/am/a/master/ds/dialog /i/am/a/master/ds/dialog
+/i/am/a/master 20 7 0 10 -262144 -1 -1;
+#X obj 247 578 bng 15 250 50 0 /i/am/a/slave/ds/dialog /i/am/a/slave/ds/dialog
+/i/am/a/slave 20 7 0 10 -262144 -1 -1;
+#X text 25 359 It is possible to chain recalls of variables. So that
+a variable starts its recall after another one finished recalling.
+;
+#X text 25 399 For example \, if one variable should be recalled after
+a fade of another one is finished \, no matter how long that fade is.
+;
+#X text 51 468 The first outlet bangs after a recall is finished.;
+#X text 51 498 The first inlet takes a bang to start the recall. The
+"slave" argument sets the register to slave mode.;
+#X text 51 558 The slave mode can also be set in the scene transition
+dialog. Click here to open it:;
+#X text 41 638 You can also do the chaining through sends & receives:
+;
+#X obj 392 328 cnv 15 200 400 empty empty empty 20 12 0 14 -204786
+-66577 0;
+#X obj 415 494 hsl 128 15 0 127 0 0 /i/am/a/master /i/am/a/master /i/am/a/master
+-2 -8 0 10 -262144 -1 -1 1100 1;
+#X obj 415 554 hsl 128 15 0 127 0 0 /i/am/a/slave /i/am/a/slave /i/am/a/slave
+-2 -8 0 10 -262144 -1 -1 1200 1;
+#X msg 439 394 0;
+#X msg 469 394 1;
+#X msg 499 394 2;
+#X obj 439 420 s /help/ds/scene;
+#X text 394 369 Change scene to see the effect:;
+#X obj 15 18 cnv 15 370 300 empty empty Delaying_recalls 20 12 0 14
+-228856 -66577 0;
+#X obj 392 18 cnv 15 200 300 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 419 162 hsl 128 15 0 127 0 0 /i/am/a/delayed/variable /i/am/a/delayed/variable
+/i/am/a/delayed/variable -2 -8 0 10 -262144 -1 -1 1000 1;
+#X obj 86 124 bng 15 250 50 0 /i/am/a/delayed/variable/ds/dialog /i/am/a/delayed/variable/ds/dialog
+/i/am/a/delayed/variable 20 7 0 10 -262144 -1 -1;
+#X msg 439 234 0;
+#X msg 469 234 1;
+#X msg 499 234 2;
+#X obj 439 260 s /help/ds/scene;
+#X text 394 209 Change scene to see the effect:;
+#X obj 419 92 hsl 128 15 0 127 0 0 /i/am/a/variable /i/am/a/variable
+/i/am/a/variable -2 -8 0 10 -262144 -1 -1 900 1;
+#X obj 86 184 nbx 4 14 -1e+37 1e+37 0 0 /i/am/a/delayed/variable/ds/delay
+/i/am/a/delayed/variable/ds/delay delay 47 7 0 10 -204800 -1 -1 1 256
+;
+#X text 25 89 To delay the recall of a variable in a specific scene
+\, go to the scene transition dialog:;
+#X text 25 159 And set the delay time for the current scene:;
+#X text 25 221 The delay time will be saved with the scene.;
+#X obj 40 533 ds_reg help /i/am/a/slave slave;
+#X obj 63 689 s <name>/ds/slave/start;
+#X obj 63 664 r <name>/ds/dispatched;
+#X obj 40 449 ds_reg help /i/am/a/master;
+#X obj 112 57 ds_reg help /i/am/a/delayed/variable;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 21 0 24 0;
+#X connect 22 0 24 0;
+#X connect 23 0 24 0;
+#X connect 33 0 32 0;
+#X connect 34 0 31 0;
+#X coords 0 740 1 739 85 60 0;
+#X restore 534 750 pd \$0-delaying_recalls;
+#N canvas 85 22 610 756 \$0-scene_transitions 0;
+#X obj 4 4 cnv 15 370 370 empty empty Linear_fade_between_scenes 20
+12 0 14 -228856 -66577 0;
+#X obj 383 4 cnv 15 200 370 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 393 309 hsl 128 15 0 127 0 0 /i/am/a/morphing/variable /i/am/a/morphing/variable
+/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 300 1;
+#X msg 428 175 0;
+#X msg 458 175 1;
+#X msg 488 175 2;
+#X obj 428 201 s /help/ds/scene;
+#X text 408 146 Change scene here:;
+#X obj 99 146 bng 15 250 50 0 /i/am/a/morphing/variable/ds/dialog /i/am/a/morphing/variable/ds/dialog
+/i/am/a/morphing/variable 20 7 0 10 -262144 -1 -1;
+#X text 12 35 Note: Only variables of type "float" can be morphed!!!
+;
+#X text 8 78 The variable "/i/am/a/morphing/variable" has a linear
+fade to each of the scenes 0-2.;
+#X obj 65 267 nbx 4 14 -1e+37 1e+37 0 0 /i/am/a/morphing/variable/ds/morph/time
+/i/am/a/morphing/variable/ds/morph/time time/s 47 7 0 10 -4034 -1 -1
+1 256;
+#X obj 64 216 tgl 15 0 /i/am/a/morphing/variable/ds/morph /i/am/a/morphing/variable/ds/morph
+morph 17 7 0 10 -4034 -1 -1 1 1;
+#X obj 65 336 nbx 4 14 -1e+37 1e+37 0 0 /i/am/a/morphing/variable/ds/morph/timegrain
+/i/am/a/morphing/variable/ds/morph/timegrain time-grain/ms 47 7 0 10
+-4034 -1 -1 20 256;
+#X text 8 181 The "morph" toggle enables a fade from another scene
+to the current scene for this variable.;
+#X text 8 245 The morph time can be set in seconds:;
+#X text 8 297 This sets the samplerate of the fade. For video \, a
+time-grain faster than the framerate would make no sense.;
+#X text 208 336 (Default = 20 ms);
+#X obj 4 384 cnv 15 370 600 empty empty Fade_curves 20 12 0 14 -228856
+-66577 0;
+#X obj 383 384 cnv 15 200 370 empty empty empty 20 12 0 14 -204786
+-66577 0;
+#X obj 393 418 hsl 128 15 0 127 0 0 /i/am/another/morphing/variable
+/i/am/another/morphing/variable /i/am/another/morphing/variable -2
+-8 0 10 -262144 -1 -1 400 1;
+#X obj 90 447 bng 15 250 50 0 /i/am/another/morphing/variable/ds/dialog
+/i/am/another/morphing/variable/ds/dialog /i/am/another/morphing/variable
+20 7 0 10 -262144 -1 -1;
+#X obj 4 1088 cnv 15 370 80 empty empty Deactivate_morphing_in_registers
+20 12 0 14 -261234 -66577 0;
+#X text 9 1112 For individual variables \, the morphing functionality
+can be deactivated permanently:;
+#X obj 12 560 nbx 4 14 -1e+37 1e+37 0 0 /i/am/another/morphing/variable/ds/morph/curve/shape
+/i/am/another/morphing/variable/ds/morph/curve/shape shape 47 7 0 10
+-204786 -1 -1 0 256;
+#X obj 11 677 nbx 4 14 0 1 0 0 /i/am/another/morphing/variable/ds/morph/curve/weight
+/i/am/another/morphing/variable/ds/morph/curve/weight weight 47 7 0
+10 -204786 -1 -1 0.8 256;
+#X obj 14 756 nbx 4 14 10 10000 0 0 /i/am/another/morphing/variable/ds/morph/curve/resolution
+/i/am/another/morphing/variable/ds/morph/curve/resolution resolution
+47 7 0 10 -204786 -1 -1 200 256;
+#X obj 19 888 hradio 15 1 0 4 /i/am/another/morphing/variable/ds/morph/curve/quality
+/i/am/another/morphing/variable/ds/morph/curve/quality quality 0 -8
+0 10 -204786 -1 -1 3;
+#X obj 98 518 bng 15 250 50 0 /i/am/another/morphing/variable/ds/morph/curve/vis
+/i/am/another/morphing/variable/ds/morph/curve/vis show_curve 17 7
+0 10 -204786 -1 -1;
+#X msg 428 564 0;
+#X msg 458 564 1;
+#X msg 488 564 2;
+#X obj 428 590 s /help/ds/scene;
+#X text 408 535 Change scene here:;
+#X text 8 491 Click here to show the current fade characteristic:;
+#X text 8 581 Shape lets you chose a suitable base form of the fade.
+A value of "0" will result in one half sine wave. "1" gives a quarter
+sinewave \, and 2 to N will give a x^n function. The shape values in
+between two integers will provide a linear interpolation of the both.
+;
+#X text 8 697 The "weight" factor lets you interpolate between the
+selected shape and a straight line.;
+#X text 97 891 2: linear interpolation;
+#X text 97 905 3: tabread4 4-point polynomianl interpolation;
+#X text 97 877 1: no interpolation;
+#X text 97 863 0: bypass --> output=input (default);
+#X obj 4 990 cnv 15 370 90 empty empty fadecurve 20 12 0 14 -262130
+-66577 0;
+#X obj 122 1051 fadecurve-help;
+#X text 14 1022 See [fadecurve-help] for more information on these
+values.;
+#X text 8 827 By using the quality setting \, you can chose \, how
+the fade curve is read:;
+#X text 107 675 (0...1);
+#X text 107 559 (-Inf...+Inf);
+#X text 150 754 (10...10000);
+#X text 8 775 The "resolution" parameter sets the resolution of the
+fade curve table (default = 100 points).;
+#N canvas 657 58 603 331 \$0-nomorph 0;
+#X obj 4 5 cnv 15 370 300 empty empty Deactivate_morphing_in_registers
+20 12 0 14 -233017 -66577 0;
+#X text 14 34 For some types of variables \, it is never desired to
+morph between two states (For example lists \, symbols \, toggles \,
+etc.). To save computing power and keep file sizes small \, the morphing
+functionality can be turned off for individual variables.;
+#X text 14 181 "nomorph" can also be set in the transition dialog \,
+but will not be saved this way:;
+#X obj 91 216 bng 15 250 50 0 /i/am/no/morphing/variable/ds/dialog
+/i/am/no/morphing/variable/ds/dialog /i/am/no/morphing/variable 20
+7 0 10 -262144 -1 -1;
+#X text 14 114 The "nomorph" argument for [ds_reg] deactivates morphing
+for this register permanently.;
+#X text 14 241 Anyway \, the controls for morphing will always be visible
+\, even if deactivated. But they will no more be saved in the storage.
+;
+#X obj 383 5 cnv 15 200 300 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 408 174 hsl 128 15 0 127 0 0 /i/am/no/morphing/variable /i/am/no/morphing/variable
+/i/am/no/morphing/variable -2 -8 0 10 -262144 -1 -1 0 1;
+#X msg 428 73 0;
+#X msg 458 73 1;
+#X msg 488 73 2;
+#X obj 428 99 s /help/ds/scene;
+#X text 408 44 Change scene here:;
+#X obj 72 151 ds_reg help /i/am/no/morphing/variable nomorph;
+#X connect 8 0 11 0;
+#X connect 9 0 11 0;
+#X connect 10 0 11 0;
+#X restore 203 1140 pd \$0-nomorph;
+#X obj 64 115 ds_reg help /i/am/a/morphing/variable;
+#X obj 57 418 ds_reg help /i/am/another/morphing/variable;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 29 0 32 0;
+#X connect 30 0 32 0;
+#X connect 31 0 32 0;
+#X coords 0 756 1 755 85 60 0;
+#X restore 533 658 pd \$0-scene_transitions;
+#N canvas 577 104 604 391 \$0-registering_variables 0;
+#X obj 4 4 cnv 15 370 370 empty empty Registering_variables 20 12 0
+14 -204800 -66577 0;
+#X text 16 143 SYNTAX: [ds_reg <domain> <variable_name>] \, where <domain>
+is the name of the storage you want to register to \, and <variable_name>
+is the complete name of your variable.;
+#X text 16 37 New variables can be registered to a storage domain with
+the [ds_reg] module.;
+#X text 16 72 Warning: Do not register variables to more than one domain!
+;
+#X text 16 102 Variables can be any type of data \, like 'list' \,
+'float' \, 'symbol' \, etc.;
+#X text 8 198 This registers "/i/am/a/variable" to domain "help":;
+#X text 9 270 This registers "/i/am/also/a/variable" to domain "help":
+;
+#X obj 383 4 cnv 15 200 370 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#X obj 405 248 hsl 128 15 0 127 0 0 /i/am/also/a/variable /i/am/also/a/variable
+/i/am/also/a/variable -2 -8 0 10 -262144 -1 -1 6300 1;
+#X obj 402 178 hsl 128 15 0 127 0 0 /i/am/a/variable /i/am/a/variable
+/i/am/a/variable -2 -8 0 10 -262144 -1 -1 900 1;
+#X msg 428 75 0;
+#X msg 458 75 1;
+#X msg 488 75 2;
+#X obj 428 101 s /help/ds/scene;
+#X text 408 46 Change scene here:;
+#X obj 64 225 ds_reg help /i/am/a/variable;
+#X obj 67 297 ds_reg help /i/am/also/a/variable;
+#X connect 10 0 13 0;
+#X connect 11 0 13 0;
+#X connect 12 0 13 0;
+#X restore 508 423 pd \$0-registering_variables;
+#X obj 40 574 cnv 15 370 70 empty empty store_&_recall 20 12 0 14 -261682
+-66577 0;
+#N canvas 297 229 562 466 \$0-store&recall 0;
+#X text 96 -373 (c)2011 Marian Weger /part of EXTENDED VIEW toolkit/
+gpl v3;
+#X obj 3 -394 cnv 15 550 450 empty empty store_&_recall 20 12 0 14
+-228856 -66577 0;
+#X obj 41 -354 nbx 3 15 0 999 0 0 /help/ds/scene/current /help/ds/scene/current
+scene 0 -8 0 12 -204786 -1 -1 0 256;
+#X obj 22 -354 bng 15 250 50 0 /0/ds/scene/current/prev /0/ds/scene/current/prev
+< 4 7 0 10 -204786 -1 -1;
+#X obj 92 -354 bng 15 250 50 0 /help/ds/scene/current/next /help/ds/scene/current/next
+> 5 7 0 10 -204786 -1 -1;
+#X obj 115 -354 bng 15 250 50 0 /help/ds/recall /help/ds/recall recall
+17 7 0 10 -4034 -1 -1;
+#X obj 114 -270 bng 15 250 50 0 /help/ds/store /help/ds/store store
+17 7 0 10 -258113 -1 -1;
+#X obj 41 -270 nbx 3 15 0 999 0 0 /help/ds/scene/selected /help/ds/scene/selected
+empty 0 -8 0 12 -261234 -1 -1 0 256;
+#X obj 22 -270 bng 15 250 50 0 /help/ds/scene/selected/prev /help/ds/scene/selected/prev
+< 4 7 0 10 -261234 -1 -1;
+#X obj 92 -270 bng 15 250 50 0 /help/ds/scene/selected/next /help/ds/scene/selected/next
+> 5 7 0 10 -261234 -1 -1;
+#X text 195 -355 In the RECALL section \, you can recall a scene from
+RAM.;
+#X text 195 -275 In the STORE section \, you can store the current
+state of the patch into RAM. Select a destination scene and press "store".
+;
+#X text 195 -325 Switch between presets 0-2 to see the effect.;
+#X msg 233 -143 0;
+#X msg 263 -143 1;
+#X msg 293 -143 2;
+#X obj 233 -117 s /help/ds/scene;
+#X text 56 -197 You can change access those parameters also through
+sends and receives.;
+#X text 59 -142 Click here to change scene:;
+#X obj 305 -36 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 305 -17 vis 1;
+#X text 63 -57 For more information on that \, and for a complete list
+of controllable parameters \, click here:;
+#X obj 305 4 s pd-\$0-parameter_list;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 0;
+#X restore 137 619 pd \$0-store&recall;
+#X text 58 599 Look here how to store and recall scenes:;
+#X obj 40 654 cnv 15 370 70 empty empty save_&_load 20 12 0 14 -261682
+-66577 0;
+#X text 46 677 Look here how to save scene sets to a textfile and how
+to load them from there:;
+#N canvas 509 208 564 464 \$0-save&load 0;
+#X obj 3 -394 cnv 15 550 450 empty empty save_&_load 20 12 0 14 -228856
+-66577 0;
+#X obj 24 -343 bng 15 250 50 0 /help/ds/save /help/ds/save save 17
+7 0 10 -258113 -1 -1;
+#X obj 24 -269 bng 15 250 50 0 /help/ds/load /help/ds/load load 17
+7 0 10 -4034 -1 -1;
+#X obj 94 -343 bng 15 250 50 0 /help/ds/resave /help/ds/resave resave
+17 7 0 10 -258113 -1 -1;
+#X obj 94 -269 bng 15 250 50 0 /help/ds/reload /help/ds/reload reload
+17 7 0 10 -4034 -1 -1;
+#X text 195 -355 The SAVE section lets you save all scenes from RAM
+to a textfile on the HDD. Click "save" to open a save dialog. "resave"
+will let you save to the last specified filename.;
+#X text 195 -275 The LOAD section lets you load all scenes from a textfile
+to RAM. Click "load" to open a load dialog. "reload" will let you load
+the last specified filename.;
+#X text 59 -197 This example uses "ev_storage-help.txt" in the ../data
+folder to save its contents.;
+#X text 59 -127 Have a look at this file in a text editor to see the
+syntax.;
+#X text 59 -107 More on that here:;
+#X obj 187 -105 bng 15 250 50 0 empty empty click_me! 17 7 0 10 -262144
+-1 -1;
+#X msg 187 -86 vis 1;
+#X obj 187 -65 s pd-\$0-file_layout;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X restore 199 699 pd \$0-save&load;
+#X obj 427 1063 cnv 15 360 80 empty empty Copy&Paste_Settings 20 12
+0 14 -262130 -66577 0;
+#N canvas 295 94 390 415 \$0-settings_buffer 0;
+#X obj 2 2 cnv 15 370 400 empty empty Settings_Buffer 20 12 0 14 -228856
+-66577 0;
+#X text 12 38 The Register Settings Buffer has the same controls \,
+as the scene transition dialog for the individual variables.;
+#X text 12 78 The buffer can be edited and then pasted into variables.
+;
+#X text 12 148 In the scene transition dialog of the individual variables
+\, there is a copy&paste section to communicate with the buffer:;
+#X obj 23 219 bng 15 250 50 0 /i/am/a/morphing/variable/ds/dialog /i/am/a/morphing/variable/ds/dialog
+/i/am/a/morphing/variable 20 7 0 10 -262144 -1 -1;
+#X obj 209 193 cnv 15 130 60 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 216 209 bng 15 250 50 0 /i/am/a/morphing/variable/ds/settings/copy
+/i/am/a/morphing/variable/ds/settings/copy COPY_to_buffer 17 7 0 10
+-4160 -1 -1;
+#X obj 216 229 bng 15 250 50 0 /i/am/a/morphing/variable/ds/settings/paste
+/i/am/a/morphing/variable/ds/settings/paste PASTE_from_buffer 17 7
+0 10 -260097 -1 -1;
+#X obj 189 117 bng 15 250 50 0 /help/ds/reg/settings/buffer /help/ds/reg/settings/buffer
+register_settings_buffer 17 7 0 10 -257985 -1 -1;
+#X text 20 117 Open the Buffer window:;
+#X obj 125 321 bng 15 250 50 0 /\$1/ds/reg/settings/buffer/paste/all
+/\$1/ds/reg/settings/buffer/paste/all send_to_all_registers 17 7 0
+10 -258113 -1 -1;
+#X text 12 278 The buffer contents can be sent to all registered variables
+in this domain by pressing the red button:;
+#X coords 0 415 1 414 85 60 0;
+#X restore 508 1114 pd \$0-settings_buffer;
+#X text 432 978 There is also a buffer for scene transition settings
+\, which can be edited independently. Settings can be copied to that
+buffer and pasted from it.;
+#X obj 607 1031 bng 15 250 50 0 /help/ds/reg/settings/buffer /help/ds/reg/settings/buffer
+register_settings_buffer 17 7 0 10 -257985 -1 -1;
+#X text 438 1031 Open the Buffer window:;
+#X text 488 1091 More detailed description:;
+#X text 441 224 At every recall \, the variable names and values are
+dumped to the first outlet.;
+#X obj 420 1171 cnv 15 370 80 empty empty Multiple_GUIs_for_the_same_domain
+20 12 0 14 -228856 -66577 0;
+#X text 424 1200 Look inside here how to create multiple GUIs for one
+domain:;
+#N canvas 147 251 432 243 \$0-multiple_guis 0;
+#X obj 132 71 ds_gui help;
+#X text 42 27 Of course \, it is possible to create more GUIs for the
+same storage domain. Put a [ds_gui <domain>] object to create one:
+;
+#X restore 500 1221 pd \$0-multiple_guis;
+#X obj 432 174 ds_logic help;
+#X obj 610 78 ds_gui help;
+#X text 430 152 main abstraction;
+#X text 507 77 gui abstraction;
+#X text 45 206 This example uses "ds-help.txt". If you accidentally
+changed it by testing the examples \, you can load the backup "ds-help_bak.txt".
+;
+#X text 45 106 This is a state saving solution \, based entirely on
+Pd-Vanilla. It consists of 3 main parts of abstractions: [ds_logic
+<domain>] is the main abstraction of this system \, and should be created
+once for each domain. [ds_gui <domain>] provides the corresponding
+graphical control. [ds_reg <domain> <name>] registers a variabl to
+the given storage domain.;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 1;
+#X connect 49 0 50 0;
+#X connect 50 0 51 0;
+#X connect 53 0 54 0;
+#X connect 54 0 55 0;
+#X connect 80 0 13 0;
+#X coords 0 756 1 755 150 115 0;

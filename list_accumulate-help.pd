@@ -1,0 +1,13 @@
+#N canvas 126 143 436 366 10;
+#X text 243 281 (c)2012 Marian Weger;
+#X text 44 38 list_accumulate;
+#X obj 153 185 list_accumulate;
+#X obj 153 102 bng 15 250 50 0 empty empty output_list 17 7 0 10 -262144
+-1 -1;
+#X obj 153 257 print;
+#X floatatom 241 147 5 0 0 0 - - -;
+#X msg 97 132 clear;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 2 1;
+#X connect 6 0 2 0;

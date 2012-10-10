@@ -1,0 +1,7 @@
+#N canvas 689 448 367 229 10;
+#X text 495 104 (c)2011-2012 \, Marian Weger;
+#X text 37 52 registers variable to state saving system;
+#X text 40 21 ds_reg <domain> <name> <arg1> <arg2> ...;
+#X text 39 80 arguments: nomorph \, slave \, set;
+#X obj 101 133 cnv 15 200 30 empty empty see_[ds-help]_for_help 20
+12 0 14 -261234 -1 0;

@@ -1,0 +1,66 @@
+#N canvas 569 22 561 523 10;
+#X obj 101 115 cnv 15 148 114 empty empty empty 20 12 0 14 -228856
+-66577 0;
+#X obj 104 173 bng 15 250 50 0 /\$1/ds/save /\$1/ds/save save 17 7
+0 10 -258113 -1 -1;
+#X obj 104 193 bng 15 250 50 0 /\$1/ds/load /\$1/ds/load load 17 7
+0 10 -4034 -1 -1;
+#X obj 174 173 bng 15 250 50 0 /\$1/ds/resave /\$1/ds/resave resave
+17 7 0 10 -258113 -1 -1;
+#X obj 174 193 bng 15 250 50 0 /\$1/ds/reload /\$1/ds/reload reload
+17 7 0 10 -4034 -1 -1;
+#X obj 123 129 nbx 3 15 0 999 0 0 /\$1/ds/scene/current /\$1/ds/scene/current
+scene 0 -8 0 12 -204786 -1 -1 0 256;
+#X obj 104 129 bng 15 250 50 0 /\$1/ds/scene/current/prev /\$1/ds/scene/current/prev
+< 4 7 0 10 -204786 -1 -1;
+#X obj 174 129 bng 15 250 50 0 /\$1/ds/scene/current/next /\$1/ds/scene/current/next
+> 5 7 0 10 -204786 -1 -1;
+#X text 101 70 (gui for ds_logic);
+#X text 91 40 ds_gui <domain>;
+#X text 302 246 (c)2011-2012 Marian Weger;
+#X obj 104 212 bng 15 250 50 0 /\$1/ds/advanced/vis /\$1/ds/advanced/vis
+advanced 17 7 0 10 -262144 -1 -1;
+#X msg 327 326 vis 1;
+#X obj 327 348 s pd-\$0-advanced;
+#N canvas 398 52 189 189 \$0-advanced 0;
+#X obj 2 -119 cnv 15 180 180 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 9 -89 tgl 15 1 /\$1/ds/settings/state /\$1/ds/settings/state
+recall_settings 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 9 -69 tgl 15 1 /\$1/ds/data/state /\$1/ds/data/state recall_data
+17 7 0 10 -262144 -1 -1 1 1;
+#X obj 9 -39 bng 15 250 50 0 /\$1/ds/reg/dialog /\$1/ds/reg/dialog
+register_settings 17 7 0 10 -4032 -1 -1;
+#X obj 9 -109 tgl 15 1 /\$1/ds/global/state /\$1/ds/global/state recall_global
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 9 21 bng 15 250 50 0 /\$1/ds/edit/dialog /\$1/ds/edit/dialog
+edit 17 7 0 10 -258113 -1 -1;
+#X obj 9 -19 bng 15 250 50 0 /\$1/ds/reg/settings/buffer /\$1/ds/reg/settings/buffer
+register_settings_buffer 17 7 0 10 -257985 -1 -1;
+#X coords 0 189 1 188 85 60 0;
+#X restore 327 374 pd \$0-advanced;
+#X obj 196 151 bng 15 250 50 0 /\$1/ds/store /\$1/ds/store store 17
+7 0 10 -258113 -1 -1;
+#X obj 327 304 r /\$1/ds/advanced/vis;
+#X obj 123 150 nbx 3 15 0 999 0 0 /\$1/ds/scene/selected /\$1/ds/scene/selected
+empty 0 -8 0 12 -261234 -1 -1 0 256;
+#X obj 104 150 bng 15 250 50 0 /\$1/ds/scene/selected/prev /\$1/ds/scene/selected/prev
+< 4 7 0 10 -261234 -1 -1;
+#X obj 174 150 bng 15 250 50 0 /\$1/ds/scene/selected/next /\$1/ds/scene/selected/next
+> 5 7 0 10 -261234 -1 -1;
+#X obj 196 129 bng 15 250 50 0 /\$1/ds/recall /\$1/ds/recall recall
+17 7 0 10 -4034 -1 -1;
+#X obj 174 212 bng 15 250 50 0 /\$1/ds/playlist/vis /\$1/ds/playlist/vis
+playlist 17 7 0 10 -262144 -1 -1;
+#X msg 85 332 vis 1;
+#X obj 85 354 s pd-\$0-playlist;
+#N canvas 604 68 333 238 \$0-playlist 0;
+#X obj 3 4 ds_pl_gui \$1;
+#X restore 84 381 pd \$0-playlist;
+#X obj 85 309 r /\$1/ds/playlist/vis;
+#X text 300 55 for help: see [ds-help];
+#X connect 12 0 13 0;
+#X connect 16 0 12 0;
+#X connect 22 0 23 0;
+#X connect 25 0 22 0;
+#X coords 0 -1 1 1 150 130 1 100 100;

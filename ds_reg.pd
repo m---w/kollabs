@@ -1,0 +1,557 @@
+#N canvas 155 25 853 550 10;
+#X text 495 104 (c)2011-2012 \, Marian Weger;
+#N canvas 138 65 783 750 dispatch 1;
+#N canvas 458 24 812 638 morph 1;
+#X obj 215 68 inlet;
+#X obj 153 580 outlet;
+#X obj 272 90 * 1000;
+#X obj 239 580 outlet;
+#X obj 272 68 r \$2/ds/morph/time;
+#X obj 215 90 t b f;
+#X obj 153 304 sel 1;
+#X obj 257 134 f 0;
+#X msg 257 164 set 0 \, 1 \$1;
+#X obj 257 223 line;
+#X obj 284 370 r \$2;
+#X obj 284 391 route float;
+#X obj 254 459 - 0;
+#X obj 239 481 *;
+#X obj 239 523 + 0;
+#X obj 269 436 t f f;
+#X obj 257 248 t f f;
+#X obj 278 188 r \$2/ds/morph/timegrain;
+#X text 286 208 only for Pd version >= 0.43;
+#X obj 269 414 f;
+#X obj 242 350 t f b;
+#X obj 257 304 fadecurve \$0-\$2/ds/morph/curve 100 0;
+#X obj 470 76 r \$2/ds/morph/curve/shape;
+#X obj 488 121 r \$2/ds/morph/curve/weight;
+#X obj 507 165 r \$2/ds/morph/curve/resolution;
+#X obj 527 212 r \$2/ds/morph/curve/quality;
+#X obj 546 257 r \$2/ds/morph/curve/vis;
+#X msg 470 98 shape \$1;
+#X msg 488 143 weight \$1;
+#X msg 527 234 quality \$1;
+#X msg 507 187 resolution \$1;
+#X msg 546 279 vis \$1;
+#X connect 0 0 5 0;
+#X connect 2 0 7 1;
+#X connect 4 0 2 0;
+#X connect 5 0 7 0;
+#X connect 5 1 20 0;
+#X connect 6 0 1 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 16 0;
+#X connect 10 0 11 0;
+#X connect 11 0 19 1;
+#X connect 12 0 13 1;
+#X connect 13 0 14 0;
+#X connect 14 0 3 0;
+#X connect 15 0 12 1;
+#X connect 15 1 14 1;
+#X connect 16 0 6 0;
+#X connect 16 1 21 0;
+#X connect 17 0 9 2;
+#X connect 19 0 15 0;
+#X connect 20 0 12 0;
+#X connect 20 1 19 0;
+#X connect 21 0 13 0;
+#X connect 22 0 27 0;
+#X connect 23 0 28 0;
+#X connect 24 0 30 0;
+#X connect 25 0 29 0;
+#X connect 26 0 31 0;
+#X connect 27 0 21 1;
+#X connect 28 0 21 1;
+#X connect 29 0 21 1;
+#X connect 30 0 21 1;
+#X connect 31 0 21 1;
+#X restore 163 905 pd morph;
+#N canvas 605 22 427 408 slave 0;
+#X obj 173 64 inlet;
+#X obj 200 321 outlet;
+#X obj 200 296 list;
+#X msg 107 80 1;
+#X obj 107 56 t b;
+#X obj 107 106 t b f;
+#X msg 173 110 1;
+#X obj 173 215 &&;
+#X obj 173 237 sel 1;
+#X obj 173 259 t b b;
+#X msg 245 143 0;
+#X obj 107 34 r \$2/ds/slave/start;
+#X obj 173 88 t b a;
+#X connect 0 0 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
+#X connect 5 1 7 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
+#X connect 9 1 10 0;
+#X connect 10 0 7 0;
+#X connect 10 0 7 1;
+#X connect 11 0 4 0;
+#X connect 12 0 6 0;
+#X connect 12 1 2 1;
+#X restore 124 416 pd slave;
+#X obj 85 30 r \$2/dispatch;
+#X obj 85 1063 s \$0-dispatched;
+#X obj 208 1030 list trim;
+#X obj 247 994 list prepend set;
+#X obj 208 1063 s \$2;
+#X obj 134 317 list;
+#X obj 134 260 r \$2/redispatch;
+#X obj 85 890 t b a;
+#X obj 124 363 r \$2/ds/slave;
+#X obj 124 660 r \$2/ds/morph;
+#X obj 247 942 r \$2/ds/set;
+#X obj 163 826 r \$2/ds/morph/time;
+#X obj 85 788 kdemux2;
+#X obj 85 388 kdemux2;
+#X obj 85 480 kdemux2;
+#X obj 208 968 kdemux2;
+#X obj 124 851 kdemux2;
+#X obj 124 454 r \$2/ds/delay;
+#N canvas 378 104 346 300 delay 0;
+#X obj 66 20 inlet;
+#X obj 103 214 outlet;
+#X obj 103 165 list;
+#X obj 66 52 t b a;
+#X obj 66 124 del 0;
+#X obj 103 187 list trim;
+#X obj 133 42 * 1000;
+#X obj 133 20 r \$2/ds/delay;
+#X connect 0 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 3 1 2 1;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
+#X connect 6 0 4 1;
+#X connect 7 0 6 0;
+#X restore 124 507 pd delay;
+#N canvas 457 223 609 443 change 0;
+#X obj 105 43 inlet;
+#X obj 105 117 change;
+#X obj 105 329 outlet;
+#X obj 168 117 t a a;
+#X obj 207 142 list length;
+#X obj 207 164 > 1;
+#X obj 168 189 kdemux2;
+#X obj 208 231 symbol;
+#X obj 208 253 schange;
+#X obj 208 275 list trim;
+#X obj 105 75 route float;
+#X obj 287 27 r \$2;
+#X msg 287 71 set \$1;
+#X obj 350 71 t a a;
+#X obj 389 96 list length;
+#X obj 389 118 > 1;
+#X obj 350 143 kdemux2;
+#X obj 287 49 route float;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 3 0 6 0;
+#X connect 3 1 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 0;
+#X connect 6 1 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
+#X connect 10 0 1 0;
+#X connect 10 1 3 0;
+#X connect 11 0 17 0;
+#X connect 12 0 1 0;
+#X connect 13 0 16 0;
+#X connect 13 1 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 1;
+#X connect 16 0 8 1;
+#X connect 17 0 12 0;
+#X connect 17 1 13 0;
+#X restore 124 212 pd change;
+#X obj 85 188 kdemux2;
+#X obj 124 164 r \$2/ds/change;
+#X obj 136 58 r \$2/ds/occupy;
+#X obj 85 82 kdemux2 1;
+#N canvas 724 154 517 396 occupy 0;
+#X obj 181 127 r \$0-busy;
+#X obj 181 149 == 0;
+#X obj 136 172 spigot 1;
+#X obj 136 66 inlet;
+#X obj 136 224 outlet;
+#X obj 298 42 r \$0-dispatch-start;
+#X msg 298 64 1;
+#X obj 384 145 r \$0-dispatched;
+#X msg 384 167 0;
+#X obj 338 220 s \$0-busy;
+#X obj 331 102 r \$2/ds/morph;
+#X obj 298 148 spigot;
+#X connect 0 0 1 0;
+#X connect 1 0 2 1;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 1;
+#X connect 11 0 9 0;
+#X restore 136 107 pd occupy;
+#X obj 137 688 r \$2/ds/nomorph;
+#X obj 137 710 == 0;
+#X obj 124 762 &&;
+#X obj 137 732 t b f;
+#X obj 85 260 t a a;
+#X obj 85 578 t a b;
+#X obj 112 599 s \$0-dispatch-start;
+#X connect 0 0 3 0;
+#X connect 0 1 17 0;
+#X connect 1 0 16 0;
+#X connect 2 0 25 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 7 0 15 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 9 1 17 0;
+#X connect 10 0 15 1;
+#X connect 11 0 29 0;
+#X connect 12 0 17 1;
+#X connect 13 0 18 1;
+#X connect 14 0 9 0;
+#X connect 14 1 18 0;
+#X connect 15 0 16 0;
+#X connect 15 1 1 0;
+#X connect 16 0 32 0;
+#X connect 16 1 20 0;
+#X connect 17 0 4 0;
+#X connect 17 1 5 0;
+#X connect 18 0 9 0;
+#X connect 18 1 0 0;
+#X connect 19 0 16 1;
+#X connect 20 0 32 0;
+#X connect 21 0 31 0;
+#X connect 22 0 31 0;
+#X connect 22 1 21 0;
+#X connect 23 0 22 1;
+#X connect 24 0 25 1;
+#X connect 25 0 22 0;
+#X connect 25 1 26 0;
+#X connect 26 0 22 0;
+#X connect 27 0 28 0;
+#X connect 28 0 30 0;
+#X connect 29 0 14 1;
+#X connect 30 0 29 0;
+#X connect 30 1 29 1;
+#X connect 31 0 15 0;
+#X connect 31 1 7 1;
+#X connect 32 0 14 0;
+#X connect 32 1 33 0;
+#X restore 59 307 pd dispatch;
+#X obj 255 422 r \$0-dispatched;
+#X obj 255 454 outlet slave-chain;
+#N canvas 554 22 784 717 fetch_and_route 0;
+#X obj 261 119 r \$2;
+#X obj 132 573 s /\$1/ds/fetched;
+#X obj 132 551 list prepend \$2;
+#X obj 51 141 t b b;
+#X msg 78 164 0;
+#X msg 171 237 1;
+#X obj 51 284 route bang set;
+#X obj 171 349 list trim;
+#X obj 152 119 r \$2/route;
+#X obj 241 393 s;
+#X obj 152 141 t b b a;
+#X obj 352 204 t b;
+#X obj 352 226 list prepend \$2;
+#X obj 352 248 s \$2/route;
+#X text 437 119 global resend;
+#X text 447 141 local resend;
+#X text 161 102 route value;
+#X obj 352 314 s \$2/route;
+#X text 424 292 global route;
+#X text 434 314 local route;
+#X obj 51 237 list;
+#X obj 352 372 r /\$1/ds/morph/time;
+#X text 467 370 global morph time;
+#X text 478 391 local morph time;
+#X obj 352 394 s \$2/ds/morph/time;
+#X obj 51 259 list trim;
+#X obj 51 59 r /\$1/ds/fetch/data;
+#X text 39 41 fetch data to storage;
+#X obj 492 204 t b;
+#X obj 492 248 s \$2/route;
+#X obj 492 182 r \$2/ds/print;
+#X obj 429 551 print \$2;
+#X obj 492 226 list prepend \$0-print;
+#X obj 429 529 r \$0-print;
+#X obj -20 442 spigot;
+#X obj -20 464 t b b;
+#X msg -20 486 <not initialised>;
+#X msg 40 442 0;
+#X obj 13 371 r \$2/ds/print;
+#X obj 13 393 t b;
+#X msg 13 415 1;
+#X obj 132 323 kdemux2;
+#X obj 352 119 r /\$1/resend;
+#X obj 352 182 r \$2/resend;
+#X obj 352 141 s \$2/resend;
+#X obj 352 292 r /\$1/route;
+#X connect 0 0 20 1;
+#X connect 2 0 1 0;
+#X connect 3 0 20 0;
+#X connect 3 1 4 0;
+#X connect 4 0 41 1;
+#X connect 5 0 41 1;
+#X connect 6 0 34 0;
+#X connect 6 1 41 0;
+#X connect 6 2 41 0;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 10 0 20 0;
+#X connect 10 1 5 0;
+#X connect 10 2 9 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 20 0 25 0;
+#X connect 21 0 24 0;
+#X connect 25 0 6 0;
+#X connect 26 0 3 0;
+#X connect 28 0 32 0;
+#X connect 30 0 28 0;
+#X connect 32 0 29 0;
+#X connect 33 0 31 0;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 35 1 37 0;
+#X connect 36 0 7 0;
+#X connect 37 0 34 1;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 40 0 34 1;
+#X connect 41 0 2 0;
+#X connect 41 1 7 0;
+#X connect 42 0 44 0;
+#X connect 43 0 11 0;
+#X connect 45 0 17 0;
+#X restore 59 285 pd fetch_and_route;
+#N canvas 191 235 428 316 \$0-gui 0;
+#X obj -130 -13 cnv 15 400 300 empty empty \$2 12 12 0 12 -228856 -1
+0;
+#X obj -35 65 nbx 4 14 -1e+37 1e+37 0 0 \$2/ds/morph/time \$2/ds/morph/time
+time/s 47 7 0 10 -4034 -1 -1 4 256;
+#X obj -121 65 tgl 15 0 \$2/ds/morph \$2/ds/morph morph 17 7 0 10 -4034
+-1 -1 1 1;
+#X obj -121 15 tgl 15 0 \$2/ds/slave \$2/ds/slave slave 17 7 0 10 -203904
+-1 -1 0 1;
+#X obj -121 245 bng 15 250 50 0 \$2/ds/print \$2/ds/print print_current_value
+17 7 0 10 -262144 -1 -1;
+#X obj -35 105 nbx 4 14 -1e+37 1e+37 0 0 \$2/ds/morph/curve/shape \$2/ds/morph/curve/shape
+shape 47 7 0 10 -204786 -1 -1 4.42 256;
+#X obj -35 125 nbx 4 14 0 1 0 0 \$2/ds/morph/curve/weight \$2/ds/morph/curve/weight
+weight 47 7 0 10 -204786 -1 -1 0.81 256;
+#X obj -35 145 nbx 4 14 10 10000 0 0 \$2/ds/morph/curve/resolution
+\$2/ds/morph/curve/resolution resolution 47 7 0 10 -204786 -1 -1 100
+256;
+#X obj -121 145 hradio 15 1 0 4 \$2/ds/morph/curve/quality \$2/ds/morph/curve/quality
+quality 0 -8 0 10 -204786 -1 -1 3;
+#X obj -121 105 bng 15 250 50 0 \$2/ds/morph/curve/vis \$2/ds/morph/curve/vis
+show_curve 17 7 0 10 -204786 -1 -1;
+#X obj -35 85 nbx 4 14 -1e+37 1e+37 0 0 \$2/ds/morph/timegrain \$2/ds/morph/timegrain
+time-grain/ms 47 7 0 10 -4034 -1 -1 20 256;
+#X obj -121 35 nbx 4 14 -1e+37 1e+37 0 0 \$2/ds/delay \$2/ds/delay
+delay/s 47 7 0 10 -204800 -1 -1 0 256;
+#X obj -121 185 tgl 15 0 \$2/ds/occupy \$2/ds/occupy occupy 17 7 0
+10 -262130 -1 -1 0 1;
+#X obj 99 245 tgl 15 0 \$2/ds/set \$2/ds/set set 17 7 0 10 -228856
+-1 -1 0 1;
+#X obj 139 245 tgl 15 0 \$2/ds/change \$2/ds/change change 17 7 0 10
+-228856 -1 -1 1 1;
+#X obj 99 265 tgl 15 0 \$2/ds/nomorph \$2/ds/nomorph morph_deactivate
+17 7 0 10 -228856 -1 -1 0 1;
+#X obj 140 27 cnv 15 130 60 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 147 43 bng 15 250 50 0 \$2/ds/settings/copy \$2/ds/settings/copy
+COPY_to_buffer 17 7 0 10 -4160 -1 -1;
+#X obj 147 63 bng 15 250 50 0 \$2/ds/settings/paste \$2/ds/settings/paste
+PASTE_from_buffer 17 7 0 10 -260097 -1 -1;
+#X text -103 214 Save scene after changes! Otherwise settings get lost!
+;
+#X restore 657 421 pd \$0-gui;
+#X obj 355 309 s \$2/ds/dialog;
+#X obj 657 318 r \$2/ds/dialog;
+#X obj 657 340 t b;
+#X msg 657 362 vis 1;
+#X obj 657 384 s pd-\$0-gui;
+#X obj 657 217 r /\$1/ds/reg-names/request;
+#X obj 657 239 list prepend \$2;
+#X obj 657 261 s /\$1/ds/reg-names;
+#N canvas 362 176 730 489 init 0;
+#X obj 340 34 loadbang;
+#X obj 28 203 list split 1;
+#X obj 62 225 t l;
+#X obj 28 250 list trim;
+#X obj 65 306 t b;
+#X obj 103 306 t b;
+#X msg 65 328 1;
+#X msg 103 328 1;
+#X obj 28 306 t b;
+#X msg 28 328 1;
+#X obj 103 355 s \$2/ds/set;
+#X obj 65 381 s \$2/ds/slave;
+#X obj 28 179 list prepend \$15 \$14 \$13 \$12 \$11 \$10 \$9 \$8 \$7
+\$6 \$5 \$4 \$3;
+#X obj 417 34 r /\$1/loadbang;
+#X obj 28 275 route nomorph slave set bang;
+#X obj 28 407 s \$2/ds/nomorph;
+#X obj 340 89 t b b b;
+#X obj 460 111 \$0;
+#X msg 460 133 \; \$1-busy 0 \;;
+#X obj 451 179 list prepend \$2 \$0;
+#X msg 451 211 \; \$2-\$1/ds/morph/curve/loadbang bang \; \$1/ds/morph/curve/quality
+0 \; \$1/ds/morph/curve/weight 0 \; \$1/ds/morph/curve/shape 0 \; \$1/ds/morph/time
+0 \; \$1/ds/morph 0 \; \$1/ds/nomorph 0 \; \$1/ds/delay 0 \; \$1/ds/slave
+0 \; \$1/ds/set 0 \; \$1/ds/morph/timegrain 20 \; \$1/ds/change 1 \;
+\$1/ds/occupy 1 \;;
+#X connect 0 0 16 0;
+#X connect 1 0 3 0;
+#X connect 1 1 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 14 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 11 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 15 0;
+#X connect 12 0 1 0;
+#X connect 13 0 16 0;
+#X connect 14 0 8 0;
+#X connect 14 1 4 0;
+#X connect 14 2 5 0;
+#X connect 16 0 12 0;
+#X connect 16 1 19 0;
+#X connect 16 2 17 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X restore 59 252 pd init;
+#N canvas 247 22 878 647 register 0;
+#X obj 531 115 ds_reg_settings \$1 \$2/ds/morph;
+#X obj 110 33 r \$2/ds/nomorph;
+#X obj 110 56 == 0;
+#X obj 23 33 r \$0-busy;
+#X obj 23 85 t f b f;
+#X obj 23 56 == 0;
+#X obj 110 148 list append \$2;
+#X obj 23 428 list append \$2;
+#X obj 110 118 && 1;
+#X obj 531 135 ds_reg_settings \$1 \$2/ds/morph/time;
+#X obj 531 155 ds_reg_settings \$1 \$2/ds/morph/curve/shape;
+#X obj 531 175 ds_reg_settings \$1 \$2/ds/morph/curve/weight;
+#X obj 531 195 ds_reg_settings \$1 \$2/ds/morph/curve/resolution;
+#X obj 531 305 ds_reg_settings \$1 \$2/ds/slave;
+#X obj 531 215 ds_reg_settings \$1 \$2/ds/morph/curve/quality;
+#X obj 531 235 ds_reg_settings \$1 \$2/ds/morph/timegrain;
+#X obj 531 285 ds_reg_settings \$1 \$2/ds/delay;
+#X obj 531 265 ds_reg_settings \$1 \$2/ds/occupy;
+#X msg 44 455 \; \$2/ds/occupy/save/state \$1 \; \$2/ds/delay/save/state
+\$1 \; \$2/ds/slave/save/state \$1 \;;
+#X msg 23 520 \; \$2/ds/occupy/dispatch/state \$1 \; \$2/ds/delay/dispatch/state
+\$1 \; \$2/ds/slave/dispatch/state \$1 \;;
+#X msg 150 180 \; \$2/ds/morph/save/state \$1 \; \$2/ds/morph/time/save/state
+\$1 \; \$2/ds/morph/timegrain/save/state \$1 \; \$2/ds/morph/curve/shape/save/state
+\$1 \; \$2/ds/morph/curve/weight/save/state \$1 \; \$2/ds/morph/curve/resolution/save/state
+\$1 \; \$2/ds/morph/curve/quality/save/state \$1 \;;
+#X msg 110 299 \; \$2/ds/morph/dispatch/state \$1 \; \$2/ds/morph/time/dispatch/state
+\$1 \; \$2/ds/morph/timegrain/dispatch/state \$1 \; \$2/ds/morph/curve/shape/dispatch/state
+\$1 \; \$2/ds/morph/curve/weight/dispatch/state \$1 \; \$2/ds/morph/curve/resolution/dispatch/state
+\$1 \; \$2/ds/morph/curve/quality/dispatch/state \$1 \;;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 5 0;
+#X connect 4 0 7 0;
+#X connect 4 1 8 0;
+#X connect 4 2 8 1;
+#X connect 5 0 4 0;
+#X connect 6 0 20 0;
+#X connect 6 0 21 0;
+#X connect 7 0 19 0;
+#X connect 7 0 18 0;
+#X connect 8 0 6 0;
+#X restore 59 351 pd register;
+#X obj 355 216 inlet settings;
+#X text 37 62 registers variable to state saving system;
+#X text 40 21 ds_reg <domain> <name> <arg1> <arg2> ...;
+#X text 39 100 arguments: nomorph \, slave \, set;
+#X obj 355 246 route dialog bang;
+#X obj 425 402 r \$0-dispatched;
+#N canvas 163 300 1172 518 copy_paste_settings 0;
+#X obj 40 111 t b;
+#X obj 438 111 t b;
+#X obj 40 89 r \$2/ds/settings/paste;
+#X obj 438 89 r \$2/ds/settings/copy;
+#X obj 40 138 list append \$1 \$2;
+#X obj 438 138 list append \$1 \$2;
+#X msg 438 170 \; \$2/ds/morph/route /\$1/ds/reg/settings/buffer/morph
+\; \$2/ds/morph/time/route /\$1/ds/reg/settings/buffer/morph/time \;
+\$2/ds/morph/timegrain/route /\$1/ds/reg/settings/buffer/morph/timegrain
+\; \$2/ds/morph/curve/shape/route /\$1/ds/reg/settings/buffer/morph/curve/shape
+\; \$2/ds/morph/curve/weight/route /\$1/ds/reg/settings/buffer/morph/curve/weight
+\; \$2/ds/morph/curve/resolution/route /\$1/ds/reg/settings/buffer/morph/curve/resolution
+\; \$2/ds/morph/curve/quality/route /\$1/ds/reg/settings/buffer/morph/curve/quality
+\; \$2/ds/occupy/route /\$1/ds/reg/settings/buffer/occupy \; \$2/ds/slave/route
+/\$1/ds/reg/settings/buffer/slave \; \$2/ds/delay/route /\$1/ds/reg/settings/buffer/delay
+\;;
+#X msg 40 170 \; /\$1/ds/reg/settings/buffer/morph/route \$2/ds/morph
+\; /\$1/ds/reg/settings/buffer/morph/time/route \$2/ds/morph/time \;
+/\$1/ds/reg/settings/buffer/morph/timegrain/route \$2/ds/morph/timegrain
+\; /\$1/ds/reg/settings/buffer/morph/curve/shape/route \$2/ds/morph/curve/shape
+\; /\$1/ds/reg/settings/buffer/morph/curve/weight/route \$2/ds/morph/curve/weight
+\; /\$1/ds/reg/settings/buffer/morph/curve/resolution/route \$2/ds/morph/curve/resolution
+\; /\$1/ds/reg/settings/buffer/morph/curve/quality/route \$2/ds/morph/curve/quality
+\; /\$1/ds/reg/settings/buffer/occupy/route \$2/ds/occupy \; /\$1/ds/reg/settings/buffer/slave/route
+\$2/ds/slave \; /\$1/ds/reg/settings/buffer/delay/route \$2/ds/delay
+\;;
+#X obj 780 90 r /\$1/ds/reg/settings/buffer/paste/all;
+#X obj 780 112 t b;
+#X obj 780 138 list append \$1 \$2;
+#X msg 780 170 \; /\$1/ds/reg/settings/buffer/morph/route \$2/ds/morph
+\; /\$1/ds/reg/settings/buffer/morph/time/route \$2/ds/morph/time \;
+/\$1/ds/reg/settings/buffer/morph/timegrain/route \$2/ds/morph/timegrain
+\; /\$1/ds/reg/settings/buffer/morph/curve/shape/route \$2/ds/morph/curve/shape
+\; /\$1/ds/reg/settings/buffer/morph/curve/weight/route \$2/ds/morph/curve/weight
+\; /\$1/ds/reg/settings/buffer/morph/curve/resolution/route \$2/ds/morph/curve/resolution
+\; /\$1/ds/reg/settings/buffer/morph/curve/quality/route \$2/ds/morph/curve/quality
+\; /\$1/ds/reg/settings/buffer/occupy/route \$2/ds/occupy \; /\$1/ds/reg/settings/buffer/slave/route
+\$2/ds/slave \; /\$1/ds/reg/settings/buffer/delay/route \$2/ds/delay
+\;;
+#X connect 0 0 4 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X restore 58 471 pd copy_paste_settings;
+#X obj 404 279 s \$2/ds/slave/start;
+#X obj 425 434 s \$2/ds/dispatched;
+#X connect 2 0 3 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 16 0 20 0;
+#X connect 20 0 6 0;
+#X connect 20 1 23 0;
+#X connect 21 0 24 0;

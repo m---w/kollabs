@@ -1,0 +1,152 @@
+#N canvas 373 22 882 691 10;
+#X obj 375 115 cnv 20 79 134 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 101 115 cnv 15 161 134 empty empty empty 3 8 0 14 -191407 -66577
+0;
+#X obj 265 115 cnv 20 107 134 empty empty empty 3 8 0 14 -191407 -66577
+0;
+#X obj 123 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -262144;
+#X obj 140 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 157 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 174 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 191 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 208 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 225 231 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 132 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -1 -262144
+-1;
+#X obj 149 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -1 -262144
+-1;
+#X obj 183 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -1 -262144
+-1;
+#X obj 200 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -1 -262144
+-1;
+#X obj 217 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -1 -262144
+-1;
+#X obj 104 223 bng 15 250 50 0 /\$1/midi/gen/note/octave/prev /\$1/midi/gen/note/octave/prev
+< 4 7 0 10 -260097 -1 -1;
+#X obj 244 223 bng 15 250 50 0 /\$1/midi/gen/note/octave/next /\$1/midi/gen/note/octave/next
+> 5 7 0 10 -260097 -1 -1;
+#X msg 35 292 0;
+#X msg 65 292 1;
+#X msg 95 292 2;
+#X msg 120 299 3;
+#X msg 150 299 4;
+#X msg 180 299 5;
+#X msg 210 299 6;
+#X msg 240 299 7;
+#X msg 270 299 8;
+#X msg 305 292 9;
+#X msg 335 292 10;
+#X msg 365 292 11;
+#X obj 223 196 nbx 3 14 -1e+37 1e+37 0 0 /\$1/midi/gen/note/octave
+/\$1/midi/gen/note/octave octave 0 -8 0 10 -260097 -1 -1 3 256;
+#X obj 184 138 nbx 4 14 0 9999 0 0 /\$1/midi/gen/note/duration /\$1/midi/gen/note/duration
+duration 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 144 138 nbx 3 14 0 127 0 0 /\$1/midi/gen/note/velocity /\$1/midi/gen/note/velocity
+vel 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 104 138 nbx 3 14 0 127 0 0 /\$1/midi/gen/note/nr /\$1/midi/gen/note/nr
+note 0 -8 0 10 -262144 -1 -1 17 256;
+#X obj 446 472 r /\$1/midi/gen/note/octave;
+#X obj 104 156 bng 15 250 50 0 /\$1/midi/gen/note/nr/prev /\$1/midi/gen/note/nr/prev
+< 4 7 0 10 -262144 -1 -1;
+#X obj 123 156 bng 15 250 50 0 /\$1/midi/gen/note/nr/next /\$1/midi/gen/note/nr/next
+> 5 7 0 10 -262144 -1 -1;
+#X obj 327 152 nbx 3 14 0 127 0 0 /\$1/midi/gen/ctl/value /\$1/midi/gen/ctl/value
+value 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 287 152 nbx 3 14 0 127 0 0 /\$1/midi/gen/ctl/nr /\$1/midi/gen/ctl/nr
+ctl 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 287 189 bng 15 250 50 0 /\$1/midi/gen/ctl/send /\$1/midi/gen/ctl/send
+send 17 7 0 10 -258113 -1 -1;
+#X obj 287 170 bng 15 250 50 0 /\$1/midi/gen/ctl/nr/prev /\$1/midi/gen/ctl/nr/prev
+< 4 7 0 10 -262144 -1 -1;
+#X obj 306 170 bng 15 250 50 0 /\$1/midi/gen/ctl/nr/next /\$1/midi/gen/ctl/nr/next
+> 5 7 0 10 -262144 -1 -1;
+#X obj 268 139 vsl 15 100 0 127 0 0 /\$1/midi/gen/ctl/value /\$1/midi/gen/ctl/value
+empty 0 -9 0 10 -1 -262144 -1 0 1;
+#X obj 327 170 bng 15 250 50 0 /\$1/midi/gen/ctl/value/prev /\$1/midi/gen/ctl/value/prev
+< 4 7 0 10 -262144 -1 -1;
+#X obj 346 170 bng 15 250 50 0 /\$1/midi/gen/ctl/value/next /\$1/midi/gen/ctl/value/next
+> 5 7 0 10 -262144 -1 -1;
+#X obj 144 156 bng 15 250 50 0 /\$1/midi/gen/note/velocity/prev /\$1/midi/gen/note/velocity/prev
+< 4 7 0 10 -262144 -1 -1;
+#X obj 163 156 bng 15 250 50 0 /\$1/midi/gen/note/velocity/next /\$1/midi/gen/note/velocity/next
+> 5 7 0 10 -262144 -1 -1;
+#X obj 195 358 s /\$1/midi/gen/note/kbd;
+#X obj 431 448 r /\$1/midi/gen/note/kbd;
+#X obj 378 139 vsl 15 100 0 16383 0 0 /\$1/midi/gen/bend /\$1/midi/gen/bend
+empty 0 -9 0 10 -1 -262144 -1 0 1;
+#X obj 397 209 nbx 5 14 0 16383 0 0 /\$1/midi/gen/bend /\$1/midi/gen/bend
+bend 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 397 227 bng 15 250 50 0 /\$1/midi/gen/bend/prev /\$1/midi/gen/bend/prev
+< 4 7 0 10 -262144 -1 -1;
+#X obj 416 227 bng 15 250 50 0 /\$1/midi/gen/bend/next /\$1/midi/gen/bend/next
+> 5 7 0 10 -262144 -1 -1;
+#X obj 287 208 tgl 15 0 /\$1/midi/gen/ctl/send/ctl /\$1/midi/gen/ctl/send/ctl
+send_on_ctl 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 287 227 tgl 15 0 /\$1/midi/gen/ctl/send/val /\$1/midi/gen/ctl/send/val
+send_on_val 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 104 175 tgl 15 0 /\$1/midi/gen/note/send/note /\$1/midi/gen/note/send/note
+send_on_note 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 104 195 tgl 15 0 /\$1/midi/gen/note/send/vel /\$1/midi/gen/note/send/vel
+send_on_vel 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 184 156 bng 15 250 50 0 /\$1/midi/gen/note/send /\$1/midi/gen/note/send
+send 17 7 0 10 -258113 -1 -1;
+#X obj 457 115 cnv 20 42 134 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 460 138 nbx 3 14 1 128 0 0 /\$1/midi/gen/ch /\$1/midi/gen/ch
+ch 0 -8 0 10 -257985 -1 -1 1 256;
+#X obj 460 197 vradio 15 1 0 3 /\$1/midi/gen/dest /\$1/midi/gen/dest
+dest 0 -8 0 10 -4034 -1 -1 0;
+#X text 476 197 in;
+#X text 476 212 out;
+#X obj 460 156 bng 15 250 50 0 /\$1/midi/gen/ch/prev /\$1/midi/gen/ch/prev
+< 4 7 0 10 -257985 -1 -1;
+#X obj 479 156 bng 15 250 50 0 /\$1/midi/gen/ch/next /\$1/midi/gen/ch/next
+> 5 7 0 10 -257985 -1 -1;
+#X text 321 628 (c)2011 \, Marian Weger;
+#X text 112 51 midi_gen_gui <domain>;
+#X obj 431 521 s /\$1/midi/gen/note/nr;
+#X text 476 226 gen;
+#X obj 431 309 prev-next /\$1/midi/gen/note/nr 0 127 1;
+#X obj 431 349 prev-next /\$1/midi/gen/note/octave 0 127 12;
+#X obj 431 289 prev-next /\$1/midi/gen/ch 1 16 1;
+#X obj 431 329 prev-next /\$1/midi/gen/note/velocity 0 127 1;
+#X obj 431 369 prev-next /\$1/midi/gen/ctl/value 0 127 1;
+#X obj 431 389 prev-next /\$1/midi/gen/ctl/nr 0 127 1;
+#X obj 431 409 prev-next /\$1/midi/gen/bend 0 16383 1;
+#X obj 431 497 + 0;
+#X connect 3 0 17 0;
+#X connect 4 0 19 0;
+#X connect 5 0 21 0;
+#X connect 6 0 22 0;
+#X connect 7 0 24 0;
+#X connect 8 0 26 0;
+#X connect 9 0 28 0;
+#X connect 10 0 18 0;
+#X connect 11 0 20 0;
+#X connect 12 0 23 0;
+#X connect 13 0 25 0;
+#X connect 14 0 27 0;
+#X connect 17 0 46 0;
+#X connect 18 0 46 0;
+#X connect 19 0 46 0;
+#X connect 20 0 46 0;
+#X connect 21 0 46 0;
+#X connect 22 0 46 0;
+#X connect 23 0 46 0;
+#X connect 24 0 46 0;
+#X connect 25 0 46 0;
+#X connect 26 0 46 0;
+#X connect 27 0 46 0;
+#X connect 28 0 46 0;
+#X connect 33 0 75 1;
+#X connect 47 0 75 0;
+#X connect 75 0 66 0;
+#X coords 0 -1 1 1 400 150 1 100 100;

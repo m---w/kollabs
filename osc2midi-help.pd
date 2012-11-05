@@ -1,0 +1,96 @@
+#N canvas 259 22 931 684 10;
+#X text 23 14 osc2midi <domain> <osc-name> <midi-type> <cc#/note#/prg#/...>
+<ch#> <scaling> <offset> <interpol.time>;
+#X obj 20 102 cnv 15 225 230 empty empty MIDI_Input 20 12 0 14 -204786
+-66577 0;
+#X obj 250 102 cnv 15 225 230 empty empty MIDI_Output 20 12 0 14 -204786
+-66577 0;
+#X text 113 137 (logic);
+#X text 72 180 (Graphical User Interface);
+#X text 348 157 (logic);
+#X text 307 200 (Graphical User Interface);
+#X obj 480 102 cnv 15 415 230 empty empty MIDI_Message_Generator 20
+12 0 14 -204786 -66577 0;
+#X text 573 133 (logic);
+#X text 726 157 (Graphical User Interface);
+#X text 403 32 (c)2012 Marian Weger;
+#X text 540 583 All parameters are registered for state-saving with
+the corresponding storage-domain. See [ds-help] for more information
+on this topic.;
+#X text 540 533 For more information on how to register variables to
+OSC \, see [osc-help].;
+#X text 540 443 [osc2midi] connects a variable \, that is already registered
+for OSC control to a given MIDI-message. The message is connected uni-
+or bidirectional \, according to the OSC settings.;
+#X obj 20 342 cnv 15 435 60 empty empty 1st:_register_variable_for_OSC
+20 12 0 14 -262130 -66577 0;
+#X obj 42 374 osc_bi \$0 /i/map/osc/to/midi;
+#X obj 30 199 midi_in_gui \$0;
+#X obj 30 137 midi_in \$0;
+#X obj 260 157 midi_out \$0;
+#X obj 260 219 midi_out_gui \$0;
+#X obj 488 134 midi_gen \$0;
+#X obj 488 176 midi_gen_gui \$0;
+#X obj 20 410 cnv 15 500 250 empty empty 2nd:_connect_OSC_to_MIDI 20
+12 0 14 -261234 -66577 0;
+#X text 99 525 |;
+#X text 99 545 |;
+#X text 99 555 |;
+#X text 129 545 |;
+#X text 129 555 |;
+#X text 99 535 |;
+#X text 129 535 osc-name;
+#X text 230 455 |;
+#X text 230 475 |;
+#X text 230 485 |;
+#X text 253 475 |;
+#X text 253 485 |;
+#X text 230 465 |;
+#X text 230 495 |;
+#X text 230 505 |;
+#X text 253 495 |;
+#X text 253 505 |;
+#X text 230 515 |;
+#X text 230 525 |;
+#X text 253 515 |;
+#X text 253 525 |;
+#X text 230 445 midi-control-type (ctl \, note \, bend \, etc.);
+#X text 253 465 midi cc#/prg#/note#/etc.;
+#X text 268 495 |;
+#X text 268 505 |;
+#X text 268 515 |;
+#X text 268 525 |;
+#X text 268 485 midi channel;
+#X text 282 515 |;
+#X text 282 525 |;
+#X text 230 535 |;
+#X text 230 545 |;
+#X text 253 535 |;
+#X text 253 545 |;
+#X text 268 535 |;
+#X text 268 545 |;
+#X text 282 535 |;
+#X text 282 545 |;
+#X text 293 535 |;
+#X text 293 545 |;
+#X text 282 505 value scaling;
+#X text 293 525 value offset;
+#X text 230 555 |;
+#X text 253 555 |;
+#X text 268 555 |;
+#X text 282 555 |;
+#X text 293 555 |;
+#X text 308 555 |;
+#X text 308 545 interpolation time;
+#X text 38 612 inlet 1: midi-out on(1)/off(0);
+#X text 38 632 inlet 2: midi-in on(1)/off(0);
+#X obj 40 575 osc2midi \$0 /i/map/osc/to/midi ctl 11 0 1 0 50;
+#X obj 460 342 cnv 15 435 60 empty empty Variable 20 12 0 14 -228856
+-66577 0;
+#X obj 605 373 hsl 128 15 0 127 0 0 /i/map/osc/to/midi /i/map/osc/to/midi
+/i/map/osc/to/midi -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 742 374 nbx 5 14 -1e+37 1e+37 0 0 /i/map/osc/to/midi /i/map/osc/to/midi
+/i/map/osc/to/midi 0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 20 72 cnv 15 875 25 empty empty General_MIDI_Modules 20 12 0
+14 -204786 -66577 0;
+#X text 99 515 domain;

@@ -83,10 +83,6 @@ window.;
 input);
 #X text 273 380 The graphical user interface provides debugging controls:
 ;
-#X text 273 300 [midi_out] provides MIDI output for the given domain
-(1st creation argument). It supports most midi message formats \, like
-control change \, note \, pitchbend \, etc. The first inlet takes midi
-messages and routes them to the right midi output.;
 #X text 273 410 "print" will print all outgoing midi messages.;
 #X text 273 430 "active" turns midi-out functionality on/off.;
 #X text 273 243 "active" turns midi-in functionality on/off.;
@@ -123,7 +119,7 @@ messages and routes them to the right midi output.;
 #X obj 530 903 hsl 128 15 1 105 0 0 /i/send/midi /i/send/midi /i/send/midi
 -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 667 904 nbx 5 14 -1e+37 1e+37 0 0 /i/send/midi /i/send/midi
-/i/send/midi 0 -8 0 10 -262144 -1 -1 1 256;
+/i/send/midi 0 -8 0 10 -262144 -1 -1 0 256;
 #X text 60 861 |;
 #X text 60 881 |;
 #X text 60 891 |;
@@ -251,7 +247,7 @@ input channel ("/<domain>/midi/in") \, output channel ("/<domain>/midi/out")
 #X obj 586 1038 hsl 128 15 5 130 0 0 /i/receive/midi /i/receive/midi
 /i/receive/midi -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 723 1039 nbx 5 14 -1e+37 1e+37 0 0 /i/receive/midi /i/receive/midi
-/i/receive/midi 0 -8 0 10 -262144 -1 -1 5 256;
+/i/receive/midi 0 -8 0 10 -262144 -1 -1 0 256;
 #X text 465 863 Turn on "print" in [midi_out_gui] above and play with
 this slider:;
 #X text 469 983 Turn on "print" in [midi_in_gui] and try to generate
@@ -338,7 +334,7 @@ between 0 and 127;
 #X obj 600 1249 hsl 128 15 -50 50 0 0 /i/do/both /i/do/both /i/do/both
 -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 737 1250 nbx 5 14 -1e+37 1e+37 0 0 /i/do/both /i/do/both /i/do/both
-0 -8 0 10 -262144 -1 -1 -50 256;
+0 -8 0 10 -262144 -1 -1 0 256;
 #X text 505 1176 Combination of [midi_s] and [midi_r] with feedback
 prevention.;
 #X text 468 956 Works just like [midi_s] \, but in opposite direction.
@@ -354,9 +350,9 @@ or bidirectional \, according to the OSC settings.;
 #X obj 430 1419 hsl 128 15 3 10 0 0 /i/map/osc/to/midi /i/map/osc/to/midi
 /i/map/osc/to/midi -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 567 1420 nbx 5 14 -1e+37 1e+37 0 0 /i/map/osc/to/midi /i/map/osc/to/midi
-/i/map/osc/to/midi 0 -8 0 10 -262144 -1 -1 3 256;
+/i/map/osc/to/midi 0 -8 0 10 -262144 -1 -1 0 256;
 #X text 297 1120 1st inlet: turn module on(1)/off(0);
-#X text 286 1349;
+#X text 286 1349 comment;
 #X text 286 1329 1st inlet: midi-out on(1)/off(0) \,;
 #X text 488 1329 2nd inlet: midi-in on(1)/off(0).;
 #X text 247 911 1st inlet: turn module on(1)/off(0);
@@ -370,4 +366,9 @@ or bidirectional \, according to the OSC settings.;
 #X text 658 1269 (-50...50);
 #X text 621 1058 (5...130);
 #X text 561 919 (1...105);
+#X text 273 300 [midi_out] provides MIDI output for the given domain
+(1st creation argument). It supports most midi message formats \, like
+control change \, note \, pitchbend \, etc. "/<domain>/midi/out" or
+the first inlet takes midi messages and routes them to the right midi
+output.;
 #X coords 0 756 1 755 85 60 0;

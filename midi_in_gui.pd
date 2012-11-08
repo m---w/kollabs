@@ -17,7 +17,7 @@ info 17 7 0 10 -262144 -1 -1 0 1;
 10 -191407 -1 -1 0 256;
 #X obj 104 146 cnv 14 55 13 empty empty empty 20 12 0 14 -262144 -66577
 0;
-#X symbolatom 104 146 9 0 0 0 - - -;
+#X symbolatom 104 146 9 0 0 1 type - -;
 #X obj 393 196 unpack s f f f;
 #X obj 373 37 loadbang;
 #X msg 373 59 symbol;

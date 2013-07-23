@@ -4,7 +4,7 @@
 <scaling> <offset> <interpol.time> <grain rate>;
 #X obj 91 141 spigot 1;
 #X msg 91 193 \$3 \$2 \$1;
-#X obj 91 94 r /\$1/midi/in;
+#X obj 91 94 r /midi/\$1/in;
 #N canvas 499 22 270 248 init 0;
 #X obj 63 49 loadbang;
 #X msg 63 115 1;

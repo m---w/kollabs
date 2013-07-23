@@ -19,9 +19,9 @@
 #X text 322 24 midi_out <domain>;
 #X obj 391 80 spigot 1;
 #X obj 391 102 print MIDI_OUT;
-#X obj 137 37 r /\$1/midi/out;
-#X obj 182 84 r /\$1/midi/out/active;
-#X obj 436 55 r /\$1/midi/out/print;
+#X obj 137 37 r /midi/\$1/out;
+#X obj 182 84 r /midi/\$1/out/active;
+#X obj 436 55 r /midi/\$1/out/print;
 #X obj 254 37 inlet;
 #X connect 0 0 13 0;
 #X connect 2 0 1 0;

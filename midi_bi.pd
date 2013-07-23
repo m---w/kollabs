@@ -2,7 +2,7 @@
 #X text 430 514 (c)2011 \, Marian Weger;
 #X obj 287 127 spigot 1;
 #X msg 287 179 \$3 \$2 \$1;
-#X obj 287 80 r /\$1/midi/in;
+#X obj 287 80 r /midi/\$1/in;
 #X obj 37 142 spigot 1;
 #X obj 37 80 r \$2;
 #X obj 37 360 + 0.5;
@@ -58,7 +58,7 @@
 #X obj 112 462 r \$0-channel;
 #X obj 287 231 route 1;
 #X obj 326 209 r \$0-channel;
-#X obj 37 527 s /\$1/midi/out;
+#X obj 37 527 s /midi/\$1/out;
 #X obj 37 220 route float;
 #X obj 194 158 loadbang;
 #X obj 194 180 symbol \$3;

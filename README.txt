@@ -9,11 +9,26 @@ Description
 -----------
 
 KOLLABS is an abstraction library for Pure Data, that covers data management, OSC- and MIDI-communication and state saving.
-    
+
 This library is still work in progress.
     
 For questions or bug reports, contact me:
 mail@marianweger.com
+
+
+Getting started
+---------------
+
+open [ds-help] for state-saving.
+open [midi-help] for MIDI communication,
+open [osc-help] for OSC communication
+
+
+Requirements
+------------
+
+Kollabs is built completely in Pd-Vanilla and thereby does not require any external libraries (except mrpeach/iemnet for OSC communication).
+It works with any Pd version above 0.42, but >= 0.43 is highly recommended.
 
 
 Source

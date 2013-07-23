@@ -8,7 +8,10 @@
 #X text 74 195 if the indexed element is not existent \, a "bang" will
 be sent to the output.;
 #X text 17 16 list_read <index init (optional)>;
+#X obj 30 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
 #X connect 5 0 3 1;
+#X connect 8 0 3 0;

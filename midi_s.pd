@@ -14,7 +14,7 @@
 #X obj 37 433 list append \$4;
 #X obj 37 401 list prepend \$3;
 #X text 249 472 (c)2011 \, Marian Weger;
-#X obj 37 537 s /\$1/midi/out;
+#X obj 37 537 s /midi/\$1/out;
 #X obj 37 507 list trim;
 #N canvas 499 22 270 248 init 0;
 #X obj 63 49 loadbang;

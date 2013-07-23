@@ -1,4 +1,4 @@
-#N canvas 463 341 470 347 10;
+#N canvas 39 323 470 347 10;
 #X obj 74 109 inlet;
 #X obj 201 109 inlet;
 #X text 226 10 0: left inlet to left outlet;
@@ -8,8 +8,8 @@
 #X obj 74 279 outlet;
 #X obj 119 161 == 0;
 #X obj 201 161 != 0;
-#X obj 119 86 loadbang;
-#X obj 119 108 float \$1;
+#X obj 119 87 loadbang;
+#X obj 119 109 float \$1;
 #X obj 156 257 spigot 0;
 #X text 244 287 (c)2012 Marian Weger;
 #X text 43 11 kdemux2 <init value>;

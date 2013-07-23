@@ -5,9 +5,9 @@
 #X obj 104 118 tgl 15 0 \$1/midi/in/print \$1/midi/in/print print 17
 7 0 10 -262144 -1 -1 0 1;
 #X text 173 25 midi_in_gui: <domain>;
-#X obj 172 118 tgl 15 0 /\$1/midi/in/showinfo /\$1/midi/in/showinfo
+#X obj 172 118 tgl 15 0 /midi/\$1/in/showinfo /midi/\$1/in/showinfo
 info 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 242 118 tgl 15 0 /\$1/midi/in/active /\$1/midi/in/active active
+#X obj 242 118 tgl 15 0 /midi/\$1/in/active /midi/\$1/in/active active
 17 7 0 10 -4034 -1 -1 1 1;
 #X obj 122 182 nbx 5 14 -1e+37 1e+37 0 0 empty empty value_1 0 -8 0
 10 -191407 -1 -1 0 256;
@@ -25,17 +25,17 @@ info 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 393 146 t a b;
 #X obj 104 181 bng 15 250 50 0 empty empty empty 17 7 0 10 -191407
 -1 -1;
-#X obj 242 145 tgl 15 0 /\$1/midi/in/raw /\$1/midi/in/raw raw 17 7
+#X obj 242 145 tgl 15 0 /midi/\$1/in/raw /midi/\$1/in/raw raw 17 7
 0 10 -262144 -1 -1 0 1;
 #N canvas 755 69 371 260 init 0;
 #X obj 123 75 loadbang;
 #X obj 123 97 list prepend \$1;
-#X msg 123 119 \; /\$1/midi/in/active 1 \; /\$1/midi/in/showinfo 0
-\; /\$1/midi/in/print 0 \;;
+#X msg 123 119 \; /midi/\$1/in/active 1 \; /midi/\$1/in/showinfo 0
+\; /midi/\$1/in/print 0 \;;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 229 265 pd init;
-#X obj 393 124 r /\$1/midi/in/info;
+#X obj 393 124 r /midi/\$1/in/info;
 #X connect 11 0 10 0;
 #X connect 11 1 6 0;
 #X connect 11 2 7 0;

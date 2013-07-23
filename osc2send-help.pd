@@ -1,7 +1,5 @@
 #N canvas 678 110 351 374 10;
 #X text 28 -59 osc2send;
-#X text 27 -22 routes them to the corresponding send;
-#X text 27 -32 takes osc style messages and;
 #X floatatom 42 25 5 0 0 0 - - -;
 #X msg 42 44 /bla/blub \$1;
 #X obj 42 86 osc2send;
@@ -15,12 +13,14 @@
 #X symbolatom 206 179 10 0 0 0 - - -;
 #X text 49 233 (c)2011 Marian Weger;
 #X msg 149 44 /pling/plong \$1 #blip?\$1;
-#X connect 3 0 4 0;
+#X text 27 -32 takes osc style messages and routes them to the corresponding
+send/receive;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
 #X connect 4 0 5 0;
-#X connect 6 0 7 0;
-#X connect 8 0 14 0;
-#X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 10 1 12 0;
-#X connect 14 0 5 0;
+#X connect 6 0 12 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 12 0 3 0;
 #X coords 0 374 1 373 85 60 0;

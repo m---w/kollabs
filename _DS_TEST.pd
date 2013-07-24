@@ -1,4 +1,4 @@
-#N canvas 204 22 1075 737 10;
+#N canvas 187 22 1075 737 10;
 #X floatatom 70 449 5 0 0 0 - - -;
 #X msg 70 468 list kjbasd 9b2f #*lafn \$1_88 n\$1;
 #X obj 70 490 list;
@@ -27,14 +27,13 @@
 #X obj 60 66 ds_scheduler domain osc oscdomain;
 #X obj 60 86 ds_transition domain osc oscdomain;
 #X obj 60 46 ds_logic domain osc oscdomain;
-#X obj 679 548 ds_reg domain /variable1;
-#X obj 183 388 list-compare;
 #X obj 679 668 ds_reg domain /mytable1 table;
 #X obj 679 568 ds_reg domain /variable2;
 #X obj 679 588 ds_reg domain /variable3;
 #X obj 679 608 ds_reg domain /variable4;
 #X obj 679 628 ds_reg domain /variable5;
 #X obj 679 648 ds_reg domain /variable6;
+#X obj 679 548 ds_reg domain /variable1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;

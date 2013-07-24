@@ -63,7 +63,7 @@
 #X connect 9 0 6 0;
 #X connect 10 0 2 0;
 #X restore 353 126 pd copy_paste_settings;
-#N canvas 757 134 354 463 register 0;
+#N canvas 757 134 354 463 register 1;
 #X obj 53 42 ds_reg_settings \$1 \$2/occupy;
 #X obj 103 138 r /ds/\$1\$2/busy;
 #X obj 103 160 t b f;

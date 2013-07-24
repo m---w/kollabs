@@ -10,7 +10,7 @@
 #X obj 174 183 bng 15 250 50 0 /ds/\$1/reload /ds/\$1/reload reload
 17 7 0 10 -4034 -1 -1;
 #X obj 123 119 nbx 3 15 0 1e+37 0 0 /ds/\$1/scene/current /ds/\$1/scene/current
-empty 0 -8 0 12 -204786 -1 -1 0 256;
+empty 0 -8 0 12 -204786 -1 -1 2 256;
 #X obj 104 119 bng 15 250 50 0 /ds/\$1/scene/current/prev /ds/\$1/scene/current/prev
 < 4 7 0 10 -204786 -1 -1;
 #X obj 174 119 bng 15 250 50 0 /ds/\$1/scene/current/next /ds/\$1/scene/current/next
@@ -22,7 +22,7 @@ advanced 17 7 0 10 -262144 -1 -1;
 #X obj 196 140 bng 15 250 50 0 /ds/\$1/store /ds/\$1/store store 17
 7 0 10 -258113 -1 -1;
 #X obj 123 140 nbx 3 15 0 1e+37 0 0 /ds/\$1/scene/selected /ds/\$1/scene/selected
-empty 0 -8 0 12 -261234 -1 -1 23 256;
+empty 0 -8 0 12 -261234 -1 -1 2 256;
 #X obj 104 140 bng 15 250 50 0 /ds/\$1/scene/selected/prev /ds/\$1/scene/selected/prev
 < 4 7 0 10 -261234 -1 -1;
 #X obj 174 140 bng 15 250 50 0 /ds/\$1/scene/selected/next /ds/\$1/scene/selected/next
@@ -262,46 +262,46 @@ debug 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 136 101 r /ds/\$1/edit/vis;
 #X obj 136 126 anyonce /ds/\$1/edit/vis;
 #X obj 136 205 s pd-\$0-edit;
-#N canvas 97 54 219 276 \$0-edit 1;
-#X obj 4 -275 cnv 15 98 50 empty empty all 5 10 0 14 -233017 -66577
+#N canvas 97 54 215 278 \$0-edit 1;
+#X obj 4 -273 cnv 15 98 50 empty empty all 5 10 0 14 -233017 -66577
 0;
-#X obj 4 -221 cnv 15 200 30 empty empty selected 5 10 0 14 -233017
+#X obj 4 -219 cnv 15 200 30 empty empty selected 5 10 0 14 -233017
 -66577 0;
-#X obj 140 -211 nbx 5 14 -1e+37 1e+37 0 0 /ds/\$1/scene/selected /ds/\$1/scene/selected
-empty 0 -8 0 10 -261234 -1 -1 23 256;
-#X obj 14 -250 bng 15 250 50 0 /ds/\$1/edit/clear /ds/\$1/edit/clear
+#X obj 14 -248 bng 15 250 50 0 /ds/\$1/edit/clear /ds/\$1/edit/clear
 delete 17 7 0 10 -258113 -1 -1;
-#X obj 106 -275 cnv 15 98 50 empty empty lock 5 10 0 14 -1 -262144
+#X obj 106 -273 cnv 15 98 50 empty empty lock 5 10 0 14 -1 -262144
 0;
-#X obj 167 -262 tgl 25 0 /ds/\$1/edit/lock /ds/\$1/edit/lock empty
+#X obj 167 -260 tgl 25 0 /ds/\$1/edit/lock /ds/\$1/edit/lock empty
 22 12 0 10 -262144 -1 -262144 1 1;
-#X obj 4 -189 cnv 15 79 180 empty empty empty 5 10 0 14 -228856 -66577
+#X obj 4 -187 cnv 15 79 180 empty empty empty 5 10 0 14 -228856 -66577
 0;
-#X obj 85 -189 cnv 15 119 180 empty empty empty 5 10 0 14 -228856 -66577
+#X obj 85 -187 cnv 15 119 180 empty empty empty 5 10 0 14 -228856 -66577
 0;
-#X obj 14 -140 bng 15 250 50 0 /ds/\$1/edit/scene/cut /ds/\$1/edit/scene/cut
+#X obj 14 -138 bng 15 250 50 0 /ds/\$1/edit/scene/cut /ds/\$1/edit/scene/cut
 cut 17 7 0 10 -260097 -1 -1;
-#X obj 14 -120 bng 15 250 50 0 /ds/\$1/edit/scene/delete /ds/\$1/edit/scene/delete
+#X obj 14 -118 bng 15 250 50 0 /ds/\$1/edit/scene/delete /ds/\$1/edit/scene/delete
 delete 17 7 0 10 -258113 -1 -1;
-#X obj 94 -160 bng 15 250 50 0 /ds/\$1/edit/scene/paste-override /ds/\$1/edit/scene/paste-override
+#X obj 94 -158 bng 15 250 50 0 /ds/\$1/edit/scene/paste-override /ds/\$1/edit/scene/paste-override
 paste_overwrite 17 7 0 10 -4160 -1 -1;
-#X obj 14 -160 bng 15 250 50 0 /ds/\$1/edit/scene/copy /ds/\$1/edit/scene/copy
+#X obj 14 -158 bng 15 250 50 0 /ds/\$1/edit/scene/copy /ds/\$1/edit/scene/copy
 copy 17 7 0 10 -257985 -1 -1;
-#X obj 94 -120 bng 15 250 50 0 /ds/\$1/edit/scene/insert /ds/\$1/edit/scene/insert
+#X obj 94 -118 bng 15 250 50 0 /ds/\$1/edit/scene/insert /ds/\$1/edit/scene/insert
 insert_blank 17 7 0 10 -4034 -1 -1;
-#X obj 94 -140 bng 15 250 50 0 /ds/\$1/edit/scene/paste-insert /ds/\$1/edit/scene/paste-insert
+#X obj 94 -138 bng 15 250 50 0 /ds/\$1/edit/scene/paste-insert /ds/\$1/edit/scene/paste-insert
 paste_insert 17 7 0 10 -4032 -1 -1;
-#X obj 14 -180 bng 15 250 50 0 /ds/\$1/edit/scene/clear /ds/\$1/edit/scene/clear
+#X obj 14 -178 bng 15 250 50 0 /ds/\$1/edit/scene/clear /ds/\$1/edit/scene/clear
 clear 17 7 0 10 -159808 -1 -1;
-#X obj 94 -50 tgl 15 0 /ds/\$1/edit/scene/paste/data /ds/\$1/edit/scene/paste/data
-data 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 94 -90 tgl 15 0 /ds/\$1/edit/scene/paste/settings /ds/\$1/edit/scene/paste/settings
-settings 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 94 -70 tgl 15 0 /ds/\$1/edit/scene/paste/tables /ds/\$1/edit/scene/paste/tables
-tables 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 94 -30 tgl 15 0 /ds/\$1/edit/scene/paste/properties /ds/\$1/edit/scene/paste/properties
-properties 17 7 0 10 -262144 -1 -1 0 1;
-#X coords 0 276 1 275 85 60 0;
+#X obj 94 -48 tgl 15 0 /ds/\$1/edit/scene/paste/data /ds/\$1/edit/scene/paste/data
+data 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 94 -88 tgl 15 0 /ds/\$1/edit/scene/paste/settings /ds/\$1/edit/scene/paste/settings
+settings 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 94 -68 tgl 15 0 /ds/\$1/edit/scene/paste/tables /ds/\$1/edit/scene/paste/tables
+tables 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 94 -28 tgl 15 0 /ds/\$1/edit/scene/paste/properties /ds/\$1/edit/scene/paste/properties
+properties 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 124 -212 nbx 3 15 0 1e+37 0 0 /ds/\$1/scene/selected /ds/\$1/scene/selected
+empty 0 -8 0 12 -261234 -1 -1 0 256;
+#X coords 0 278 1 277 85 60 0;
 #X restore 136 231 pd \$0-edit;
 #X obj 221 205 s /ds/\$1/edit/lock;
 #X msg 221 183 1;

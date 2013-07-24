@@ -19,12 +19,12 @@
 ;
 #X obj -565 227 ds_reg_global \$1 /reg/settings/buffer/occupy;
 #X restore 56 131 pd register_settings_buffer;
-#N canvas 438 22 532 526 init 1;
+#N canvas 438 22 532 526 init 0;
 #X obj 142 16 loadbang;
-#X obj 299 82 list prepend \$1;
-#X obj 170 455 r /ds/\$1/transition/check/question;
-#X obj 170 497 s /ds/\$1/transition/check/answer;
-#X msg 299 112 \; /ds/\$1/store/settings/state 1 \; /ds/\$1/recall/settings/state
+#X obj 299 122 list prepend \$1;
+#X obj 170 495 r /ds/\$1/transition/check/question;
+#X obj 170 537 s /ds/\$1/transition/check/answer;
+#X msg 299 152 \; /ds/\$1/store/settings/state 1 \; /ds/\$1/recall/settings/state
 1 \; /ds/\$1/transition/state 1 \; /ds/\$1/occupy 1 \; /ds/\$1/morph
 1 \; /ds/\$1/occupy/override 0 \; /ds/\$1/slave 1 \; /ds/\$1/delay
 1 \; /ds/\$1/reg/settings/buffer/slave 0 \; /ds/\$1/reg/settings/buffer/delay
@@ -33,7 +33,7 @@
 0 \; /ds/\$1/reg/settings/buffer/morph/curve/weight 0 \; /ds/\$1/reg/settings/buffer/morph/curve/quality
 0 \; /ds/\$1/reg/settings/buffer/morph/curve/resolution 128 \; /ds/\$1/reg/settings/buffer/occupy
 0 \; /ds/\$1/transition/busy 0 \; /ds/\$1/transition/paused 0 \;;
-#X obj 142 420 del 100;
+#X obj 142 460 del 100;
 #N canvas 80 22 899 619 FLAGS 0;
 #X obj 70 109 list split 1;
 #X obj 104 131 t l;
@@ -69,7 +69,7 @@
 #X connect 14 0 5 0;
 #X connect 14 1 8 0;
 #X connect 14 2 7 0;
-#X restore 170 199 pd FLAGS;
+#X restore 170 239 pd FLAGS;
 #N canvas 655 79 611 540 MODULE_LOADER 0;
 #X msg 467 493 clear;
 #X obj 181 353 * 20;
@@ -118,9 +118,12 @@
 #X connect 17 0 9 0;
 #X connect 18 0 6 0;
 #X connect 19 0 3 0;
-#X restore 187 175 pd MODULE_LOADER;
-#X obj 142 38 t b b b b;
-#X connect 0 0 8 0;
+#X restore 187 215 pd MODULE_LOADER;
+#X obj 142 78 t b b b b;
+#X obj 142 44 loadonce /ds/\$1/logic/init;
+#X obj 295 96 s /ds/\$1/print;
+#X msg 295 74 ERROR [ds_transition] multiply defined!;
+#X connect 0 0 9 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 5 0 3 0;
@@ -128,6 +131,9 @@
 #X connect 8 1 6 0;
 #X connect 8 2 7 0;
 #X connect 8 3 1 0;
+#X connect 9 0 8 0;
+#X connect 9 1 11 0;
+#X connect 11 0 10 0;
 #X restore 56 91 pd init;
 #N canvas 322 375 450 300 register 0;
 #X obj 94 98 ds_reg_global \$1 /occupy;
@@ -184,5 +190,5 @@
 #X connect 19 0 14 0;
 #X restore 56 151 pd transition_busy;
 #N canvas 0 22 450 300 \$0-modules 0;
-#X obj 30 9630 ds_transition_osc domain oscdomain 0 0 0 0 0;
+#X obj 30 50 ds_transition_osc domain oscdomain 0 0 0 0 0;
 #X restore 56 171 pd \$0-modules;

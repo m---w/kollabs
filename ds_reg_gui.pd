@@ -42,27 +42,27 @@ show_buffer 17 7 0 10 -257985 -1 -1;
 0;
 #X text 36 25 ds_reg_gui <domain> <name>;
 #X obj 250 204 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1\$2/morph/time /ds/\$1\$2/morph/time
-time/s: -45 7 0 10 -233016 -1 -1 0 256;
+time/s: -45 7 0 10 -24198 -1 -1 0 256;
 #X obj 111 204 tgl 15 0 /ds/\$1\$2/morph /ds/\$1\$2/morph morph 17
-7 0 10 -233016 -1 -1 0 1;
+7 0 10 -258699 -1 -1 0 1;
 #X obj 250 230 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1\$2/morph/curve/shape
-/ds/\$1\$2/morph/curve/shape empty 47 7 0 10 -233016 -1 -1 0 256;
+/ds/\$1\$2/morph/curve/shape empty 47 7 0 10 -24198 -1 -1 0 256;
 #X obj 111 288 nbx 4 14 10 10000 0 0 /ds/\$1\$2/morph/curve/resolution
-/ds/\$1\$2/morph/curve/resolution resolution 0 -8 0 10 -233016 -1 -1
+/ds/\$1\$2/morph/curve/resolution resolution 0 -8 0 10 -225271 -1 -1
 10 256;
 #X obj 324 288 hradio 15 1 0 3 /ds/\$1\$2/morph/curve/quality /ds/\$1\$2/morph/curve/quality
-quality 0 -8 0 10 -233016 -1 -1 0;
+quality 0 -8 0 10 -225271 -1 -1 0;
 #X obj 324 230 bng 20 250 50 0 /ds/\$1\$2/morph/curve/vis /ds/\$1\$2/morph/curve/vis
-show 23 10 0 10 -233016 -1 -1;
+show 23 10 0 10 -24198 -1 -1;
 #X obj 199 288 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1\$2/morph/timegrain
-/ds/\$1\$2/morph/timegrain time-grain/ms 0 -8 0 10 -233016 -1 -1 0
+/ds/\$1\$2/morph/timegrain time-grain/ms 0 -8 0 10 -225271 -1 -1 0
 256;
 #X obj 114 251 hsl 128 15 0 1 0 0 /ds/\$1\$2/morph/curve/weight /ds/\$1\$2/morph/curve/weight
-weight 5 8 0 10 -233016 -1 -1 0 1;
+weight 5 8 0 10 -24198 -1 -1 0 1;
 #X obj 114 230 hsl 128 15 -10 10 0 0 /ds/\$1\$2/morph/curve/shape /ds/\$1\$2/morph/curve/shape
-shape 5 8 0 10 -233016 -1 -1 0 1;
+shape 5 8 0 10 -24198 -1 -1 6350 1;
 #X obj 250 251 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1\$2/morph/curve/weight
-/ds/\$1\$2/morph/curve/weight empty 47 7 0 10 -233016 -1 -1 0 256;
+/ds/\$1\$2/morph/curve/weight empty 47 7 0 10 -24198 -1 -1 0 256;
 #X obj 63 504 loadbang;
 #X obj 90 552 list prepend \$1 \$2;
 #X obj 63 734 r /ds/\$1\$2/name_prepend;

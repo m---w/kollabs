@@ -1,4 +1,4 @@
-#N canvas 339 22 1075 737 10;
+#N canvas 405 22 1075 737 10;
 #X floatatom 70 449 5 0 0 0 - - -;
 #X msg 70 468 list kjbasd 9b2f #*lafn \$1_88 n\$1;
 #X obj 70 490 list;
@@ -6,13 +6,13 @@
 #X symbolatom 70 590 10 0 0 0 - - -;
 #X obj 70 609 s /variable2;
 #X obj 55 655 vsl 15 128 0 127 0 0 /variable3 /variable3 3 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 12100 1;
 #X obj 75 655 vsl 15 128 0 127 0 0 /variable4 /variable4 4 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 10900 1;
 #X obj 95 655 vsl 15 128 0 127 0 0 /variable5 /variable5 5 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 9100 1;
 #X obj 115 655 vsl 15 128 0 127 0 0 /variable6 /variable6 6 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 11800 1;
 #X obj 171 557 r /variable2;
 #X symbolatom 171 609 10 0 0 0 - - -;
 #X obj 318 461 r /variable1;

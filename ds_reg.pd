@@ -40,17 +40,17 @@
 #X obj 145 437 s /ds/\$1\$2/transition/in;
 #X obj 145 475 r /ds/\$1\$2/transition/out;
 #X obj 94 1608 s /ds/\$1\$2/dispatched;
-#N canvas 457 223 609 443 change 0;
+#N canvas 485 289 536 430 change 0;
 #X obj 105 43 inlet;
 #X obj 105 117 change;
-#X obj 105 329 outlet;
+#X obj 105 379 outlet;
 #X obj 168 117 t a a;
 #X obj 207 142 list length;
 #X obj 207 164 > 1;
 #X obj 168 189 kdemux2;
 #X obj 208 231 symbol;
 #X obj 208 253 schange;
-#X obj 208 275 list trim;
+#X obj 208 345 list trim;
 #X obj 105 75 route float;
 #X obj 287 27 r \$2;
 #X msg 287 71 set \$1;
@@ -59,7 +59,10 @@
 #X obj 389 118 > 1;
 #X obj 350 143 kdemux2;
 #X obj 287 49 route float;
-#X text 380 220 todo: change for lists!;
+#X obj 302 255 list-abs/list-compare;
+#X obj 302 304 list;
+#X obj 302 226 t a a;
+#X obj 302 277 sel 0;
 #X connect 0 0 10 0;
 #X connect 1 0 2 0;
 #X connect 3 0 6 0;
@@ -67,7 +70,7 @@
 #X connect 4 0 5 0;
 #X connect 5 0 6 1;
 #X connect 6 0 7 0;
-#X connect 6 1 2 0;
+#X connect 6 1 20 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 9 0 2 0;
@@ -80,8 +83,14 @@
 #X connect 14 0 15 0;
 #X connect 15 0 16 1;
 #X connect 16 0 8 1;
+#X connect 16 1 18 1;
 #X connect 17 0 12 0;
 #X connect 17 1 13 0;
+#X connect 18 0 21 0;
+#X connect 19 0 9 0;
+#X connect 20 0 18 0;
+#X connect 20 1 19 1;
+#X connect 21 0 19 0;
 #X restore 133 271 pd change;
 #X obj 94 247 kdemux2;
 #X obj 133 130 r /ds/\$1\$2/change;
@@ -617,20 +626,24 @@ occupy nooccupy table resize noresize;
 #X connect 79 0 42 1;
 #X restore 59 341 pd transition_loader;
 #N canvas 525 22 627 302 \$0-transition 0;
-#X obj 30 20 ds_transition_occupy domain /mytable1 table 0 0 0 0 0
-0 0 0 0 0 0 0;
-#X obj 30 60 ds_transition_slave domain /mytable1 table 0 0 0 0 0 0
-0 0 0 0 0 0;
-#X obj 30 100 ds_transition_delay domain /mytable1 table 0 0 0 0 0
-0 0 0 0 0 0 0;
-#X obj 381 180 s /ds/domain/mytable1/transition/out;
-#X obj 30 180 s /ds/domain/mytable1/dispatched;
+#X obj 30 20 ds_transition_occupy domain /variable1 0 0 0 0 0 0 0 0
+0 0 0 0 0;
+#X obj 30 60 ds_transition_slave domain /variable1 0 0 0 0 0 0 0 0
+0 0 0 0 0;
+#X obj 30 100 ds_transition_delay domain /variable1 0 0 0 0 0 0 0 0
+0 0 0 0 0;
+#X obj 30 140 ds_transition_morph domain /variable1 0 0 0 0 0 0 0 0
+0 0 0 0 0;
+#X obj 381 180 s /ds/domain/variable1/transition/out;
+#X obj 30 180 s /ds/domain/variable1/dispatched;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
-#X connect 2 0 4 0;
-#X connect 2 1 3 0;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 3 0 5 0;
+#X connect 3 1 4 0;
 #X restore 59 361 pd \$0-transition;
 #N canvas 151 242 403 420 route 0;
 #X obj 89 187 ds_route /ds/\$1\$2/data_prepend;
@@ -683,7 +696,7 @@ occupy nooccupy table resize noresize;
 #X connect 13 0 8 1;
 #X restore 59 241 pd fetch_and_route_loader;
 #N canvas 0 22 450 300 \$0-fetch_and_route 0;
-#X obj 30 20 ds_fetch_table domain /mytable1;
+#X obj 30 20 ds_fetch domain /variable1;
 #X restore 59 261 pd \$0-fetch_and_route;
 #N canvas 585 129 277 212 print 0;
 #X obj 64 86 r /ds/\$1\$2/print/out;

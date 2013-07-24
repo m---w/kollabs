@@ -252,7 +252,7 @@
 ======================== SCENE 10 ========================
 # PROPERTIES
 /duration 0
-/name <unnamed>
+/name bla blub 1 2 3
 # SETTINGS
 /variable1/morph/timegrain 20
 /variable1/morph/curve/quality 0

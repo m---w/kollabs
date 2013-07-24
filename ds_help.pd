@@ -1,4 +1,4 @@
-#N canvas 50 22 1208 756 10;
+#N canvas 63 22 1208 756 10;
 #X obj 10 62 cnv 15 751 80 empty empty empty 5 8 0 14 -233017 -66577
 0;
 #X obj 834 478 cnv 15 370 30 empty empty empty 20 12 0 14 -228856 -66577
@@ -795,12 +795,12 @@ control.;
 #X text 86 415 Look inside:;
 #X obj 66 387 cnv 15 260 20 empty empty [ds_logic]:_FLAGS 5 10 0 14
 -1 -262144 0;
-#N canvas 129 40 457 485 \$0-logic_flags 0;
+#N canvas 274 22 457 485 \$0-logic_flags 1;
 #X obj 4 25 cnv 15 430 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 34 135 cnv 15 370 160 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 34 114 cnv 15 370 20 empty empty direct 5 10 0 14 -1 -262144
+#X obj 34 114 cnv 15 370 20 empty empty simple 5 10 0 14 -1 -262144
 0;
 #X obj 186 268 osc2send-help;
 #X obj 34 341 cnv 15 370 100 empty empty empty 20 12 0 14 -262130 -66577
@@ -1764,4 +1764,10 @@ But a beginning with "/" is proposed to conform with the OSC standard.
 PD does allow.;
 #X restore 901 649 pd \$0-naming_syntax;
 #X obj 419 1253 ds_scheduler_gui help;
-#X coords 0 756 1 755 150 115 0;
+#X obj 651 390 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 651 410 vis 1;
+#X obj 651 432 s pd-\$0-logic_flags;
+#X connect 118 0 119 0;
+#X connect 119 0 120 0;
+#X coords 0 -1 1 1 771 2000 2 0 0;

@@ -1,4 +1,4 @@
-#N canvas 120 173 602 501 10;
+#N canvas 589 134 602 501 10;
 #N canvas 150 136 455 525 slave 0;
 #X obj 173 164 inlet;
 #X obj 200 481 outlet;
@@ -89,7 +89,7 @@
 #X connect 7 0 4 0;
 #X connect 10 0 5 0;
 #X restore 412 140 pd copy_paste_settings;
-#N canvas 718 279 264 179 INIT 0;
+#N canvas 349 314 264 179 INIT 0;
 #X obj 28 24 loadbang;
 #X obj 55 70 s /ds/\$1\$2/slave/reinit;
 #X obj 28 46 t b b;
@@ -116,13 +116,13 @@
 #X connect 7 0 4 0;
 #X restore 412 160 pd register;
 #X obj 255 427 s \$0-state;
-#X obj 192 165 t f b;
 #X obj 237 217 v /ds/\$1\$2/slave/lock/v;
 #X obj 220 346 v /ds/\$1/slave/v;
 #X obj 220 324 r \$0-loadbang;
 #X obj 237 239 == 0;
+#X obj 237 193 r \$0-loadbang;
 #X connect 0 0 10 0;
-#X connect 1 0 19 0;
+#X connect 1 0 3 0;
 #X connect 2 0 10 0;
 #X connect 2 1 0 0;
 #X connect 3 0 5 0;
@@ -134,9 +134,8 @@
 #X connect 8 0 2 0;
 #X connect 10 0 11 0;
 #X connect 10 1 12 0;
-#X connect 19 0 3 0;
-#X connect 19 1 20 0;
-#X connect 20 0 23 0;
-#X connect 21 0 6 0;
-#X connect 22 0 21 0;
-#X connect 23 0 3 1;
+#X connect 19 0 22 0;
+#X connect 20 0 6 0;
+#X connect 21 0 20 0;
+#X connect 22 0 3 1;
+#X connect 23 0 19 0;

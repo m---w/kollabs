@@ -636,7 +636,25 @@ occupy nooccupy table resize noresize;
 #X connect 79 1 78 0;
 #X connect 80 0 2 0;
 #X restore 59 341 pd transition_loader;
-#N canvas 525 22 627 302 \$0-transition 0;
+#N canvas 525 22 627 302 \$0-transition 1;
+#X obj 30 20 ds_transition_occupy help /i/am/a/slave slave 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X obj 30 60 ds_transition_slave help /i/am/a/slave slave 0 0 0 0 0
+0 0 0 0 0 0 0;
+#X obj 30 100 ds_transition_delay help /i/am/a/slave slave 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X obj 30 140 ds_transition_morph help /i/am/a/slave slave 0 0 0 0
+0 0 0 0 0 0 0 0;
+#X obj 381 180 s /ds/help/i/am/a/slave/transition/out;
+#X obj 30 180 s /ds/help/i/am/a/slave/dispatched;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 2 0 3 0;
+#X connect 2 1 3 1;
+#X connect 3 0 5 0;
+#X connect 3 1 4 0;
 #X restore 59 361 pd \$0-transition;
 #N canvas 151 242 403 420 route 0;
 #X obj 89 187 ds_route /ds/\$1\$2/data_prepend;
@@ -691,7 +709,7 @@ occupy nooccupy table resize noresize;
 #X connect 14 0 0 0;
 #X restore 59 241 pd fetch_and_route_loader;
 #N canvas 0 22 450 300 \$0-fetch_and_route 0;
-#X obj 30 20 ds_fetch domain /variable1;
+#X obj 30 20 ds_fetch help /i/am/a/slave;
 #X restore 59 261 pd \$0-fetch_and_route;
 #N canvas 585 129 277 212 print 0;
 #X obj 64 86 r /ds/\$1\$2/print/out;

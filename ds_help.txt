@@ -21,7 +21,7 @@
 /reg/settings/buffer/morph 0
 /reg/settings/buffer/delay 0
 /reg/settings/buffer/slave 0
-/print/debug/state 1
+/print/debug/state 0
 /print/datastream/state 0
 /print/errors/state 1
 /print/info/state 1
@@ -34,8 +34,8 @@
 /dispatch 1
 ======================== SCENE 0 ========================
 # PROPERTIES
-/name 
-/duration 0
+/name EEN
+/duration 23
 # SETTINGS
 /i/am/a/variable/morph/timegrain 20
 /i/am/a/variable/morph/curve/quality 0
@@ -197,8 +197,8 @@
 /i/am/both 15
 ======================== SCENE 1 ========================
 # PROPERTIES
-/name 
-/duration 0
+/name TWEE
+/duration 21
 # SETTINGS
 /i/am/a/variable/morph/timegrain 20
 /i/am/a/variable/morph/curve/quality 0
@@ -348,7 +348,7 @@
 /i/am/a/slave 59
 /i/am/another/morphing/variable 64
 /i/am/a/morphing/variable 61
-/i/am/occupied 3
+/i/am/occupied 47
 /i/got/changed 33
 /i/must/be/set 20
 /i/am/no/morphing/variable 100
@@ -359,8 +359,8 @@
 /i/am/both 36
 ======================== SCENE 2 ========================
 # PROPERTIES
-/name 
-/duration 0
+/name DRIE
+/duration 42
 # SETTINGS
 /i/am/a/variable/morph/timegrain 20
 /i/am/a/variable/morph/curve/quality 0
@@ -510,7 +510,7 @@
 /i/am/a/slave 107
 /i/am/another/morphing/variable 122
 /i/am/a/morphing/variable 123
-/i/am/occupied 3
+/i/am/occupied 101
 /i/got/changed 33
 /i/must/be/set 30
 /i/am/no/morphing/variable 11

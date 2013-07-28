@@ -49,13 +49,13 @@ time/s: -45 7 0 10 -24198 -1 -1 0 256;
 /ds/\$1\$2/morph/curve/shape empty 47 7 0 10 -24198 -1 -1 0 256;
 #X obj 111 288 nbx 4 14 10 10000 0 0 /ds/\$1\$2/morph/curve/resolution
 /ds/\$1\$2/morph/curve/resolution resolution 0 -8 0 10 -225271 -1 -1
-10 256;
+128 256;
 #X obj 324 288 hradio 15 1 0 3 /ds/\$1\$2/morph/curve/quality /ds/\$1\$2/morph/curve/quality
 quality 0 -8 0 10 -225271 -1 -1 0;
 #X obj 324 230 bng 20 250 50 0 /ds/\$1\$2/morph/curve/vis /ds/\$1\$2/morph/curve/vis
 show 23 10 0 10 -24198 -1 -1;
 #X obj 199 288 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1\$2/morph/timegrain
-/ds/\$1\$2/morph/timegrain time-grain/ms 0 -8 0 10 -225271 -1 -1 0
+/ds/\$1\$2/morph/timegrain time-grain/ms 0 -8 0 10 -225271 -1 -1 20
 256;
 #X obj 114 251 hsl 128 15 0 1 0 0 /ds/\$1\$2/morph/curve/weight /ds/\$1\$2/morph/curve/weight
 weight 5 8 0 10 -24198 -1 -1 0 1;
@@ -78,7 +78,7 @@ shape 5 8 0 10 -24198 -1 -1 6350 1;
 #X obj 63 988 s /ds/\$1\$2/data_append/gui;
 #X obj 63 944 r /ds/\$1\$2/data_append;
 #X obj 181 365 tgl 15 0 \$0-dummy /ds/\$1\$2/table table 17 7 0 10
--228856 -1 -1 1 1;
+-228856 -1 -1 0 1;
 #X obj 485 1081 s /ds/\$1\$2/name_prepend/resend;
 #X obj 485 1101 s /ds/\$1\$2/name_append/resend;
 #X obj 485 1121 s /ds/\$1\$2/data_prepend/resend;

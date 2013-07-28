@@ -1,137 +1,121 @@
-#N canvas 270 22 796 756 10;
+#N canvas 258 22 796 756 10;
 #X obj 10 62 cnv 15 751 90 empty empty empty 5 8 0 14 -233017 -66577
 0;
-#X obj 10 493 cnv 15 375 100 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 10 633 cnv 15 375 100 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 10 794 cnv 15 375 150 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 10 934 cnv 15 375 150 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 10 41 cnv 15 751 20 empty empty Description 5 10 0 14 -1 -262144
 0;
-#X obj 10 773 cnv 15 750 20 empty empty Scene_transitions:_[ds_transition]_and_[ds_transition_gui]
+#X obj 10 913 cnv 15 750 20 empty empty Scene_transitions:_[ds_transition]_and_[ds_transition_gui]
 5 10 0 14 -1 -262144 0;
 #X obj 10 10 cnv 15 751 20 empty empty Kollabs/DS 5 10 0 14 -258113
 -1 0;
-#X text 15 500 [ds_reg <domain> <name>] registers a variable to the
+#X text 15 640 [ds_reg <domain> <name>] registers a variable to the
 given storage domain.;
-#X text 15 530 creation arguments:;
-#X text 153 530 1st: domain;
-#X text 153 550 2nd: variable name;
-#X obj 386 184 cnv 15 375 200 empty empty empty 20 12 0 14 -204786
+#X text 15 670 creation arguments:;
+#X text 153 670 1st: domain;
+#X text 153 690 2nd: variable name;
+#X obj 386 324 cnv 15 375 200 empty empty empty 20 12 0 14 -204786
 -66577 0;
-#X obj 10 472 cnv 15 750 20 empty empty Registers:_[ds_reg] 5 10 0
+#X obj 10 612 cnv 15 750 20 empty empty Registers:_[ds_reg] 5 10 0
 14 -1 -262144 0;
-#X text 528 196 Storage logic for domain "help";
-#X obj 386 493 cnv 15 375 100 empty empty empty 20 12 0 14 -204786
+#X text 528 336 Storage logic for domain "help";
+#X obj 386 633 cnv 15 375 100 empty empty empty 20 12 0 14 -204786
 -66577 0;
-#X text 401 509 Register for assigning the variable "/i/am/a/variable"
+#X text 401 649 Register for assigning the variable "/i/am/a/variable"
 to domain "help";
-#N canvas 710 135 385 375 backup 0;
-#X obj 100 170 t b b;
-#X obj 100 275 del 1000;
-#X obj 100 100 bng 15 250 50 0 empty empty click_here_to_load_backup!
-17 7 0 10 -262144 -1 -1;
-#X msg 100 307 \; /ds/help/scene 0 \; /ds/help2/scene 0 \;;
-#X msg 127 218 \; /ds/help/loadfile ds_help_bak.txt \; /ds/help2/loadfile
-ds_help2_bak.txt \;;
-#X connect 0 0 1 0;
-#X connect 0 1 4 0;
-#X connect 1 0 3 0;
-#X connect 2 0 0 0;
-#X coords 0 -1 1 1 15 15 2 100 100;
-#X restore 514 132 pd backup;
-#X obj 424 198 ds_logic help;
-#X obj 404 237 ds_gui help;
-#X text 19 806 Scene transitions can be set for all variables individually.
+#X obj 404 377 ds_gui help;
+#X text 19 946 Scene transitions can be set for all variables individually.
 This can be delays \, master-slave-chains \, or smooth morphings.;
-#X text 19 856 To enable scene transitions globally for a specific
+#X text 19 996 To enable scene transitions globally for a specific
 domain \, create the [ds_transition <domain>] object.;
-#X text 19 886 It also has a nice gui \, which you will probably need:
+#X text 19 1026 It also has a nice gui \, which you will probably need:
 [ds_transition_gui <domain>];
-#X obj 386 794 cnv 15 375 150 empty empty empty 20 12 0 14 -204786
+#X obj 386 934 cnv 15 375 150 empty empty empty 20 12 0 14 -204786
 -66577 0;
-#X obj 457 809 ds_transition help;
-#X obj 457 842 ds_transition_gui help;
-#X obj 10 1187 cnv 15 750 20 empty empty Timeline_Editing_/_Playlist_View:_[ds_scheduler]_and_[ds_scheduler_gui]
+#X obj 457 982 ds_transition_gui help;
+#X obj 10 1327 cnv 15 750 20 empty empty Timeline_Editing_/_Playlist_View:_[ds_scheduler]_and_[ds_scheduler_gui]
 5 10 0 14 -1 -262144 0;
-#X obj 10 1208 cnv 15 375 120 empty empty empty 20 12 0 14 -228856
+#X obj 10 1348 cnv 15 375 120 empty empty empty 20 12 0 14 -228856
 -66577 0;
-#X obj 386 1208 cnv 15 375 330 empty empty empty 20 12 0 14 -204786
+#X obj 386 1348 cnv 15 375 330 empty empty empty 20 12 0 14 -204786
 -66577 0;
-#X obj 419 1226 ds_scheduler help;
-#X text 19 1228 Using the scheduler \, a playlist of scenes can be
+#X obj 419 1366 ds_scheduler help;
+#X text 19 1368 Using the scheduler \, a playlist of scenes can be
 managed. Scenes can be given a specific duration \, after which the
 next scene will be recalled.;
-#X text 19 1278 [ds_scheduler] creates the whole needed logic for the
+#X text 19 1418 [ds_scheduler] creates the whole needed logic for the
 timeline functions. [ds_scheduler_gui] provides an intuitive player
 view.;
-#X obj 10 594 cnv 15 751 150 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 10 734 cnv 15 751 150 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 362 696 cnv 15 300 30 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 362 836 cnv 15 300 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 362 675 cnv 15 300 20 empty empty Additional_Tools:_route/update/print
+#X obj 362 815 cnv 15 300 20 empty empty Additional_Tools:_route/update/print
 5 10 0 14 -1 -262144 0;
-#X obj 41 634 cnv 15 300 30 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 41 774 cnv 15 300 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 41 613 cnv 15 300 20 empty empty Registering_Variables 5 10
+#X obj 41 753 cnv 15 300 20 empty empty Registering_Variables 5 10
 0 14 -1 -262144 0;
-#X obj 362 634 cnv 15 300 30 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 362 774 cnv 15 300 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 362 613 cnv 15 300 20 empty empty Multiple_Domains 5 10 0 14
+#X obj 362 753 cnv 15 300 20 empty empty Multiple_Domains 5 10 0 14
 -1 -262144 0;
-#X obj 41 696 cnv 15 300 30 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 41 836 cnv 15 300 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 41 675 cnv 15 300 20 empty empty [ds_reg]:_FLAGS 5 10 0 14 -1
+#X obj 41 815 cnv 15 300 20 empty empty [ds_reg]:_FLAGS 5 10 0 14 -1
 -262144 0;
-#X text 135 570 >= 3rd: see "FLAGS";
-#X obj 10 184 cnv 15 375 200 empty empty empty 20 12 0 14 -228856 -66577
+#X text 135 710 >= 3rd: see "FLAGS";
+#X obj 10 324 cnv 15 375 200 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X text 37 224 creation arguments:;
-#X text 174 224 1st: domain;
-#X text 15 189 [ds_logic <domain>] is the main abstraction of this
+#X text 37 364 creation arguments:;
+#X text 174 364 1st: domain;
+#X text 15 329 [ds_logic <domain>] is the main abstraction of this
 system \, and should be created once for each domain.;
-#X text 156 244 >= 2nd: see "FLAGS";
-#X obj 10 163 cnv 15 751 20 empty empty Main_Abstractions:_[ds_logic]_&_[ds_gui]
+#X text 156 384 >= 2nd: see "FLAGS";
+#X obj 10 303 cnv 15 751 20 empty empty Main_Abstractions:_[ds_logic]_&_[ds_gui]
 5 10 0 14 -1 -262144 0;
-#X text 17 297 [ds_gui <domain>] provides the corresponding graphical
+#X text 17 437 [ds_gui <domain>] provides the corresponding graphical
 control.;
-#X text 35 332 creation argument: 1st: domain;
-#X text 574 261 GUI for domain "help";
-#X obj 10 385 cnv 15 751 75 empty empty empty 20 12 0 14 -191407 -66577
+#X text 35 472 creation argument: 1st: domain;
+#X text 574 401 GUI for domain "help";
+#X obj 10 525 cnv 15 751 75 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 66 417 cnv 15 260 30 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 66 557 cnv 15 260 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 66 397 cnv 15 260 20 empty empty [ds_logic]:_FLAGS 5 10 0 14
+#X obj 66 537 cnv 15 260 20 empty empty [ds_logic]:_FLAGS 5 10 0 14
 -1 -262144 0;
-#X obj 347 417 cnv 15 260 30 empty empty empty 20 12 0 14 -261682 -66577
+#X obj 347 557 cnv 15 260 30 empty empty empty 20 12 0 14 -261682 -66577
 0;
-#X obj 347 397 cnv 15 260 20 empty empty [ds_gui]:_CONTROLS 5 10 0
+#X obj 347 537 cnv 15 260 20 empty empty [ds_gui]:_CONTROLS 5 10 0
 14 -1 -262144 0;
-#X obj 10 945 cnv 15 751 225 empty empty empty 20 12 0 14 -191407 -66577
-0;
-#X obj 28 1114 cnv 15 350 30 empty empty empty 20 12 0 14 -262130 -66577
-0;
-#X obj 389 1052 cnv 15 350 30 empty empty empty 20 12 0 14 -262130
+#X obj 10 1085 cnv 15 751 225 empty empty empty 20 12 0 14 -191407
 -66577 0;
-#X obj 389 1114 cnv 15 350 30 empty empty empty 20 12 0 14 -262130
--66577 0;
-#X obj 389 1031 cnv 15 350 20 empty empty Fade_/_Morph_between_scenes
-5 10 0 14 -1 -262144 0;
-#X obj 28 1093 cnv 15 350 20 empty empty Delaying_&_Chaining_Recalls
-5 10 0 14 -1 -262144 0;
-#X obj 389 1093 cnv 15 350 20 empty empty What_if_last_transition_is_still_active?
-5 10 0 14 -1 -262144 0;
-#X obj 10 1329 cnv 15 375 209 empty empty empty 20 12 0 14 -191407
--66577 0;
-#X obj 37 1375 cnv 15 260 30 empty empty empty 20 12 0 14 -261682 -66577
+#X obj 28 1254 cnv 15 350 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 37 1355 cnv 15 260 20 empty empty [ds_scheduler_gui]:_CONTROLS
+#X obj 389 1192 cnv 15 350 30 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj 389 1254 cnv 15 350 30 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj 389 1171 cnv 15 350 20 empty empty Fade_/_Morph_between_scenes
+5 10 0 14 -1 -262144 0;
+#X obj 28 1233 cnv 15 350 20 empty empty Delaying_&_Chaining_Recalls
+5 10 0 14 -1 -262144 0;
+#X obj 389 1233 cnv 15 350 20 empty empty What_if_last_transition_is_still_active?
+5 10 0 14 -1 -262144 0;
+#X obj 10 1469 cnv 15 375 209 empty empty empty 20 12 0 14 -191407
+-66577 0;
+#X obj 37 1515 cnv 15 260 30 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X obj 37 1495 cnv 15 260 20 empty empty [ds_scheduler_gui]:_CONTROLS
 5 10 0 14 -1 -262144 0;
 #X text 15 70 This is a scene-based state saving solution \, featuring
 complex transition features. It is based entirely on Pd-Vanilla. It
 is based on the two main abstractions [ds_logic] and [ds_reg] for the
 very basic features. For transitions etc. \, some additional abstractions
 are required.;
-#X obj 419 1263 ds_scheduler_gui help;
+#X obj 419 1403 ds_scheduler_gui help;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -169,80 +153,80 @@ data is being dispatched:;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 106 425 pd section;
+#X restore 106 565 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
 #X msg 50 70 vis 1;
 #X obj 50 92 s pd-\$0-GUI;
-#N canvas 567 22 574 547 \$0-GUI 0;
-#X text 96 -203 (c)2011 Marian Weger /part of EXTENDED VIEW toolkit/
+#N canvas 567 22 573 553 \$0-GUI 0;
+#X text 96 200 (c)2011 Marian Weger /part of EXTENDED VIEW toolkit/
 gpl v3;
-#X obj 3 -204 cnv 15 550 540 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 3 199 cnv 15 550 540 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 41 -184 nbx 3 15 0 999 0 0 /ds/help/scene/current /ds/help/scene/current
-scene 0 -8 0 12 -204786 -1 -1 2 256;
-#X obj 22 -184 bng 15 250 50 0 /ds/help/scene/current/prev /ds/help/scene/current/prev
+#X obj 41 219 nbx 3 15 0 999 0 0 /ds/help/scene/current /ds/help/scene/current
+scene 0 -8 0 12 -204786 -1 -1 0 256;
+#X obj 22 219 bng 15 250 50 0 /ds/help/scene/current/prev /ds/help/scene/current/prev
 < 4 7 0 10 -204786 -1 -1;
-#X obj 92 -184 bng 15 250 50 0 /ds/help/scene/current/next /ds/help/scene/current/next
+#X obj 92 219 bng 15 250 50 0 /ds/help/scene/current/next /ds/help/scene/current/next
 > 5 7 0 10 -204786 -1 -1;
-#X obj 115 -184 bng 15 250 50 0 /ds/help/recall /ds/help/recall recall
+#X obj 115 219 bng 15 250 50 0 /ds/help/recall /ds/help/recall recall
 17 7 0 10 -4034 -1 -1;
-#X obj 24 -23 bng 15 250 50 0 /ds/help/save /ds/help/save save 17 7
+#X obj 24 380 bng 15 250 50 0 /ds/help/save /ds/help/save save 17 7
 0 10 -258113 -1 -1;
-#X obj 24 71 bng 15 250 50 0 /ds/help/load /ds/help/load load 17 7
+#X obj 24 474 bng 15 250 50 0 /ds/help/load /ds/help/load load 17 7
 0 10 -4034 -1 -1;
-#X obj 94 -23 bng 15 250 50 0 /ds/help/resave /ds/help/resave resave
+#X obj 94 380 bng 15 250 50 0 /ds/help/resave /ds/help/resave resave
 17 7 0 10 -258113 -1 -1;
-#X obj 94 71 bng 15 250 50 0 /ds/help/reload /ds/help/reload reload
+#X obj 94 474 bng 15 250 50 0 /ds/help/reload /ds/help/reload reload
 17 7 0 10 -4034 -1 -1;
-#X obj 114 -100 bng 15 250 50 0 /ds/help/store /ds/help/store store
+#X obj 114 303 bng 15 250 50 0 /ds/help/store /ds/help/store store
 17 7 0 10 -258113 -1 -1;
-#X obj 41 -100 nbx 3 15 0 999 0 0 /ds/help/scene/selected /ds/help/scene/selected
-empty 0 -8 0 12 -261234 -1 -1 2 256;
-#X obj 22 -100 bng 15 250 50 0 /ds/help/scene/selected/prev /ds/help/scene/selected/prev
+#X obj 41 303 nbx 3 15 0 999 0 0 /ds/help/scene/selected /ds/help/scene/selected
+empty 0 -8 0 12 -261234 -1 -1 0 256;
+#X obj 22 303 bng 15 250 50 0 /ds/help/scene/selected/prev /ds/help/scene/selected/prev
 < 4 7 0 10 -261234 -1 -1;
-#X obj 92 -100 bng 15 250 50 0 /ds/help/scene/selected/next /ds/help/scene/selected/next
+#X obj 92 303 bng 15 250 50 0 /ds/help/scene/selected/next /ds/help/scene/selected/next
 > 5 7 0 10 -261234 -1 -1;
-#X text 195 -35 The SAVE section lets you save all scenes from RAM
+#X text 195 368 The SAVE section lets you save all scenes from RAM
 to a textfile on the HDD. Click "save" to open a save dialog. "resave"
 will let you save to the last specified filename.;
-#X text 195 65 The LOAD section lets you load all scenes from a textfile
+#X text 195 468 The LOAD section lets you load all scenes from a textfile
 to RAM. Click "load" to open a load dialog. "reload" will let you load
 the last specified filename.;
-#X text 195 -185 In the RECALL section \, you can recall a scene from
+#X text 195 218 In the RECALL section \, you can recall a scene from
 RAM.;
-#X text 195 -105 In the STORE section \, you can store the current
-state of the patch into RAM. Select a destination scene and press "store".
+#X text 195 298 In the STORE section \, you can store the current state
+of the patch into RAM. Select a destination scene and press "store".
 ;
-#X text 195 -155 Switch between presets 0-2 to see the effect.;
-#X obj 24 131 bng 15 250 50 0 /ds/help/advanced/vis /ds/help/advanced/vis
+#X text 195 248 Switch between presets 0-2 to see the effect.;
+#X obj 24 534 bng 15 250 50 0 /ds/help/advanced/vis /ds/help/advanced/vis
 advanced 17 7 0 10 -262144 -1 -1;
-#X text 195 131 This button opens the advanced options.;
-#X obj 200 181 cnv 15 260 30 empty empty empty 20 12 0 14 -262130 -66577
+#X text 195 534 This button opens the advanced options.;
+#X obj 200 584 cnv 15 260 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 3 -394 cnv 15 550 20 empty empty [ds_gui] 5 10 0 14 -1 -262144
+#X obj 3 9 cnv 15 550 20 empty empty [ds_gui] 5 10 0 14 -1 -262144
 0;
-#X obj 200 161 cnv 15 260 20 empty empty Advanced_settings 5 10 0 14
+#X obj 200 564 cnv 15 260 20 empty empty Advanced_settings 5 10 0 14
 -1 -262144 0;
-#X obj 3 -225 cnv 15 550 20 empty empty Explanations 5 10 0 14 -1 -262144
+#X obj 3 178 cnv 15 550 20 empty empty Explanations 5 10 0 14 -1 -262144
 0;
-#X obj 26 240 bng 15 250 50 0 /ds/help/edit/vis /ds/help/edit/vis edit
+#X obj 26 643 bng 15 250 50 0 /ds/help/edit/vis /ds/help/edit/vis edit
 17 7 0 10 -262144 -1 -1;
-#X text 194 241 Click on this button to open the file editing dialog.
+#X text 194 644 Click on this button to open the file editing dialog.
 ;
-#X obj 198 288 cnv 15 280 30 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 198 691 cnv 15 280 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 198 268 cnv 15 280 20 empty empty Scene_editing_actions 5 10
+#X obj 198 671 cnv 15 280 20 empty empty Scene_editing_actions 5 10
 0 14 -1 -262144 0;
-#X obj 3 -373 cnv 15 550 140 empty empty empty 20 12 0 14 -204786 -66577
+#X obj 3 30 cnv 15 550 140 empty empty empty 20 12 0 14 -204786 -66577
 0;
-#X text 191 -325 Of course \, it is possible to create more GUIs for
+#X text 191 78 Of course \, it is possible to create more GUIs for
 the same storage domain. Put a [ds_gui <domain>] object to create one:
 ;
-#X text 191 -345 HINT:;
-#X obj 23 -366 ds_gui help;
-#X text 189 -280 Anyway \, the windows for advanced settings or edit
+#X text 191 58 HINT:;
+#X obj 23 37 ds_gui help;
+#X text 189 123 Anyway \, the windows for advanced settings or edit
 will only open once.;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
@@ -331,7 +315,7 @@ dynamic patching within the storage logic.;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 268 189 pd section;
+#X restore 268 592 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -358,7 +342,7 @@ clear 17 7 0 10 -159808 -1 -1;
 #X text 24 239 Actions for the currently selected scene:;
 #X text 19 170 Actions on the whole buffer:;
 #X obj 289 241 nbx 5 14 -1e+37 1e+37 0 0 /ds/help/scene/selected /ds/help/scene/selected
-selected 0 -8 0 10 -261234 -1 -1 2 256;
+selected 0 -8 0 10 -261234 -1 -1 0 256;
 #X text 153 366 Insert blank scene before the selected scene.;
 #X text 153 386 Insert copied/cut scene before the selected scene.
 ;
@@ -399,12 +383,13 @@ must always unlock them:;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 273 297 pd section;
+#X restore 273 700 pd section;
+#X coords 0 553 1 552 85 60 0;
 #X restore 50 132 pd \$0-GUI;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 412 427 pd section;
+#X restore 412 567 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -422,9 +407,9 @@ the [ds_reg] module.;
 #X obj 374 25 cnv 15 230 250 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 405 208 hsl 128 15 0 127 0 0 /i/am/also/a/variable /i/am/also/a/variable
-/i/am/also/a/variable -2 -8 0 10 -262144 -1 -1 7700 1;
+/i/am/also/a/variable -2 -8 0 10 -262144 -1 -1 6300 1;
 #X obj 405 158 hsl 128 15 0 127 0 0 /i/am/a/variable /i/am/a/variable
-/i/am/a/variable -2 -8 0 10 -262144 -1 -1 10000 1;
+/i/am/a/variable -2 -8 0 10 -262144 -1 -1 900 1;
 #X msg 428 75 0;
 #X msg 458 75 1;
 #X msg 488 75 2;
@@ -499,12 +484,12 @@ used.;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 120 639 pd section;
+#X restore 120 779 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
 #X msg 50 70 vis 1;
-#N canvas 381 22 776 756 \$0-register_flags 0;
+#N canvas 490 22 776 756 \$0-register_flags 0;
 #X obj 5 1107 cnv 15 370 180 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 53 1247 bng 15 250 50 0 /ds/help/i/must/be/set/dialog /ds/help/i/must/be/set/dialog
@@ -529,7 +514,7 @@ for this register permanently.;
 #X obj 375 107 cnv 15 370 200 empty empty empty 20 12 0 14 -204786
 -66577 0;
 #X obj 487 175 hsl 128 15 0 127 0 0 /i/am/no/morphing/variable /i/am/no/morphing/variable
-/i/am/no/morphing/variable -2 -8 0 10 -262144 -1 -1 1100 1;
+/i/am/no/morphing/variable -2 -8 0 10 -262144 -1 -1 0 1;
 #X msg 533 240 0;
 #X msg 563 240 1;
 #X msg 593 240 2;
@@ -539,7 +524,7 @@ for this register permanently.;
 -66577 0;
 #X obj 375 1571 cnv 15 370 150 empty empty empty 20 12 0 14 -204786
 -66577 0;
-#X symbolatom 244 1257 20 0 0 0 prepend: /ds/help/i/must/be/set/data_prepend
+#X symbolatom 244 1257 20 0 0 0 prepend: /ds/help/i/must/be/set/data_prepend/gui
 #0-dummy;
 #X obj 573 1242 r /i/must/be/set;
 #X msg 581 1186 0;
@@ -547,9 +532,8 @@ for this register permanently.;
 #X msg 641 1186 2;
 #X obj 581 1212 s /ds/help/scene;
 #X obj 507 1156 nbx 5 14 -1e+37 1e+37 0 0 /i/must/be/set /i/must/be/set
-/i/must/be/set 0 -8 0 10 -262144 -1 -1 30 256;
-#X msg 573 1266 30;
-#X text 489 1264 message box:;
+/i/must/be/set 0 -8 0 10 -262144 -1 -1 10 256;
+#X msg 573 1266 10;
 #X obj 5 86 cnv 15 740 20 empty empty nomorph:_Turn_off_morphing_permanently
 5 10 0 14 -1 -262144 0;
 #X obj 5 1086 cnv 15 740 20 empty empty data_prepend/data_append:_Prepend/Append_symbol_to_the_recalled_data
@@ -578,7 +562,7 @@ only the differences on every recall.;
 /i/must/be/set/too 20 7 0 10 -262144 -1 -1;
 #X obj 375 1319 cnv 15 370 220 empty empty empty 20 12 0 14 -204786
 -66577 0;
-#X symbolatom 244 1480 20 0 0 0 append: /ds/help/i/must/be/set/too/name_append
+#X symbolatom 244 1480 20 0 0 0 append: /ds/help/i/must/be/set/too/name_append/gui
 #0-dummy;
 #X msg 581 1478 0;
 #X msg 611 1478 1;
@@ -602,30 +586,19 @@ to the variable name for recall:;
 #X obj 565 1385 r /i/must/be/set/too/set;
 #X text 13 1690 This also works if your variable contains a symbol
 or list.;
-#X text 12 1506 This combinatino of "prepend_data" and "append_name"
-makes it possible to recall to atom boxes without feedback.;
 #X obj 92 276 bng 15 250 50 0 /ds/help/reg/dialog /ds/help/reg/dialog
 register_list 17 7 0 10 -159808 -1 -1;
 #X text 56 297 --->;
 #X text 12 1176 This way \, for example a "set" message can be prepended.
 ;
-#X obj 92 1204 bng 15 250 50 0 /ds/help/advanced/vis /ds/help/advanced/vis
-advanced 17 7 0 10 -262144 -1 -1;
-#X obj 215 1204 bng 15 250 50 0 /ds/help/reg/dialog /ds/help/reg/dialog
+#X obj 53 1214 bng 15 250 50 0 /ds/help/reg/dialog /ds/help/reg/dialog
 register_list 17 7 0 10 -159808 -1 -1;
-#X text 169 1202 --->;
 #X text 16 1246 --->;
-#X obj 65 1433 bng 15 250 50 0 /ds/help/advanced/vis /ds/help/advanced/vis
-advanced 17 7 0 10 -262144 -1 -1;
-#X obj 188 1433 bng 15 250 50 0 /ds/help/reg/dialog /ds/help/reg/dialog
+#X obj 65 1433 bng 15 250 50 0 /ds/help/reg/dialog /ds/help/reg/dialog
 register_list 17 7 0 10 -159808 -1 -1;
-#X text 142 1431 --->;
 #X text 31 1459 --->;
-#X obj 53 1641 bng 15 250 50 0 /ds/help/advanced/vis /ds/help/advanced/vis
-advanced 17 7 0 10 -262144 -1 -1;
-#X obj 176 1641 bng 15 250 50 0 /ds/help/reg/dialog /ds/help/reg/dialog
+#X obj 74 1641 bng 15 250 50 0 /ds/help/reg/dialog /ds/help/reg/dialog
 register_list 17 7 0 10 -159808 -1 -1;
-#X text 130 1639 --->;
 #X text 39 1667 --->;
 #X text 243 1239 Data;
 #X text 243 1461 Name;
@@ -701,15 +674,6 @@ arguments:;
 variable is a table.;
 #X text 15 1803 With "resize" and "noresize" \, you can specify \,
 if the table should be resized automatically or not.;
-#N canvas 710 135 272 231 link 0;
-#X obj 50 50 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
--1 -1;
-#X msg 50 70 vis 1;
-#X obj 50 92 s pd-\$0-registering_variables;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 478 1811 pd link;
 #X text 15 233 If the "nomorph" flag is set \, the corresponding parameters
 in the transition dialog will be greyed out:;
 #X obj 415 499 cnv 15 320 30 empty empty empty 20 12 0 14 -262130 -66577
@@ -768,11 +732,23 @@ in the transition dialog will be greyed out:;
 -66577 0;
 #X obj 415 1782 cnv 15 320 20 empty empty More_information_on_registering_tables
 5 10 0 14 -1 -262144 0;
+#X text 449 1264 just a message box:;
+#N canvas 710 135 272 231 link 0;
+#X obj 50 50 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
+-1 -1;
+#X msg 50 70 vis 1;
+#X obj 50 92 s pd-\$0-registering_variables;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X coords 0 -1 1 1 15 15 2 50 50;
+#X restore 478 1811 pd link;
+#X obj 444 1585 ds_reg help /i/got/changed change;
 #X obj 423 127 ds_reg help /i/am/no/morphing/variable nomorph;
 #X obj 383 1329 ds_reg help /i/must/be/set/too data_prepend set name_append
 /set;
 #X obj 424 1117 ds_reg help /i/must/be/set data_prepend set;
-#X obj 444 1585 ds_reg help /i/got/changed change;
+#X text 12 1506 This combination of "prepend_data" and "append_name"
+makes it possible to recall to atom boxes without feedback.;
 #X connect 11 0 14 0;
 #X connect 12 0 14 0;
 #X connect 13 0 14 0;
@@ -780,22 +756,22 @@ in the transition dialog will be greyed out:;
 #X connect 20 0 23 0;
 #X connect 21 0 23 0;
 #X connect 22 0 23 0;
-#X connect 32 0 35 0;
-#X connect 33 0 35 0;
-#X connect 34 0 35 0;
-#X connect 37 0 38 0;
-#X connect 45 0 48 0;
-#X connect 46 0 48 0;
-#X connect 47 0 48 0;
-#X connect 51 0 52 0;
-#X connect 57 0 51 0;
+#X connect 31 0 34 0;
+#X connect 32 0 34 0;
+#X connect 33 0 34 0;
+#X connect 36 0 37 0;
+#X connect 44 0 47 0;
+#X connect 45 0 47 0;
+#X connect 46 0 47 0;
+#X connect 50 0 51 0;
+#X connect 56 0 50 0;
 #X coords 0 756 1 755 85 60 0;
 #X restore 70 129 pd \$0-register_flags;
 #X obj 50 92 s pd-\$0-register_flags;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 101 705 pd section;
+#X restore 101 845 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -818,7 +794,7 @@ to.;
 #X obj 5 364 cnv 15 740 20 empty empty Register_a_variable_to_multiple_domains
 5 10 0 14 -1 -262144 0;
 #X obj 452 467 hsl 128 15 0 127 0 0 /i/belong/to/both /i/belong/to/both
-/i/belong/to/both -2 -8 0 10 -262144 -1 -1 6600 1;
+/i/belong/to/both -2 -8 0 10 -262144 -1 -1 3200 1;
 #X text 401 35 Load textfile for "help2" on startup:;
 #N canvas 131 51 306 252 \$0-init2 0;
 #X obj 47 49 loadbang;
@@ -871,12 +847,12 @@ be part of multiple domains \, as you might get in big trouble...;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 431 640 pd section;
+#X restore 431 780 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
 #X msg 50 70 vis 1;
-#N canvas 251 22 650 756 \$0-tools 0;
+#N canvas 293 22 650 756 \$0-tools 0;
 #X obj 11 36 cnv 15 370 300 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 381 36 cnv 15 230 300 empty empty empty 20 12 0 14 -204786 -66577
@@ -884,12 +860,11 @@ be part of multiple domains \, as you might get in big trouble...;
 #X obj 11 16 cnv 15 600 20 empty empty Route_current_value_of_variable
 5 10 0 14 -1 -262144 0;
 #X obj 414 205 r /i/am/a/target;
-#X obj 414 227 print /i/am/a/target;
 #X msg 414 147 symbol /i/am/a/target;
 #X obj 414 127 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
 -1 -1;
 #X obj 499 91 nbx 5 14 -1e+37 1e+37 0 0 /i/am/a/source /i/am/a/source
-/i/am/a/source 0 -8 0 10 -262144 -1 -1 83 256;
+/i/am/a/source 0 -8 0 10 -262144 -1 -1 13 256;
 #X text 423 90 change it:;
 #X text 33 157 This may be useful for implementing copy&paste functions
 \, etc.;
@@ -906,7 +881,7 @@ be part of multiple domains \, as you might get in big trouble...;
 #X obj 11 676 cnv 15 600 20 empty empty Print_current_value 5 10 0
 14 -1 -262144 0;
 #X obj 497 422 nbx 5 14 -1e+37 1e+37 0 0 /i/am/both /i/am/both /i/am/both
-0 -8 0 10 -262144 -1 -1 86 256;
+0 -8 0 10 -262144 -1 -1 15 256;
 #X text 423 420 change it:;
 #X obj 424 450 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
 -1 -1;
@@ -914,7 +889,7 @@ be part of multiple domains \, as you might get in big trouble...;
 #X obj 424 810 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
 -1 -1;
 #X obj 497 772 nbx 5 14 -1e+37 1e+37 0 0 /what/am/i /what/am/i /what/am/i
-0 -8 0 10 -262144 -1 -1 357 256;
+0 -8 0 10 -262144 -1 -1 97 256;
 #X text 423 770 change it:;
 #X text 23 467 This may be useful for updating GUI elements.;
 #X text 23 807 Sometimes useful for debugging.;
@@ -924,12 +899,6 @@ destination.;
 itself \, i.e. update it.;
 #X text 23 717 Print the current value and domain of a registered variable
 to the console.;
-#X obj 109 862 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
--1 -1;
-#X msg 109 887 vis 1;
-#X obj 109 909 s pd-\$0-scene_transition_dialog;
-#X text 20 838 There is already a button for that in the "Scene Transition
-Dialog":;
 #X msg 414 278 symbol /i/am/a/target;
 #X obj 414 258 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
 -1 -1;
@@ -949,9 +918,6 @@ Dialog":;
 #X obj 424 832 s /ds/help/what/am/i/print;
 #X text 33 87 Sending a message "<target>" to "/ds/<domain>/<name>/route"
 \, sends the current value of "<name>" to "<target>".;
-#X text 23 284 Sending a message "<target>" to "/ds/<domain>/route"
-sends the current values of all registered variables of <domain> to
-<target>.;
 #X text 23 417 Sending any message to "/ds/<domain>/<name>/resend"
 will send the current value of "<name>" to itself.;
 #X text 30 614 Sending any message to "/ds/<domain>/resend" sends the
@@ -963,30 +929,43 @@ will print the current value of <name> to the Pd window.;
 #X obj 505 619 msg_monitor 750;
 #X text 421 867 look at your Pd window!;
 #X text 397 320 look at your Pd window!;
+#X obj 414 227 print /i/am/a/target;
+#X text 23 284 Sending a message "<target>" to "/ds/<domain>/route"
+sends the current values of all registered variables of <domain> to
+<target>.;
+#N canvas 710 135 272 231 link 0;
+#X obj 50 50 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
+-1 -1;
+#X msg 50 70 vis 1;
+#X obj 50 92 s pd-\$0-gui-advanced;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X coords 0 -1 1 1 15 15 2 50 50;
+#X restore 167 865 pd link;
+#X text 20 838 Single parameters can also be printed via the advanced
+settings of [ds_gui]:;
 #X obj 417 378 ds_reg help /i/am/both;
 #X obj 421 45 ds_reg help /i/am/a/source;
 #X obj 421 720 ds_reg help /what/am/i;
-#X connect 3 0 4 0;
-#X connect 5 0 39 0;
-#X connect 6 0 5 0;
-#X connect 18 0 41 0;
-#X connect 19 0 52 0;
-#X connect 20 0 46 0;
-#X connect 28 0 29 0;
-#X connect 29 0 30 0;
-#X connect 32 0 40 0;
-#X connect 33 0 32 0;
-#X connect 35 0 44 0;
-#X connect 37 0 53 0;
-#X connect 52 0 38 0;
-#X connect 53 0 43 0;
+#X connect 3 0 50 0;
+#X connect 4 0 34 0;
+#X connect 5 0 4 0;
+#X connect 17 0 36 0;
+#X connect 18 0 46 0;
+#X connect 19 0 41 0;
+#X connect 27 0 35 0;
+#X connect 28 0 27 0;
+#X connect 30 0 39 0;
+#X connect 32 0 47 0;
+#X connect 46 0 33 0;
+#X connect 47 0 38 0;
 #X coords 0 756 1 755 85 60 0;
 #X restore 50 129 pd \$0-tools;
 #X obj 50 92 s pd-\$0-tools;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 415 703 pd section;
+#X restore 415 843 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -997,7 +976,7 @@ will print the current value of <name> to the Pd window.;
 #X obj 380 -59 cnv 15 375 390 empty empty empty 20 12 0 14 -204786
 -66577 0;
 #X obj 485 235 hsl 128 15 0 127 0 0 /i/am/a/morphing/variable /i/am/a/morphing/variable
-/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 12300 1;
+/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 300 1;
 #X msg 457 102 0;
 #X msg 487 102 1;
 #X msg 517 102 2;
@@ -1018,7 +997,7 @@ the current scene for this variable.;
 -66577 0;
 #X obj 443 448 hsl 128 15 0 127 0 0 /i/am/another/morphing/variable
 /i/am/another/morphing/variable /i/am/another/morphing/variable -2
--8 0 10 -262144 -1 -1 12200 1;
+-8 0 10 -262144 -1 -1 400 1;
 #X obj 88 446 bng 15 250 50 0 /ds/help/i/am/another/morphing/variable/dialog
 /ds/help/i/am/another/morphing/variable/dialog /i/am/another/morphing/variable
 20 7 0 10 -262144 -1 -1;
@@ -1066,10 +1045,10 @@ A negative sign will invert the shape.;
 is set to zero:;
 #X obj 311 124 nbx 4 14 -1e+37 1e+37 0 0 /ds/help/i/am/a/morphing/variable/morph/time
 /ds/help/i/am/a/morphing/variable/morph/time time/s: -45 7 0 10 -4034
--1 -1 2 256;
+-1 -1 1 256;
 #X obj 105 285 nbx 4 14 -1e+37 1e+37 0 0 /ds/help/i/am/a/morphing/variable/morph/timegrain
 /ds/help/i/am/a/morphing/variable/morph/timegrain time-grain/ms 0 -8
-0 10 -204786 -1 -1 30 256;
+0 10 -204786 -1 -1 20 256;
 #X obj 116 188 hsl 128 15 0 1 0 0 /ds/help/i/am/a/morphing/variable/morph/curve/weight
 /ds/help/i/am/a/morphing/variable/morph/curve/weight weight 5 8 0 10
 -4034 -1 -1 0 1;
@@ -1080,10 +1059,10 @@ is set to zero:;
 a time-grain faster than the framerate would make no sense.;
 #X obj 174 517 nbx 4 14 -1e+37 1e+37 0 0 /ds/help/i/am/another/morphing/variable/morph/curve/shape
 /ds/help/i/am/another/morphing/variable/morph/curve/shape empty 47
-7 0 10 -4034 -1 -1 -5.04 256;
+7 0 10 -4034 -1 -1 0 256;
 #X obj 76 715 nbx 4 14 10 10000 0 0 /ds/help/i/am/another/morphing/variable/morph/curve/resolution
 /ds/help/i/am/another/morphing/variable/morph/curve/resolution resolution
-0 -8 0 10 -204786 -1 -1 128 256;
+0 -8 0 10 -204786 -1 -1 200 256;
 #X obj 26 852 hradio 15 1 0 3 /ds/help/i/am/another/morphing/variable/morph/curve/quality
 /ds/help/i/am/another/morphing/variable/morph/curve/quality quality
 0 -8 0 10 -204786 -1 -1 2;
@@ -1092,13 +1071,13 @@ a time-grain faster than the framerate would make no sense.;
 0 10 -4034 -1 -1;
 #X obj 34 635 hsl 128 15 0 1 0 0 /ds/help/i/am/another/morphing/variable/morph/curve/weight
 /ds/help/i/am/another/morphing/variable/morph/curve/weight weight 5
-8 0 10 -4034 -1 -1 12700 1;
+8 0 10 -4034 -1 -1 10160 1;
 #X obj 38 517 hsl 128 15 -10 10 0 0 /ds/help/i/am/another/morphing/variable/morph/curve/shape
 /ds/help/i/am/another/morphing/variable/morph/curve/shape shape 5 8
-0 10 -4034 -1 -1 3150 1;
+0 10 -4034 -1 -1 6350 1;
 #X obj 170 635 nbx 4 14 -1e+37 1e+37 0 0 /ds/help/i/am/another/morphing/variable/morph/curve/weight
 /ds/help/i/am/another/morphing/variable/morph/curve/weight empty 47
-7 0 10 -4034 -1 -1 1 256;
+7 0 10 -4034 -1 -1 0.8 256;
 #X text 12 368 The variable "/i/am/another/morphing/variable" has a
 curved fade to each of the scenes 0-2. See the scene transition dialog:
 ;
@@ -1139,12 +1118,12 @@ curve values:;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 490 1060 pd section;
+#X restore 490 1200 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
 #X msg 50 70 vis 1;
-#N canvas 239 221 776 351 \$0-occupy 0;
+#N canvas 482 316 776 351 \$0-occupy 0;
 #X obj 10 31 cnv 15 375 300 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 223 80 bng 15 250 50 0 /ds/help/i/am/occupied/dialog /ds/help/i/am/occupied/dialog
@@ -1160,7 +1139,7 @@ to another scene recall until its transition is completed.;
 #X obj 386 31 cnv 15 375 300 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 440 192 hsl 128 15 0 127 0 0 /i/am/a/morphing/variable /i/am/a/morphing/variable
-/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 12300 1;
+/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 300 1;
 #X msg 609 118 0;
 #X msg 639 118 1;
 #X msg 669 118 2;
@@ -1196,7 +1175,7 @@ register_list 17 7 0 10 -159808 -1 -1;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 452 1124 pd section;
+#X restore 452 1264 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -1217,9 +1196,9 @@ a fade of another one is finished \, no matter how long that fade is.
 #X obj 381 395 cnv 15 375 500 empty empty empty 20 12 0 14 -204786
 -66577 0;
 #X obj 429 707 hsl 128 15 0 127 0 0 /i/am/a/master /i/am/a/master /i/am/a/master
--2 -8 0 10 -262144 -1 -1 10900 1;
+-2 -8 0 10 -262144 -1 -1 1100 1;
 #X obj 586 707 hsl 128 15 0 127 0 0 /i/am/a/slave /i/am/a/slave /i/am/a/slave
--2 -8 0 10 -262144 -1 -1 10700 1;
+-2 -8 0 10 -262144 -1 -1 1200 1;
 #X msg 487 600 0;
 #X msg 517 600 1;
 #X msg 547 600 2;
@@ -1230,7 +1209,7 @@ a fade of another one is finished \, no matter how long that fade is.
 #X obj 381 24 cnv 15 375 340 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 462 150 hsl 128 15 0 127 0 0 /i/am/a/delayed/variable /i/am/a/delayed/variable
-/i/am/a/delayed/variable -2 -8 0 10 -262144 -1 -1 10100 1;
+/i/am/a/delayed/variable -2 -8 0 10 -262144 -1 -1 1000 1;
 #X obj 89 115 bng 15 250 50 0 /ds/help/i/am/a/delayed/variable/dialog
 /ds/help/i/am/a/delayed/variable/dialog /i/am/a/delayed/variable 20
 7 0 10 -262144 -1 -1;
@@ -1240,10 +1219,10 @@ a fade of another one is finished \, no matter how long that fade is.
 #X obj 482 248 s /ds/help/scene;
 #X text 437 197 Change scene to see the effect:;
 #X obj 460 95 hsl 128 15 0 127 0 0 /i/am/a/variable /i/am/a/variable
-/i/am/a/variable -2 -8 0 10 -262144 -1 -1 10000 1;
+/i/am/a/variable -2 -8 0 10 -262144 -1 -1 900 1;
 #X obj 76 190 nbx 4 14 -1e+37 1e+37 0 0 /ds/help/i/am/a/delayed/variable/delay
 /ds/help/i/am/a/delayed/variable/delay delay/s 47 7 0 10 -204800 -1
--1 1.5 256;
+-1 1 256;
 #X obj 5 4 cnv 15 751 20 empty empty Delaying_recalls 5 10 0 14 -1
 -262144 0;
 #X text 12 40 To delay the recall of a variable in a specific scene
@@ -1280,7 +1259,6 @@ slave 17 7 0 10 -203904 -1 -1 1 1;
 #X text 18 250 A delay can also be set or deactivated permanently for
 individual registers by creation argument. See here for more information:
 ;
-#X obj 398 530 ds_reg help /i/am/a/slave slave;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
 -1 -1;
@@ -1299,6 +1277,7 @@ individual registers by creation argument. See here for more information:
 #X connect 1 0 2 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
 #X restore 154 288 pd section;
+#X obj 398 530 ds_reg help /i/am/a/slave slave;
 #X obj 398 416 ds_reg help /i/am/a/master;
 #X obj 448 38 ds_reg help /i/am/a/delayed/variable;
 #X connect 8 0 11 0;
@@ -1308,14 +1287,14 @@ individual registers by creation argument. See here for more information:
 #X connect 18 0 20 0;
 #X connect 19 0 20 0;
 #X connect 31 0 32 0;
-#X connect 49 0 46 0;
+#X connect 49 0 48 0;
 #X coords 0 756 1 755 85 60 0;
 #X restore 48 125 pd \$0-delay;
 #X obj 50 92 s pd-\$0-delay;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 130 1123 pd section;
+#X restore 130 1263 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -1416,14 +1395,10 @@ the elapsed time \, until you stop it or proceed manually.;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 95 1383 pd section;
-#X text 398 74 This helpfile uses "ds_help.txt" and "ds_help2.txt".
-If you accidentally changed and saved them by testing the examples
-\, you can load the backup "ds_help_bak.txt" or "ds_help2_bak.txt"
-respectively:;
-#X obj 28 1052 cnv 15 350 30 empty empty empty 20 12 0 14 -262130 -66577
+#X restore 95 1523 pd section;
+#X obj 28 1192 cnv 15 350 30 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 28 1031 cnv 15 350 20 empty empty General_Information 5 10 0
+#X obj 28 1171 cnv 15 350 20 empty empty General_Information 5 10 0
 14 -1 -262144 0;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
@@ -1485,10 +1460,10 @@ settings to take effect for this scene.;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 118 1060 pd section;
-#X obj 28 986 cnv 15 350 30 empty empty empty 20 12 0 14 -261682 -66577
+#X restore 118 1200 pd section;
+#X obj 28 1126 cnv 15 350 30 empty empty empty 20 12 0 14 -261682 -66577
 0;
-#X obj 28 965 cnv 15 350 20 empty empty [ds_transition_gui]:_CONTROLS
+#X obj 28 1105 cnv 15 350 20 empty empty [ds_transition_gui]:_CONTROLS
 5 10 0 14 -1 -262144 0;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
@@ -1876,22 +1851,22 @@ store 17 7 0 10 -262144 -1 -1 0 1;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 71 996 pd section;
-#X obj 10 1555 cnv 15 751 20 empty empty General_Information 5 10 0
+#X restore 71 1136 pd section;
+#X obj 10 1695 cnv 15 751 20 empty empty General_Information 5 10 0
 14 -1 -262144 0;
-#X obj 10 1576 cnv 15 751 200 empty empty empty 5 8 0 14 -233017 -66577
+#X obj 10 1716 cnv 15 751 200 empty empty empty 5 8 0 14 -233017 -66577
 0;
-#X obj 20 1608 cnv 15 370 30 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 20 1748 cnv 15 370 30 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 19 1670 cnv 15 370 30 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 19 1810 cnv 15 370 30 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 20 1587 cnv 15 370 20 empty empty Control_through_Send/Receive
+#X obj 20 1727 cnv 15 370 20 empty empty Control_through_Send/Receive
 5 10 0 14 -1 -262144 0;
-#X obj 19 1649 cnv 15 370 20 empty empty File_layout 5 10 0 14 -1 -262144
+#X obj 19 1789 cnv 15 370 20 empty empty File_layout 5 10 0 14 -1 -262144
 0;
-#X obj 19 1734 cnv 15 370 30 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 19 1874 cnv 15 370 30 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 19 1713 cnv 15 370 20 empty empty Naming_Syntax 5 10 0 14 -1
+#X obj 19 1853 cnv 15 370 20 empty empty Naming_Syntax 5 10 0 14 -1
 -262144 0;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
@@ -2005,7 +1980,7 @@ fully loaded to RAM.;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 115 1617 pd section;
+#X restore 115 1757 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -2066,7 +2041,7 @@ number.;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 129 1678 pd section;
+#X restore 129 1818 pd section;
 #N canvas 710 135 272 231 section 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -2089,7 +2064,31 @@ allows.;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 15 15 2 50 50;
-#X restore 96 1741 pd section;
+#X restore 96 1881 pd section;
 #X text 621 12 (c)2013 Marian Weger;
-#X obj 466 551 ds_reg help /i/am/a/variable;
+#X obj 10 192 cnv 15 751 90 empty empty empty 5 8 0 14 -233017 -66577
+0;
+#X obj 10 171 cnv 15 751 20 empty empty About_This_Helpfile 5 10 0
+14 -1 -262144 0;
+#N canvas 710 135 383 400 backup 0;
+#X obj 100 246 del 1000;
+#X obj 100 100 bng 15 250 50 0 empty empty click_here_to_reload_from_backup
+17 7 0 10 -262144 -1 -1;
+#X msg 127 189 \; /ds/help/loadfile ds_help_bak.txt \; /ds/help2/loadfile
+ds_help2_bak.txt \;;
+#X obj 100 160 t b b;
+#X msg 100 278 \; /ds/help/scene 0 \; /ds/help2/scene 0 \; /ds/help/savefile
+ds_help.txt \; /ds/help2/savefile ds_help2.txt \;;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 2 0;
+#X coords 0 -1 1 1 15 15 2 100 100;
+#X restore 70 251 pd backup;
+#X text 20 196 If you changed something in the stored scenes \, or
+if you have overwritten the example preset files ("ds_help.txt" and
+"ds_help2.txt) \, you can always revert them:;
+#X obj 424 338 ds_logic help;
+#X obj 457 949 ds_transition help;
+#X obj 466 691 ds_reg help /i/am/a/variable;
 #X coords 0 756 1 755 771 2000 0;

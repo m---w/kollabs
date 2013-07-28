@@ -244,7 +244,7 @@
 #X obj 71 115 ds_reg_global \$1 /recall/properties/state;
 #X obj 71 135 ds_reg_global \$1 /store/properties/state;
 #X restore 53 70 pd register;
-#N canvas 95 238 576 344 init 1;
+#N canvas 95 238 576 344 init 0;
 #X obj 145 26 loadbang;
 #X msg 218 164 \; /ds/\$1/resolution 1 \; /ds/\$1/timebase 0 \; /ds/\$1/store/properties/state
 1 \; /ds/\$1/recall/properties/state 1 \;;
@@ -335,17 +335,17 @@
 #X connect 19 0 3 0;
 #X restore 179 270 pd MODULE_LOADER;
 #X obj 145 98 t b b b;
-#X obj 145 49 loadonce /ds/\$1/logic/init;
-#X obj 298 101 s /ds/\$1/print;
-#X msg 298 79 ERROR: [ds_scheduler] multiply defined!;
-#X connect 0 0 6 0;
+#X obj 322 101 s /ds/\$1/print;
+#X msg 322 79 ERROR: [ds_scheduler] multiply defined!;
+#X obj 145 49 loadonce /ds/\$1/scheduler/init;
+#X connect 0 0 8 0;
 #X connect 2 0 1 0;
 #X connect 5 0 3 0;
 #X connect 5 1 4 0;
 #X connect 5 2 2 0;
-#X connect 6 0 5 0;
-#X connect 6 1 8 0;
-#X connect 8 0 7 0;
+#X connect 7 0 6 0;
+#X connect 8 0 5 0;
+#X connect 8 1 7 0;
 #X restore 53 50 pd init;
 #N canvas 59 192 738 517 current_scene_name_&_duration 0;
 #X obj 321 284 sel 1 0;

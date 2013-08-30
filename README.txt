@@ -19,9 +19,9 @@ mail@marianweger.com
 Getting started
 ---------------
 
-open [ds-help] for state-saving.
-open [midi-help] for MIDI communication,
-open [osc-help] for OSC communication
+open [ds_help] for state-saving.
+open [midi_help] for MIDI communication,
+open [osc_help] for OSC communication
 
 
 Requirements

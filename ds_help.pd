@@ -1,4 +1,4 @@
-#N canvas 258 22 796 756 10;
+#N canvas 466 22 796 756 10;
 #X obj 10 62 cnv 15 751 90 empty empty empty 5 8 0 14 -233017 -66577
 0;
 #X obj 10 633 cnv 15 375 100 empty empty empty 20 12 0 14 -228856 -66577
@@ -165,7 +165,7 @@ gpl v3;
 #X obj 3 199 cnv 15 550 540 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 41 219 nbx 3 15 0 999 0 0 /ds/help/scene/current /ds/help/scene/current
-scene 0 -8 0 12 -204786 -1 -1 0 256;
+scene 0 -8 0 12 -204786 -1 -1 1 256;
 #X obj 22 219 bng 15 250 50 0 /ds/help/scene/current/prev /ds/help/scene/current/prev
 < 4 7 0 10 -204786 -1 -1;
 #X obj 92 219 bng 15 250 50 0 /ds/help/scene/current/next /ds/help/scene/current/next
@@ -183,7 +183,7 @@ scene 0 -8 0 12 -204786 -1 -1 0 256;
 #X obj 114 303 bng 15 250 50 0 /ds/help/store /ds/help/store store
 17 7 0 10 -258113 -1 -1;
 #X obj 41 303 nbx 3 15 0 999 0 0 /ds/help/scene/selected /ds/help/scene/selected
-empty 0 -8 0 12 -261234 -1 -1 0 256;
+empty 0 -8 0 12 -261234 -1 -1 1 256;
 #X obj 22 303 bng 15 250 50 0 /ds/help/scene/selected/prev /ds/help/scene/selected/prev
 < 4 7 0 10 -261234 -1 -1;
 #X obj 92 303 bng 15 250 50 0 /ds/help/scene/selected/next /ds/help/scene/selected/next
@@ -342,7 +342,7 @@ clear 17 7 0 10 -159808 -1 -1;
 #X text 24 239 Actions for the currently selected scene:;
 #X text 19 170 Actions on the whole buffer:;
 #X obj 289 241 nbx 5 14 -1e+37 1e+37 0 0 /ds/help/scene/selected /ds/help/scene/selected
-selected 0 -8 0 10 -261234 -1 -1 0 256;
+selected 0 -8 0 10 -261234 -1 -1 1 256;
 #X text 153 366 Insert blank scene before the selected scene.;
 #X text 153 386 Insert copied/cut scene before the selected scene.
 ;
@@ -407,9 +407,9 @@ the [ds_reg] module.;
 #X obj 374 25 cnv 15 230 250 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 405 208 hsl 128 15 0 127 0 0 /i/am/also/a/variable /i/am/also/a/variable
-/i/am/also/a/variable -2 -8 0 10 -262144 -1 -1 6300 1;
+/i/am/also/a/variable -2 -8 0 10 -262144 -1 -1 2400 1;
 #X obj 405 158 hsl 128 15 0 127 0 0 /i/am/a/variable /i/am/a/variable
-/i/am/a/variable -2 -8 0 10 -262144 -1 -1 900 1;
+/i/am/a/variable -2 -8 0 10 -262144 -1 -1 4000 1;
 #X msg 428 75 0;
 #X msg 458 75 1;
 #X msg 488 75 2;
@@ -514,7 +514,7 @@ for this register permanently.;
 #X obj 375 107 cnv 15 370 200 empty empty empty 20 12 0 14 -204786
 -66577 0;
 #X obj 487 175 hsl 128 15 0 127 0 0 /i/am/no/morphing/variable /i/am/no/morphing/variable
-/i/am/no/morphing/variable -2 -8 0 10 -262144 -1 -1 0 1;
+/i/am/no/morphing/variable -2 -8 0 10 -262144 -1 -1 10000 1;
 #X msg 533 240 0;
 #X msg 563 240 1;
 #X msg 593 240 2;
@@ -532,8 +532,8 @@ for this register permanently.;
 #X msg 641 1186 2;
 #X obj 581 1212 s /ds/help/scene;
 #X obj 507 1156 nbx 5 14 -1e+37 1e+37 0 0 /i/must/be/set /i/must/be/set
-/i/must/be/set 0 -8 0 10 -262144 -1 -1 10 256;
-#X msg 573 1266 10;
+/i/must/be/set 0 -8 0 10 -262144 -1 -1 20 256;
+#X msg 573 1266 20;
 #X obj 5 86 cnv 15 740 20 empty empty nomorph:_Turn_off_morphing_permanently
 5 10 0 14 -1 -262144 0;
 #X obj 5 1086 cnv 15 740 20 empty empty data_prepend/data_append:_Prepend/Append_symbol_to_the_recalled_data
@@ -794,7 +794,7 @@ to.;
 #X obj 5 364 cnv 15 740 20 empty empty Register_a_variable_to_multiple_domains
 5 10 0 14 -1 -262144 0;
 #X obj 452 467 hsl 128 15 0 127 0 0 /i/belong/to/both /i/belong/to/both
-/i/belong/to/both -2 -8 0 10 -262144 -1 -1 3200 1;
+/i/belong/to/both -2 -8 0 10 -262144 -1 -1 11800 1;
 #X text 401 35 Load textfile for "help2" on startup:;
 #N canvas 131 51 306 252 \$0-init2 0;
 #X obj 47 49 loadbang;
@@ -852,7 +852,7 @@ be part of multiple domains \, as you might get in big trouble...;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
 #X msg 50 70 vis 1;
-#N canvas 293 22 650 756 \$0-tools 0;
+#N canvas 389 22 650 756 \$0-tools 0;
 #X obj 11 36 cnv 15 370 300 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 381 36 cnv 15 230 300 empty empty empty 20 12 0 14 -204786 -66577
@@ -864,7 +864,7 @@ be part of multiple domains \, as you might get in big trouble...;
 #X obj 414 127 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
 -1 -1;
 #X obj 499 91 nbx 5 14 -1e+37 1e+37 0 0 /i/am/a/source /i/am/a/source
-/i/am/a/source 0 -8 0 10 -262144 -1 -1 13 256;
+/i/am/a/source 0 -8 0 10 -262144 -1 -1 38 256;
 #X text 423 90 change it:;
 #X text 33 157 This may be useful for implementing copy&paste functions
 \, etc.;
@@ -881,7 +881,7 @@ be part of multiple domains \, as you might get in big trouble...;
 #X obj 11 676 cnv 15 600 20 empty empty Print_current_value 5 10 0
 14 -1 -262144 0;
 #X obj 497 422 nbx 5 14 -1e+37 1e+37 0 0 /i/am/both /i/am/both /i/am/both
-0 -8 0 10 -262144 -1 -1 15 256;
+0 -8 0 10 -262144 -1 -1 36 256;
 #X text 423 420 change it:;
 #X obj 424 450 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
 -1 -1;
@@ -889,7 +889,7 @@ be part of multiple domains \, as you might get in big trouble...;
 #X obj 424 810 bng 15 250 50 0 empty empty click_here! 17 7 0 10 -262144
 -1 -1;
 #X obj 497 772 nbx 5 14 -1e+37 1e+37 0 0 /what/am/i /what/am/i /what/am/i
-0 -8 0 10 -262144 -1 -1 97 256;
+0 -8 0 10 -262144 -1 -1 273 256;
 #X text 423 770 change it:;
 #X text 23 467 This may be useful for updating GUI elements.;
 #X text 23 807 Sometimes useful for debugging.;
@@ -976,7 +976,7 @@ settings of [ds_gui]:;
 #X obj 380 -59 cnv 15 375 390 empty empty empty 20 12 0 14 -204786
 -66577 0;
 #X obj 485 235 hsl 128 15 0 127 0 0 /i/am/a/morphing/variable /i/am/a/morphing/variable
-/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 300 1;
+/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 6100 1;
 #X msg 457 102 0;
 #X msg 487 102 1;
 #X msg 517 102 2;
@@ -997,7 +997,7 @@ the current scene for this variable.;
 -66577 0;
 #X obj 443 448 hsl 128 15 0 127 0 0 /i/am/another/morphing/variable
 /i/am/another/morphing/variable /i/am/another/morphing/variable -2
--8 0 10 -262144 -1 -1 400 1;
+-8 0 10 -262144 -1 -1 6400 1;
 #X obj 88 446 bng 15 250 50 0 /ds/help/i/am/another/morphing/variable/dialog
 /ds/help/i/am/another/morphing/variable/dialog /i/am/another/morphing/variable
 20 7 0 10 -262144 -1 -1;
@@ -1139,13 +1139,13 @@ to another scene recall until its transition is completed.;
 #X obj 386 31 cnv 15 375 300 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 440 192 hsl 128 15 0 127 0 0 /i/am/a/morphing/variable /i/am/a/morphing/variable
-/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 300 1;
+/i/am/a/morphing/variable -2 -8 0 10 -262144 -1 -1 6100 1;
 #X msg 609 118 0;
 #X msg 639 118 1;
 #X msg 669 118 2;
 #X obj 609 144 s /ds/help/scene;
 #X obj 440 272 hsl 128 15 0 127 0 0 /i/am//occupied /i/am/occupied
-/i/am/occupied -2 -8 0 10 -262144 -1 -1 300 1;
+/i/am/occupied -2 -8 0 10 -262144 -1 -1 4700 1;
 #X text 559 91 Change scenes very fast:;
 #X text 404 152 "occupy" off:;
 #X text 404 232 "occupy" on:;
@@ -1196,9 +1196,9 @@ a fade of another one is finished \, no matter how long that fade is.
 #X obj 381 395 cnv 15 375 500 empty empty empty 20 12 0 14 -204786
 -66577 0;
 #X obj 429 707 hsl 128 15 0 127 0 0 /i/am/a/master /i/am/a/master /i/am/a/master
--2 -8 0 10 -262144 -1 -1 1100 1;
+-2 -8 0 10 -262144 -1 -1 5600 1;
 #X obj 586 707 hsl 128 15 0 127 0 0 /i/am/a/slave /i/am/a/slave /i/am/a/slave
--2 -8 0 10 -262144 -1 -1 1200 1;
+-2 -8 0 10 -262144 -1 -1 5900 1;
 #X msg 487 600 0;
 #X msg 517 600 1;
 #X msg 547 600 2;
@@ -1209,7 +1209,7 @@ a fade of another one is finished \, no matter how long that fade is.
 #X obj 381 24 cnv 15 375 340 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 462 150 hsl 128 15 0 127 0 0 /i/am/a/delayed/variable /i/am/a/delayed/variable
-/i/am/a/delayed/variable -2 -8 0 10 -262144 -1 -1 1000 1;
+/i/am/a/delayed/variable -2 -8 0 10 -262144 -1 -1 4100 1;
 #X obj 89 115 bng 15 250 50 0 /ds/help/i/am/a/delayed/variable/dialog
 /ds/help/i/am/a/delayed/variable/dialog /i/am/a/delayed/variable 20
 7 0 10 -262144 -1 -1;
@@ -1219,7 +1219,7 @@ a fade of another one is finished \, no matter how long that fade is.
 #X obj 482 248 s /ds/help/scene;
 #X text 437 197 Change scene to see the effect:;
 #X obj 460 95 hsl 128 15 0 127 0 0 /i/am/a/variable /i/am/a/variable
-/i/am/a/variable -2 -8 0 10 -262144 -1 -1 900 1;
+/i/am/a/variable -2 -8 0 10 -262144 -1 -1 4000 1;
 #X obj 76 190 nbx 4 14 -1e+37 1e+37 0 0 /ds/help/i/am/a/delayed/variable/delay
 /ds/help/i/am/a/delayed/variable/delay delay/s 47 7 0 10 -204800 -1
 -1 1 256;
@@ -1299,7 +1299,7 @@ individual registers by creation argument. See here for more information:
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
 #X msg 50 70 vis 1;
-#N canvas 184 22 783 743 \$0-scheduler-gui 0;
+#N canvas 162 22 783 743 \$0-scheduler-gui 0;
 #X obj 10 29 cnv 15 750 1130 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 10 8 cnv 15 750 20 empty empty [ds_scheduler_gui]:_CONTROLS
@@ -1469,7 +1469,7 @@ settings to take effect for this scene.;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
 #X msg 50 70 vis 1;
-#N canvas 392 85 620 649 \$0-transition-gui 0;
+#N canvas 149 89 620 649 \$0-transition-gui 0;
 #X obj 185 29 cnv 15 419 600 empty empty empty 20 12 0 14 -241339 -66577
 0;
 #X obj 4 8 cnv 15 600 20 empty empty [ds_transition_gui]_/_CONTROLS
@@ -1497,7 +1497,7 @@ dialog:;
 #X obj 22 491 bng 15 250 50 0 /ds/help/transition/advanced/vis /ds/help/transition/advanced/vis
 advanced 17 7 0 10 -262144 -1 -1;
 #X obj 23 396 bng 15 250 50 0 /ds/help/transition/stop /ds/help/transition/stop
-|| 2 8 0 10 -262144 -191407 -1;
+|| 2 8 0 10 -4034 -191407 -1;
 #X obj 23 446 bng 15 250 50 0 /ds/help/transition/resume /ds/help/transition/resume
 > 6 7 0 10 -262144 -191407 -1;
 #X text 217 255 The register settings buffer acts as a clipboard for
@@ -1636,7 +1636,6 @@ in every scene. They are saved in the "settings" section of the file.
 0;
 #X obj 23 1375 tgl 15 0 /ds/help/i/am/a/variable/table /ds/help/i/am/a/variable/table
 table 17 7 0 10 -228856 -1 -1 0 1;
-#X text 173 1375 Shows if the registered variable is a table.;
 #N canvas 710 135 272 231 link 0;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
@@ -1702,6 +1701,8 @@ for the individual registers:;
 #X text 498 162 Hint: It is also possible to create an additional GUI
 for a specific variable by creating [ds_reg_gui <domain> <name>];
 #X obj 148 37 ds_reg_gui help /i/am/a/variable;
+#X text 173 1375 Shows if the registered variable is a table. (to be
+set as flag for [ds_reg]).;
 #X coords 0 756 1 755 85 60 0;
 #X restore 35 142 pd \$0-scene_transition_dialog;
 #X obj 50 92 s pd-\$0-scene_transition_dialog;
@@ -2046,19 +2047,19 @@ number.;
 #X obj 50 50 bng 15 250 50 0 empty empty click_here_to_open! 17 7 0
 10 -262144 -1 -1;
 #X msg 50 70 vis 1;
-#N canvas 464 22 380 246 \$0-naming_syntax 0;
+#N canvas 464 22 392 242 \$0-naming_syntax 0;
 #X obj 4 25 cnv 15 370 200 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 4 4 cnv 15 370 20 empty empty Syntax_for_variable_names 5 10
 0 14 -1 -262144 0;
 #X text 40 118 /category>/<subcategory>/.../<name>;
-#X text 10 83 In this helpfile \, all variables consist only of lowercase
-letters and slashes in the form of:;
-#X text 10 33 There is no special naming syntax needed for your variables.
-But a beginning with "/" is proposed to conform with the OSC standard.
-;
 #X text 13 148 Generally \, your variables can have any name that PD
 allows.;
+#X text 10 33 There is no special naming syntax needed for your variables.
+But a beginning with "/" is highly recommended to conform with the
+OSC standard.;
+#X text 10 83 In this helpfile \, all variable names consist only of
+lowercase letters and slashes in the form of:;
 #X restore 54 135 pd \$0-naming_syntax;
 #X obj 50 92 s pd-\$0-naming_syntax;
 #X connect 0 0 1 0;

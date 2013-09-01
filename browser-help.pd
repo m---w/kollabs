@@ -1,4 +1,4 @@
-#N canvas 395 53 691 565 10;
+#N canvas 194 80 691 565 10;
 #X text 162 385 (c)2013 Marian Weger;
 #X obj 75 298 r /browser/<name>/selected;
 #X obj 75 320 print;

@@ -10,7 +10,7 @@
 #X obj 174 183 bng 15 250 50 0 /ds/\$1/reload /ds/\$1/reload reload
 17 7 0 10 -4034 -1 -1;
 #X obj 123 119 nbx 3 15 0 1e+37 0 0 /ds/\$1/scene/current /ds/\$1/scene/current
-empty 0 -8 0 12 -204786 -1 -1 2 256;
+empty 0 -8 0 12 -204786 -1 -1 0 256;
 #X obj 104 119 bng 15 250 50 0 /ds/\$1/scene/current/prev /ds/\$1/scene/current/prev
 < 4 7 0 10 -204786 -1 -1;
 #X obj 174 119 bng 15 250 50 0 /ds/\$1/scene/current/next /ds/\$1/scene/current/next
@@ -22,7 +22,7 @@ advanced 17 7 0 10 -262144 -1 -1;
 #X obj 196 140 bng 15 250 50 0 /ds/\$1/store /ds/\$1/store store 17
 7 0 10 -258113 -1 -1;
 #X obj 123 140 nbx 3 15 0 1e+37 0 0 /ds/\$1/scene/selected /ds/\$1/scene/selected
-empty 0 -8 0 12 -261234 -1 -1 2 256;
+empty 0 -8 0 12 -261234 -1 -1 0 256;
 #X obj 104 140 bng 15 250 50 0 /ds/\$1/scene/selected/prev /ds/\$1/scene/selected/prev
 < 4 7 0 10 -261234 -1 -1;
 #X obj 174 140 bng 15 250 50 0 /ds/\$1/scene/selected/next /ds/\$1/scene/selected/next
@@ -36,56 +36,56 @@ empty 0 -8 0 12 -261234 -1 -1 2 256;
 #N canvas 0 50 450 300 ADVANCED 0;
 #X msg 82 112 vis 1;
 #X obj 82 134 s pd-\$0-advanced;
-#N canvas 646 125 232 481 \$0-advanced 1;
-#X obj 4 -118 cnv 15 200 124 empty empty Recall 5 10 0 14 -228856 -66577
+#N canvas 646 152 220 512 \$0-advanced 0;
+#X obj 5 7 cnv 15 200 124 empty empty Recall 5 10 0 14 -228856 -66577
 0;
-#X obj 28 -94 tgl 15 0 /ds/\$1/recall/data/state /ds/\$1/recall/data/state
-data 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 4 79 cnv 15 200 250 empty empty Print 5 10 0 14 -228856 -66577
+#X obj 29 31 tgl 15 0 /ds/\$1/recall/data/state /ds/\$1/recall/data/state
+data 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 5 204 cnv 15 200 250 empty empty Print 5 10 0 14 -228856 -66577
 0;
-#X obj 82 -94 tgl 15 0 /ds/\$1/change /ds/\$1/change changes_only 17
+#X obj 83 31 tgl 15 0 /ds/\$1/change /ds/\$1/change changes_only 17
 7 0 10 -262144 -1 -1 0 1;
-#X obj 28 -74 tgl 15 0 /ds/\$1/recall/tables/state /ds/\$1/recall/tables/state
-tables 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 4 10 cnv 15 200 65 empty empty Store 5 10 0 14 -228856 -66577
+#X obj 29 51 tgl 15 0 /ds/\$1/recall/tables/state /ds/\$1/recall/tables/state
+tables 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 5 135 cnv 15 200 65 empty empty Store 5 10 0 14 -228856 -66577
 0;
-#X obj 28 34 tgl 15 0 /ds/\$1/store/data/state /ds/\$1/store/data/state
-data 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 28 54 tgl 15 0 /ds/\$1/store/tables/state /ds/\$1/store/tables/state
-tables 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 28 -54 bng 15 250 50 0 /ds/\$1/recall/global /ds/\$1/recall/global
+#X obj 29 159 tgl 15 0 /ds/\$1/store/data/state /ds/\$1/store/data/state
+data 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 29 179 tgl 15 0 /ds/\$1/store/tables/state /ds/\$1/store/tables/state
+tables 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 29 71 bng 15 250 50 0 /ds/\$1/recall/global /ds/\$1/recall/global
 global 17 7 0 10 -262144 -1 -1;
-#X obj 4 333 cnv 15 200 30 empty empty System 5 10 0 14 -228856 -66577
+#X obj 5 458 cnv 15 200 30 empty empty System 5 10 0 14 -228856 -66577
 0;
-#X obj 87 340 tgl 15 0 /ds/\$1/dsp/mute /ds/\$1/dsp/mute dsp_muting
+#X obj 88 465 tgl 15 0 /ds/\$1/dsp/mute /ds/\$1/dsp/mute dsp_muting
 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 28 104 tgl 15 0 /ds/\$1/print/info/state /ds/\$1/print/info/state
-info 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 28 125 tgl 15 0 /ds/\$1/print/errors/state /ds/\$1/print/errors/state
-errors 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 28 166 tgl 15 0 /ds/\$1/print/datastream/state /ds/\$1/print/datastream/state
+#X obj 29 229 tgl 15 0 /ds/\$1/print/info/state /ds/\$1/print/info/state
+info 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 29 250 tgl 15 0 /ds/\$1/print/errors/state /ds/\$1/print/errors/state
+errors 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 29 291 tgl 15 0 /ds/\$1/print/datastream/state /ds/\$1/print/datastream/state
 datastream 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 28 187 bng 15 250 50 0 /ds/\$1/print/buffer /ds/\$1/print/buffer
+#X obj 29 312 bng 15 250 50 0 /ds/\$1/print/buffer /ds/\$1/print/buffer
 clipboard 17 7 0 10 -262144 -1 -1;
-#X obj 28 208 bng 15 250 50 0 /ds/\$1/print/scenes /ds/\$1/print/scenes
+#X obj 29 333 bng 15 250 50 0 /ds/\$1/print/scenes /ds/\$1/print/scenes
 all_scenes 17 7 0 10 -262144 -1 -1;
-#X obj 28 228 bng 15 250 50 0 /ds/\$1/scene/selected/print /ds/\$1/scene/selected/print
+#X obj 29 353 bng 15 250 50 0 /ds/\$1/scene/selected/print /ds/\$1/scene/selected/print
 selected_scene 17 7 0 10 -262144 -1 -1;
-#X obj 28 248 bng 15 250 50 0 /ds/\$1/print/main /ds/\$1/print/main
+#X obj 29 373 bng 15 250 50 0 /ds/\$1/print/main /ds/\$1/print/main
 recently_loaded/saved 17 7 0 10 -262144 -1 -1;
-#X obj 28 268 bng 15 250 50 0 /ds/\$1/print/global /ds/\$1/print/global
+#X obj 29 393 bng 15 250 50 0 /ds/\$1/print/global /ds/\$1/print/global
 global_settings 17 7 0 10 -262144 -1 -1;
-#X obj 28 288 bng 15 250 50 0 /ds/\$1/reg/print/dialog /ds/\$1/reg/print/dialog
+#X obj 29 413 bng 15 250 50 0 /ds/\$1/reg/print/dialog /ds/\$1/reg/print/dialog
 register_list 17 7 0 10 -262144 -1 -1;
-#X obj 28 308 bng 15 250 50 0 /ds/\$1/reg/global/print/dialog /ds/\$1/reg/global/print/dialog
+#X obj 29 433 bng 15 250 50 0 /ds/\$1/reg/global/print/dialog /ds/\$1/reg/global/print/dialog
 global_register_list 17 7 0 10 -262144 -1 -1;
-#X obj 28 -34 tgl 15 0 /ds/\$1/dispatch /ds/\$1/dispatch dispatch 17
-7 0 10 -262144 -1 -1 1 1;
-#X obj 28 146 tgl 15 0 /ds/\$1/print/debug/state /ds/\$1/print/debug/state
+#X obj 29 91 tgl 15 0 /ds/\$1/dispatch /ds/\$1/dispatch dispatch 17
+7 0 10 -262144 -1 -1 0 1;
+#X obj 29 271 tgl 15 0 /ds/\$1/print/debug/state /ds/\$1/print/debug/state
 debug 17 7 0 10 -262144 -1 -1 0 1;
-#X obj 28 -14 tgl 15 0 /ds/\$1/scene/modulo /ds/\$1/scene/modulo modulo_scenes
+#X obj 29 111 tgl 15 0 /ds/\$1/scene/modulo /ds/\$1/scene/modulo modulo_scenes
 17 7 0 10 -262144 -1 -1 0 1;
-#X coords 0 481 1 480 85 60 0;
+#X coords 0 512 1 511 85 60 0;
 #X restore 82 160 pd \$0-advanced;
 #X obj 82 60 r /ds/\$1/advanced/vis;
 #N canvas 43 108 913 589 register-list-loader 0;
@@ -263,46 +263,45 @@ debug 17 7 0 10 -262144 -1 -1 0 1;
 #X msg 136 183 vis 1;
 #X obj 136 101 r /ds/\$1/edit/vis;
 #X obj 136 205 s pd-\$0-edit;
-#N canvas 97 54 215 278 \$0-edit 0;
-#X obj 4 -273 cnv 15 98 50 empty empty all 5 10 0 14 -233017 -66577
+#N canvas 97 112 235 307 \$0-edit 0;
+#X obj 6 9 cnv 15 98 50 empty empty all 5 10 0 14 -233017 -66577 0
+;
+#X obj 6 63 cnv 15 200 30 empty empty selected 5 10 0 14 -233017 -66577
 0;
-#X obj 4 -219 cnv 15 200 30 empty empty selected 5 10 0 14 -233017
--66577 0;
-#X obj 14 -248 bng 15 250 50 0 /ds/\$1/edit/clear /ds/\$1/edit/clear
+#X obj 16 34 bng 15 250 50 0 /ds/\$1/edit/clear /ds/\$1/edit/clear
 delete 17 7 0 10 -258113 -1 -1;
-#X obj 106 -273 cnv 15 98 50 empty empty lock 5 10 0 14 -1 -262144
+#X obj 108 9 cnv 15 98 50 empty empty lock 5 10 0 14 -1 -262144 0;
+#X obj 169 22 tgl 25 0 /ds/\$1/edit/lock /ds/\$1/edit/lock empty 22
+12 0 10 -262144 -1 -262144 1 1;
+#X obj 6 95 cnv 15 79 180 empty empty empty 5 10 0 14 -228856 -66577
 0;
-#X obj 167 -260 tgl 25 0 /ds/\$1/edit/lock /ds/\$1/edit/lock empty
-22 12 0 10 -262144 -1 -262144 1 1;
-#X obj 4 -187 cnv 15 79 180 empty empty empty 5 10 0 14 -228856 -66577
+#X obj 87 95 cnv 15 119 180 empty empty empty 5 10 0 14 -228856 -66577
 0;
-#X obj 85 -187 cnv 15 119 180 empty empty empty 5 10 0 14 -228856 -66577
-0;
-#X obj 14 -138 bng 15 250 50 0 /ds/\$1/edit/scene/cut /ds/\$1/edit/scene/cut
+#X obj 16 144 bng 15 250 50 0 /ds/\$1/edit/scene/cut /ds/\$1/edit/scene/cut
 cut 17 7 0 10 -260097 -1 -1;
-#X obj 14 -118 bng 15 250 50 0 /ds/\$1/edit/scene/delete /ds/\$1/edit/scene/delete
+#X obj 16 164 bng 15 250 50 0 /ds/\$1/edit/scene/delete /ds/\$1/edit/scene/delete
 delete 17 7 0 10 -258113 -1 -1;
-#X obj 94 -158 bng 15 250 50 0 /ds/\$1/edit/scene/paste-override /ds/\$1/edit/scene/paste-override
+#X obj 96 124 bng 15 250 50 0 /ds/\$1/edit/scene/paste-override /ds/\$1/edit/scene/paste-override
 paste_overwrite 17 7 0 10 -4160 -1 -1;
-#X obj 14 -158 bng 15 250 50 0 /ds/\$1/edit/scene/copy /ds/\$1/edit/scene/copy
+#X obj 16 124 bng 15 250 50 0 /ds/\$1/edit/scene/copy /ds/\$1/edit/scene/copy
 copy 17 7 0 10 -257985 -1 -1;
-#X obj 94 -118 bng 15 250 50 0 /ds/\$1/edit/scene/insert /ds/\$1/edit/scene/insert
+#X obj 96 164 bng 15 250 50 0 /ds/\$1/edit/scene/insert /ds/\$1/edit/scene/insert
 insert_blank 17 7 0 10 -4034 -1 -1;
-#X obj 94 -138 bng 15 250 50 0 /ds/\$1/edit/scene/paste-insert /ds/\$1/edit/scene/paste-insert
+#X obj 96 144 bng 15 250 50 0 /ds/\$1/edit/scene/paste-insert /ds/\$1/edit/scene/paste-insert
 paste_insert 17 7 0 10 -4032 -1 -1;
-#X obj 14 -178 bng 15 250 50 0 /ds/\$1/edit/scene/clear /ds/\$1/edit/scene/clear
+#X obj 16 104 bng 15 250 50 0 /ds/\$1/edit/scene/clear /ds/\$1/edit/scene/clear
 clear 17 7 0 10 -159808 -1 -1;
-#X obj 94 -48 tgl 15 0 /ds/\$1/edit/scene/paste/data /ds/\$1/edit/scene/paste/data
-data 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 94 -88 tgl 15 0 /ds/\$1/edit/scene/paste/settings /ds/\$1/edit/scene/paste/settings
-settings 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 94 -68 tgl 15 0 /ds/\$1/edit/scene/paste/tables /ds/\$1/edit/scene/paste/tables
-tables 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 94 -28 tgl 15 0 /ds/\$1/edit/scene/paste/properties /ds/\$1/edit/scene/paste/properties
-properties 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 124 -212 nbx 3 15 0 1e+37 0 0 /ds/\$1/scene/selected /ds/\$1/scene/selected
-empty 0 -8 0 12 -261234 -1 -1 2 256;
-#X coords 0 278 1 277 85 60 0;
+#X obj 96 234 tgl 15 0 /ds/\$1/edit/scene/paste/data /ds/\$1/edit/scene/paste/data
+data 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 96 194 tgl 15 0 /ds/\$1/edit/scene/paste/settings /ds/\$1/edit/scene/paste/settings
+settings 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 96 214 tgl 15 0 /ds/\$1/edit/scene/paste/tables /ds/\$1/edit/scene/paste/tables
+tables 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 96 254 tgl 15 0 /ds/\$1/edit/scene/paste/properties /ds/\$1/edit/scene/paste/properties
+properties 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 126 70 nbx 3 15 0 1e+37 0 0 /ds/\$1/scene/selected /ds/\$1/scene/selected
+empty 0 -8 0 12 -261234 -1 -1 0 256;
+#X coords 0 307 1 306 85 60 0;
 #X restore 136 231 pd \$0-edit;
 #X obj 221 205 s /ds/\$1/edit/lock;
 #X msg 221 183 1;

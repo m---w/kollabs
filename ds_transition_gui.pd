@@ -1,4 +1,4 @@
-#N canvas 700 22 578 549 10;
+#N canvas 700 58 578 549 10;
 #X obj 101 115 cnv 15 178 45 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X msg 70 388 vis 1;
@@ -11,26 +11,26 @@ buffer 17 7 0 10 -257985 -1 -1;
 #X text 124 140 General:;
 #X obj 70 336 r /ds/\$1/transition/advanced/vis;
 #X obj 70 410 s pd-\$0-transition-advanced;
-#N canvas 428 60 217 199 \$0-transition-advanced 0;
-#X obj 6 -401 cnv 15 200 180 empty empty Transition_Settings 5 10 0
-14 -228856 -66577 0;
-#X obj 17 -379 tgl 15 0 /ds/\$1/transition/state /ds/\$1/transition/state
+#N canvas 428 195 250 226 \$0-transition-advanced 0;
+#X obj 6 8 cnv 15 200 180 empty empty Transition_Settings 5 10 0 14
+-228856 -66577 0;
+#X obj 17 30 tgl 15 0 /ds/\$1/transition/state /ds/\$1/transition/state
 state 17 7 0 10 -258113 -1 -1 1 1;
-#X obj 17 -279 tgl 15 0 /ds/\$1/morph /ds/\$1/morph morph 17 7 0 10
+#X obj 17 130 tgl 15 0 /ds/\$1/morph /ds/\$1/morph morph 17 7 0 10
 -4034 -1 -1 1 1;
-#X obj 137 -299 tgl 15 0 /ds/\$1/occupy /ds/\$1/occupy occupy 17 7
-0 10 -260097 -1 -1 1 1;
-#X obj 17 -299 tgl 15 0 /ds/\$1/occupy/override /ds/\$1/occupy/override
+#X obj 137 110 tgl 15 0 /ds/\$1/occupy /ds/\$1/occupy occupy 17 7 0
+10 -260097 -1 -1 1 1;
+#X obj 17 110 tgl 15 0 /ds/\$1/occupy/override /ds/\$1/occupy/override
 occupy_override: 17 7 0 10 -260097 -1 -1 0 1;
-#X obj 17 -239 tgl 15 0 /ds/\$1/slave /ds/\$1/slave slave 17 7 0 10
+#X obj 17 170 tgl 15 0 /ds/\$1/slave /ds/\$1/slave slave 17 7 0 10
 -203904 -1 -1 1 1;
-#X obj 17 -259 tgl 15 0 /ds/\$1/delay /ds/\$1/delay delay 17 7 0 10
+#X obj 17 150 tgl 15 0 /ds/\$1/delay /ds/\$1/delay delay 17 7 0 10
 -204800 -1 -1 1 1;
-#X obj 17 -349 tgl 15 0 /ds/\$1/recall/settings/state /ds/\$1/recall/settings/state
+#X obj 17 60 tgl 15 0 /ds/\$1/recall/settings/state /ds/\$1/recall/settings/state
 recall 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 17 -329 tgl 15 0 /ds/\$1/store/settings/state /ds/\$1/store/settings/state
+#X obj 17 80 tgl 15 0 /ds/\$1/store/settings/state /ds/\$1/store/settings/state
 store 17 7 0 10 -262144 -1 -1 1 1;
-#X coords 0 199 1 198 85 60 0;
+#X coords 0 226 1 225 85 60 0;
 #X restore 70 436 pd \$0-transition-advanced;
 #X msg 317 399 vis 1;
 #X obj 317 335 r /ds/\$1/reg/settings/buffer;
@@ -53,9 +53,9 @@ slave 17 7 0 10 -203904 -1 -1 0 1;
 0;
 #X obj 159 113 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1/reg/settings/buffer/morph/time
 /ds/\$1/reg/settings/buffer/morph/time time/s: -45 7 0 10 -4034 -1
--1 12 256;
+-1 0 256;
 #X obj 20 113 tgl 15 0 /ds/\$1/reg/settings/buffer/morph /ds/\$1/reg/settings/buffer/morph
-morph 17 7 0 10 -258113 -1 -1 1 1;
+morph 17 7 0 10 -258113 -1 -1 0 1;
 #X obj 159 139 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1/reg/settings/buffer/morph/curve/shape
 /ds/\$1/reg/settings/buffer/morph/curve/shape empty 47 7 0 10 -4034
 -1 -1 0 256;
@@ -98,7 +98,7 @@ advanced 17 7 0 10 -262144 -1 -1;
 || 2 8 0 10 -24198 -1 -1;
 #X obj 134 166 bng 15 250 50 0 /ds/\$1/transition/resume /ds/\$1/transition/resume
 > 6 7 0 10 -262144 -1 -1;
-#N canvas 136 22 936 665 register-list-loader 0;
+#N canvas 136 58 936 665 register-list-loader 0;
 #X obj 451 443 + 1;
 #X obj 389 477 * 20;
 #X msg 652 425 clear;
@@ -198,14 +198,12 @@ advanced 17 7 0 10 -262144 -1 -1;
 #X connect 39 0 40 0;
 #X restore 327 126 pd register-list-loader;
 #N canvas 565 93 402 401 \$0-register-list 0;
-#X obj 30 20 cnv 15 300 20 empty empty Register_list_for_"domain" 5
-10 0 14 -1 -262144 0;
 #X restore 327 146 pd \$0-register-list;
-#N canvas 637 22 392 393 \$0-register-list-guis 0;
+#N canvas 637 58 392 393 \$0-register-list-guis 0;
 #X restore 327 166 pd \$0-register-list-guis;
-#N canvas 637 22 392 393 \$0-register-list-control 0;
+#N canvas 637 58 392 393 \$0-register-list-control 0;
 #X restore 327 186 pd \$0-register-list-control;
-#N canvas 153 223 540 344 COLOR_stop_resume 1;
+#N canvas 153 223 540 344 COLOR_stop_resume 0;
 #X obj 197 282 outlet;
 #X obj 197 52 r /ds/\$1/transition/busy;
 #X obj 197 154 sel 0 1;
